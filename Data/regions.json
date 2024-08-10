@@ -1,0 +1,7796 @@
+[
+    {
+        "regionId": 1,
+        "regionCentre": [
+            100,
+            100
+        ],
+        "isWaterRegion": true,
+        "isLandRegion": false,
+        "regionOwner": "None",
+        "neighbours": [
+            2,
+            26
+        ],
+        "building": "None",
+        "Biome": "Ocean",
+        "Resource": "None"
+    },
+    {
+        "regionId": 2,
+        "regionCentre": [
+            85,
+            288
+        ],
+        "isWaterRegion": true,
+        "isLandRegion": false,
+        "regionOwner": "None",
+        "neighbours": [
+            1,
+            3,
+            9,
+            10,
+            11,
+            19,
+            27
+        ],
+        "building": "None",
+        "Biome": "Ocean",
+        "Resource": "None"
+    },
+    {
+        "regionId": 3,
+        "regionCentre": [
+            96,
+            507
+        ],
+        "isWaterRegion": true,
+        "isLandRegion": false,
+        "regionOwner": "None",
+        "neighbours": [
+            2,
+            4,
+            9,
+            15,
+            22,
+            28
+        ],
+        "building": "None",
+        "Biome": "Ocean",
+        "Resource": "None"
+    },
+    {
+        "regionId": 4,
+        "regionCentre": [
+            98,
+            698
+        ],
+        "isWaterRegion": true,
+        "isLandRegion": false,
+        "regionOwner": "None",
+        "neighbours": [
+            25,
+            3,
+            5,
+            14
+        ],
+        "building": "None",
+        "Biome": "Ocean",
+        "Resource": "None"
+    },
+    {
+        "regionId": 5,
+        "regionCentre": [
+            75,
+            899
+        ],
+        "isWaterRegion": true,
+        "isLandRegion": false,
+        "regionOwner": "None",
+        "neighbours": [
+            34,
+            4,
+            36,
+            6,
+            13,
+            14,
+            16,
+            18
+        ],
+        "building": "None",
+        "Biome": "Ocean",
+        "Resource": "None"
+    },
+    {
+        "regionId": 6,
+        "regionCentre": [
+            95,
+            1102
+        ],
+        "isWaterRegion": true,
+        "isLandRegion": false,
+        "regionOwner": "None",
+        "neighbours": [
+            5,
+            7,
+            12,
+            17,
+            29
+        ],
+        "building": "None",
+        "Biome": "Ocean",
+        "Resource": "None"
+    },
+    {
+        "regionId": 7,
+        "regionCentre": [
+            53,
+            1287
+        ],
+        "isWaterRegion": true,
+        "isLandRegion": false,
+        "regionOwner": "None",
+        "neighbours": [
+            8,
+            12,
+            6
+        ],
+        "building": "None",
+        "Biome": "Ocean",
+        "Resource": "None"
+    },
+    {
+        "regionId": 8,
+        "regionCentre": [
+            143,
+            1310
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            23,
+            12,
+            20,
+            7
+        ],
+        "building": "None",
+        "Biome": "Desert",
+        "Resource": {
+            "Gold": 3,
+            "Stone": 1
+        }
+    },
+    {
+        "regionId": 9,
+        "regionCentre": [
+            131,
+            424
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            11,
+            2,
+            3,
+            15
+        ],
+        "building": "None",
+        "Biome": "Meadowlands",
+        "Resource": {
+            "Wood": 2,
+            "Iron": 1
+        }
+    },
+    {
+        "regionId": 10,
+        "regionCentre": [
+            143,
+            345
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            19,
+            2,
+            11,
+            21
+        ],
+        "building": "None",
+        "Biome": "Meadowlands",
+        "Resource": {
+            "Wood": 2,
+            "Iron": 1
+        }
+    },
+    {
+        "regionId": 11,
+        "regionCentre": [
+            158,
+            382
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            2,
+            9,
+            10,
+            15,
+            21,
+            22
+        ],
+        "building": "None",
+        "Biome": "Meadowlands",
+        "Resource": {
+            "Wood": 2,
+            "Iron": 1
+        }
+    },
+    {
+        "regionId": 12,
+        "regionCentre": [
+            193,
+            1197
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            33,
+            6,
+            7,
+            8,
+            23,
+            29
+        ],
+        "building": "None",
+        "Biome": "Desert",
+        "Resource": {
+            "Gold": 3,
+            "Stone": 1
+        }
+    },
+    {
+        "regionId": 13,
+        "regionCentre": [
+            175,
+            965
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            16,
+            17,
+            5,
+            31
+        ],
+        "building": "None",
+        "Biome": "Forest",
+        "Resource": {
+            "Wood": 3
+        }
+    },
+    {
+        "regionId": 14,
+        "regionCentre": [
+            206,
+            813
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            34,
+            4,
+            5,
+            42,
+            18,
+            25
+        ],
+        "building": "None",
+        "Biome": "Meadowlands",
+        "Resource": {
+            "Wood": 2,
+            "Iron": 1
+        }
+    },
+    {
+        "regionId": 15,
+        "regionCentre": [
+            172,
+            410
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            3,
+            9,
+            11,
+            22
+        ],
+        "building": "None",
+        "Biome": "Marsh",
+        "Resource": {
+            "Wood": 2
+        }
+    },
+    {
+        "regionId": 16,
+        "regionCentre": [
+            191,
+            920
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            32,
+            13,
+            36,
+            5
+        ],
+        "building": "None",
+        "Biome": "Forest",
+        "Resource": {
+            "Wood": 3
+        }
+    },
+    {
+        "regionId": 17,
+        "regionCentre": [
+            186,
+            1010
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            6,
+            13,
+            29,
+            30,
+            31
+        ],
+        "building": "None",
+        "Biome": "Desert",
+        "Resource": {
+            "Gold": 3,
+            "Stone": 1
+        }
+    },
+    {
+        "regionId": 18,
+        "regionCentre": [
+            197,
+            867
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            34,
+            5,
+            14
+        ],
+        "building": "None",
+        "Biome": "Meadowlands",
+        "Resource": {
+            "Wood": 2,
+            "Iron": 1
+        }
+    },
+    {
+        "regionId": 19,
+        "regionCentre": [
+            183,
+            313
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            24,
+            2,
+            10,
+            21
+        ],
+        "building": "None",
+        "Biome": "Light Forest",
+        "Resource": {
+            "Wood": 2
+        }
+    },
+    {
+        "regionId": 20,
+        "regionCentre": [
+            286,
+            1347
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            8,
+            68,
+            23
+        ],
+        "building": "None",
+        "Biome": "Desert",
+        "Resource": {
+            "Gold": 3,
+            "Stone": 1
+        }
+    },
+    {
+        "regionId": 21,
+        "regionCentre": [
+            208,
+            353
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            10,
+            11,
+            19,
+            22,
+            24,
+            27
+        ],
+        "building": "None",
+        "Biome": "Hills",
+        "Resource": {
+            "Wood": 1,
+            "Iron": 1,
+            "Stone": 1
+        }
+    },
+    {
+        "regionId": 22,
+        "regionCentre": [
+            214,
+            394
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            3,
+            11,
+            15,
+            21,
+            27,
+            28
+        ],
+        "building": "None",
+        "Biome": "Marsh",
+        "Resource": {
+            "Wood": 2
+        }
+    },
+    {
+        "regionId": 23,
+        "regionCentre": [
+            318,
+            1231
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            33,
+            8,
+            74,
+            12,
+            20,
+            61
+        ],
+        "building": "None",
+        "Biome": "Desert",
+        "Resource": {
+            "Gold": 3,
+            "Stone": 1
+        }
+    },
+    {
+        "regionId": 24,
+        "regionCentre": [
+            226,
+            308
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            27,
+            19,
+            21
+        ],
+        "building": "None",
+        "Biome": "Light Forest",
+        "Resource": {
+            "Wood": 2
+        }
+    },
+    {
+        "regionId": 25,
+        "regionCentre": [
+            288,
+            701
+        ],
+        "isWaterRegion": true,
+        "isLandRegion": false,
+        "regionOwner": "None",
+        "neighbours": [
+            64,
+            66,
+            67,
+            4,
+            42,
+            43,
+            14,
+            55,
+            28,
+            62
+        ],
+        "building": "None",
+        "Biome": "Ocean",
+        "Resource": "None"
+    },
+    {
+        "regionId": 26,
+        "regionCentre": [
+            300,
+            90
+        ],
+        "isWaterRegion": true,
+        "isLandRegion": false,
+        "regionOwner": "None",
+        "neighbours": [
+            1,
+            35,
+            37,
+            71,
+            50,
+            56,
+            27
+        ],
+        "building": "None",
+        "Biome": "Ocean",
+        "Resource": "None"
+    },
+    {
+        "regionId": 27,
+        "regionCentre": [
+            259,
+            308
+        ],
+        "isWaterRegion": true,
+        "isLandRegion": false,
+        "regionOwner": "None",
+        "neighbours": [
+            2,
+            35,
+            37,
+            38,
+            41,
+            45,
+            51,
+            21,
+            22,
+            24,
+            26,
+            28
+        ],
+        "building": "None",
+        "Biome": "Ocean",
+        "Resource": "None"
+    },
+    {
+        "regionId": 28,
+        "regionCentre": [
+            277,
+            511
+        ],
+        "isWaterRegion": true,
+        "isLandRegion": false,
+        "regionOwner": "None",
+        "neighbours": [
+            65,
+            3,
+            69,
+            39,
+            40,
+            72,
+            43,
+            45,
+            55,
+            22,
+            54,
+            25,
+            27
+        ],
+        "building": "None",
+        "Biome": "Ocean",
+        "Resource": "None"
+    },
+    {
+        "regionId": 29,
+        "regionCentre": [
+            302,
+            1073
+        ],
+        "isWaterRegion": true,
+        "isLandRegion": false,
+        "regionOwner": "None",
+        "neighbours": [
+            33,
+            6,
+            73,
+            12,
+            44,
+            17,
+            58,
+            61,
+            30
+        ],
+        "building": "None",
+        "Biome": "Ocean",
+        "Resource": "None"
+    },
+    {
+        "regionId": 30,
+        "regionCentre": [
+            254,
+            1029
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            17,
+            44,
+            29,
+            31
+        ],
+        "building": "None",
+        "Biome": "Desert",
+        "Resource": {
+            "Gold": 3,
+            "Stone": 1
+        }
+    },
+    {
+        "regionId": 31,
+        "regionCentre": [
+            259,
+            974
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            32,
+            44,
+            13,
+            46,
+            48,
+            17,
+            30
+        ],
+        "building": "None",
+        "Biome": "Meadowlands",
+        "Resource": {
+            "Wood": 2,
+            "Iron": 1
+        }
+    },
+    {
+        "regionId": 32,
+        "regionCentre": [
+            257,
+            929
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            16,
+            36,
+            46,
+            31
+        ],
+        "building": "None",
+        "Biome": "Meadowlands",
+        "Resource": {
+            "Wood": 2,
+            "Iron": 1
+        }
+    },
+    {
+        "regionId": 33,
+        "regionCentre": [
+            287,
+            1126
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            61,
+            12,
+            29,
+            23
+        ],
+        "building": "None",
+        "Biome": "Desert",
+        "Resource": {
+            "Gold": 3,
+            "Stone": 1
+        }
+    },
+    {
+        "regionId": 34,
+        "regionCentre": [
+            265,
+            849
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            36,
+            5,
+            42,
+            14,
+            47,
+            18
+        ],
+        "building": "None",
+        "Biome": "Large Hills",
+        "Resource": {
+            "Gold": 1,
+            "Iron": 2,
+            "Stone": 1
+        }
+    },
+    {
+        "regionId": 35,
+        "regionCentre": [
+            279,
+            211
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            37,
+            38,
+            50,
+            26,
+            27
+        ],
+        "building": "None",
+        "Biome": "Hills",
+        "Resource": {
+            "Wood": 1,
+            "Iron": 1,
+            "Stone": 1
+        }
+    },
+    {
+        "regionId": 36,
+        "regionCentre": [
+            284,
+            888
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            32,
+            34,
+            5,
+            46,
+            47,
+            16,
+            52
+        ],
+        "building": "None",
+        "Biome": "Hills",
+        "Resource": {
+            "Wood": 1,
+            "Iron": 1,
+            "Stone": 1
+        }
+    },
+    {
+        "regionId": 37,
+        "regionCentre": [
+            284,
+            168
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            35,
+            26,
+            27
+        ],
+        "building": "None",
+        "Biome": "Large Hills",
+        "Resource": {
+            "Gold": 1,
+            "Iron": 2,
+            "Stone": 1
+        }
+    },
+    {
+        "regionId": 38,
+        "regionCentre": [
+            288,
+            244
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            35,
+            41,
+            49,
+            50,
+            27
+        ],
+        "building": "None",
+        "Biome": "Large Hills",
+        "Resource": {
+            "Gold": 1,
+            "Iron": 2,
+            "Stone": 1
+        }
+    },
+    {
+        "regionId": 39,
+        "regionCentre": [
+            300,
+            482
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            28,
+            54
+        ],
+        "building": "None",
+        "Biome": "Dark Forest",
+        "Resource": {
+            "Wood": 4
+        }
+    },
+    {
+        "regionId": 40,
+        "regionCentre": [
+            313,
+            424
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            57,
+            28,
+            45
+        ],
+        "building": "None",
+        "Biome": "Marsh",
+        "Resource": {
+            "Wood": 2
+        }
+    },
+    {
+        "regionId": 41,
+        "regionCentre": [
+            295,
+            287
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            49,
+            27,
+            38,
+            51
+        ],
+        "building": "None",
+        "Biome": "Meadowlands",
+        "Resource": {
+            "Wood": 2,
+            "Iron": 1
+        }
+    },
+    {
+        "regionId": 42,
+        "regionCentre": [
+            345,
+            822
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            64,
+            34,
+            76,
+            77,
+            14,
+            47,
+            52,
+            25
+        ],
+        "building": "None",
+        "Biome": "Meadowlands",
+        "Resource": {
+            "Wood": 2,
+            "Iron": 1
+        }
+    },
+    {
+        "regionId": 43,
+        "regionCentre": [
+            312,
+            592
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            25,
+            28,
+            55
+        ],
+        "building": "None",
+        "Biome": "Meadowlands",
+        "Resource": {
+            "Wood": 2,
+            "Iron": 1
+        }
+    },
+    {
+        "regionId": 44,
+        "regionCentre": [
+            330,
+            1019
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            48,
+            58,
+            29,
+            30,
+            31
+        ],
+        "building": "None",
+        "Biome": "Large Hills",
+        "Resource": {
+            "Gold": 1,
+            "Iron": 2,
+            "Stone": 1
+        }
+    },
+    {
+        "regionId": 45,
+        "regionCentre": [
+            315,
+            384
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            40,
+            27,
+            28,
+            53
+        ],
+        "building": "None",
+        "Biome": "Hills",
+        "Resource": {
+            "Wood": 1,
+            "Iron": 1,
+            "Stone": 1
+        }
+    },
+    {
+        "regionId": 46,
+        "regionCentre": [
+            324,
+            933
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            32,
+            36,
+            48,
+            52,
+            58,
+            31
+        ],
+        "building": "None",
+        "Biome": "Large Hills",
+        "Resource": {
+            "Gold": 1,
+            "Iron": 2,
+            "Stone": 1
+        }
+    },
+    {
+        "regionId": 47,
+        "regionCentre": [
+            317,
+            863
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            34,
+            36,
+            42,
+            52
+        ],
+        "building": "None",
+        "Biome": "Large Hills",
+        "Resource": {
+            "Gold": 1,
+            "Iron": 2,
+            "Stone": 1
+        }
+    },
+    {
+        "regionId": 48,
+        "regionCentre": [
+            326,
+            971
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            58,
+            44,
+            46,
+            31
+        ],
+        "building": "None",
+        "Biome": "Meadowlands",
+        "Resource": {
+            "Wood": 2,
+            "Iron": 1
+        }
+    },
+    {
+        "regionId": 49,
+        "regionCentre": [
+            331,
+            261
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            38,
+            41,
+            50,
+            51,
+            56,
+            59
+        ],
+        "building": "None",
+        "Biome": "Hills",
+        "Resource": {
+            "Wood": 1,
+            "Iron": 1,
+            "Stone": 1
+        }
+    },
+    {
+        "regionId": 50,
+        "regionCentre": [
+            337,
+            207
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            35,
+            38,
+            49,
+            56,
+            26
+        ],
+        "building": "None",
+        "Biome": "Large Hills",
+        "Resource": {
+            "Gold": 1,
+            "Iron": 2,
+            "Stone": 1
+        }
+    },
+    {
+        "regionId": 51,
+        "regionCentre": [
+            341,
+            314
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            41,
+            59,
+            49,
+            53,
+            27,
+            60
+        ],
+        "building": "None",
+        "Biome": "Meadowlands",
+        "Resource": {
+            "Wood": 2,
+            "Iron": 1
+        }
+    },
+    {
+        "regionId": 52,
+        "regionCentre": [
+            380,
+            897
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            36,
+            42,
+            75,
+            77,
+            46,
+            47,
+            58
+        ],
+        "building": "None",
+        "Biome": "Meadowlands",
+        "Resource": {
+            "Wood": 2,
+            "Iron": 1
+        }
+    },
+    {
+        "regionId": 53,
+        "regionCentre": [
+            351,
+            372
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            45,
+            51,
+            57,
+            60,
+            63
+        ],
+        "building": "None",
+        "Biome": "Meadowlands",
+        "Resource": {
+            "Wood": 2,
+            "Iron": 1
+        }
+    },
+    {
+        "regionId": 54,
+        "regionCentre": [
+            360,
+            465
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            57,
+            28,
+            69,
+            39
+        ],
+        "building": "None",
+        "Biome": "Dark Forest",
+        "Resource": {
+            "Wood": 4
+        }
+    },
+    {
+        "regionId": 55,
+        "regionCentre": [
+            363,
+            607
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            65,
+            43,
+            25,
+            28,
+            62
+        ],
+        "building": "None",
+        "Biome": "Meadowlands",
+        "Resource": {
+            "Wood": 2,
+            "Iron": 1
+        }
+    },
+    {
+        "regionId": 56,
+        "regionCentre": [
+            379,
+            243
+        ],
+        "isWaterRegion": true,
+        "isLandRegion": false,
+        "regionOwner": "None",
+        "neighbours": [
+            70,
+            49,
+            50,
+            26,
+            59,
+            60
+        ],
+        "building": "None",
+        "Biome": "Ocean",
+        "Resource": "None"
+    },
+    {
+        "regionId": 57,
+        "regionCentre": [
+            374,
+            427
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            69,
+            40,
+            53,
+            54,
+            63
+        ],
+        "building": "None",
+        "Biome": "Large Hills",
+        "Resource": {
+            "Gold": 1,
+            "Iron": 2,
+            "Stone": 1
+        }
+    },
+    {
+        "regionId": 58,
+        "regionCentre": [
+            387,
+            977
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            73,
+            75,
+            44,
+            46,
+            48,
+            52,
+            29
+        ],
+        "building": "None",
+        "Biome": "Meadowlands",
+        "Resource": {
+            "Wood": 2,
+            "Iron": 1
+        }
+    },
+    {
+        "regionId": 59,
+        "regionCentre": [
+            369,
+            292
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            56,
+            49,
+            51,
+            60
+        ],
+        "building": "None",
+        "Biome": "Meadowlands",
+        "Resource": {
+            "Wood": 2,
+            "Iron": 1
+        }
+    },
+    {
+        "regionId": 60,
+        "regionCentre": [
+            393,
+            344
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            70,
+            51,
+            53,
+            56,
+            59,
+            63
+        ],
+        "building": "None",
+        "Biome": "Meadowlands",
+        "Resource": {
+            "Wood": 2,
+            "Iron": 1
+        }
+    },
+    {
+        "regionId": 61,
+        "regionCentre": [
+            431,
+            1101
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            33,
+            73,
+            74,
+            85,
+            23,
+            29
+        ],
+        "building": "None",
+        "Biome": "Desert",
+        "Resource": {
+            "Gold": 3,
+            "Stone": 1
+        }
+    },
+    {
+        "regionId": 62,
+        "regionCentre": [
+            408,
+            652
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            65,
+            67,
+            80,
+            55,
+            25
+        ],
+        "building": "None",
+        "Biome": "Meadowlands",
+        "Resource": {
+            "Wood": 2,
+            "Iron": 1
+        }
+    },
+    {
+        "regionId": 63,
+        "regionCentre": [
+            409,
+            396
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            69,
+            70,
+            78,
+            53,
+            57,
+            60
+        ],
+        "building": "None",
+        "Biome": "Meadowlands",
+        "Resource": {
+            "Wood": 2,
+            "Iron": 1
+        }
+    },
+    {
+        "regionId": 64,
+        "regionCentre": [
+            402,
+            794
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            25,
+            42,
+            76,
+            66
+        ],
+        "building": "None",
+        "Biome": "SnowyPeaks",
+        "Resource": {
+            "Stone": 2,
+            "Gold": 1
+        }
+    },
+    {
+        "regionId": 65,
+        "regionCentre": [
+            422,
+            570
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            72,
+            79,
+            80,
+            83,
+            55,
+            28,
+            62
+        ],
+        "building": "None",
+        "Biome": "Meadowlands",
+        "Resource": {
+            "Wood": 2,
+            "Iron": 1
+        }
+    },
+    {
+        "regionId": 66,
+        "regionCentre": [
+            437,
+            768
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            64,
+            67,
+            76,
+            84,
+            25
+        ],
+        "building": "None",
+        "Biome": "Meadowlands",
+        "Resource": {
+            "Wood": 2,
+            "Iron": 1
+        }
+    },
+    {
+        "regionId": 67,
+        "regionCentre": [
+            431,
+            725
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            66,
+            81,
+            84,
+            25,
+            62
+        ],
+        "building": "None",
+        "Biome": "Meadowlands",
+        "Resource": {
+            "Wood": 2,
+            "Iron": 1
+        }
+    },
+    {
+        "regionId": 68,
+        "regionCentre": [
+            479,
+            1349
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            74,
+            20,
+            92
+        ],
+        "building": "None",
+        "Biome": "Desert",
+        "Resource": {
+            "Gold": 3,
+            "Stone": 1
+        }
+    },
+    {
+        "regionId": 69,
+        "regionCentre": [
+            429,
+            456
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            72,
+            78,
+            54,
+            57,
+            28,
+            63
+        ],
+        "building": "None",
+        "Biome": "Dark Forest",
+        "Resource": {
+            "Wood": 4
+        }
+    },
+    {
+        "regionId": 70,
+        "regionCentre": [
+            505,
+            292
+        ],
+        "isWaterRegion": true,
+        "isLandRegion": false,
+        "regionOwner": "None",
+        "neighbours": [
+            102,
+            71,
+            72,
+            78,
+            56,
+            60,
+            95,
+            63
+        ],
+        "building": "None",
+        "Biome": "Ocean",
+        "Resource": "None"
+    },
+    {
+        "regionId": 71,
+        "regionCentre": [
+            496,
+            102
+        ],
+        "isWaterRegion": true,
+        "isLandRegion": false,
+        "regionOwner": "None",
+        "neighbours": [
+            98,
+            99,
+            100,
+            101,
+            70,
+            26
+        ],
+        "building": "None",
+        "Biome": "Ocean",
+        "Resource": "None"
+    },
+    {
+        "regionId": 72,
+        "regionCentre": [
+            474,
+            463
+        ],
+        "isWaterRegion": true,
+        "isLandRegion": false,
+        "regionOwner": "None",
+        "neighbours": [
+            65,
+            69,
+            70,
+            78,
+            79,
+            86,
+            90,
+            28,
+            95
+        ],
+        "building": "None",
+        "Biome": "Ocean",
+        "Resource": "None"
+    },
+    {
+        "regionId": 73,
+        "regionCentre": [
+            488,
+            1028
+        ],
+        "isWaterRegion": true,
+        "isLandRegion": false,
+        "regionOwner": "None",
+        "neighbours": [
+            105,
+            75,
+            29,
+            85,
+            58,
+            61
+        ],
+        "building": "None",
+        "Biome": "Ocean",
+        "Resource": "None"
+    },
+    {
+        "regionId": 74,
+        "regionCentre": [
+            503,
+            1204
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            96,
+            68,
+            85,
+            23,
+            61
+        ],
+        "building": "None",
+        "Biome": "Desert",
+        "Resource": {
+            "Gold": 3,
+            "Stone": 1
+        }
+    },
+    {
+        "regionId": 75,
+        "regionCentre": [
+            529,
+            911
+        ],
+        "isWaterRegion": true,
+        "isLandRegion": false,
+        "regionOwner": "None",
+        "neighbours": [
+            97,
+            104,
+            73,
+            77,
+            110,
+            82,
+            52,
+            84,
+            87,
+            89,
+            58,
+            94
+        ],
+        "building": "None",
+        "Biome": "Ocean",
+        "Resource": "None"
+    },
+    {
+        "regionId": 76,
+        "regionCentre": [
+            448,
+            814
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            64,
+            66,
+            42,
+            77,
+            82,
+            84
+        ],
+        "building": "None",
+        "Biome": "SnowyPeaks",
+        "Resource": {
+            "Stone": 2,
+            "Gold": 1
+        }
+    },
+    {
+        "regionId": 77,
+        "regionCentre": [
+            454,
+            867
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            42,
+            75,
+            76,
+            82,
+            52
+        ],
+        "building": "None",
+        "Biome": "Marsh",
+        "Resource": {
+            "Wood": 2
+        }
+    },
+    {
+        "regionId": 78,
+        "regionCentre": [
+            456,
+            404
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            72,
+            69,
+            70,
+            63
+        ],
+        "building": "None",
+        "Biome": "Dark Forest",
+        "Resource": {
+            "Wood": 4
+        }
+    },
+    {
+        "regionId": 79,
+        "regionCentre": [
+            495,
+            537
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            65,
+            72,
+            83,
+            86,
+            91
+        ],
+        "building": "None",
+        "Biome": "Forest",
+        "Resource": {
+            "Wood": 3
+        }
+    },
+    {
+        "regionId": 80,
+        "regionCentre": [
+            466,
+            641
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            65,
+            81,
+            83,
+            88,
+            62
+        ],
+        "building": "None",
+        "Biome": "Light Forest",
+        "Resource": {
+            "Wood": 2
+        }
+    },
+    {
+        "regionId": 81,
+        "regionCentre": [
+            498,
+            690
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            67,
+            80,
+            84,
+            88,
+            89
+        ],
+        "building": "None",
+        "Biome": "Light Forest",
+        "Resource": {
+            "Wood": 2
+        }
+    },
+    {
+        "regionId": 82,
+        "regionCentre": [
+            497,
+            834
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            75,
+            76,
+            77,
+            84
+        ],
+        "building": "None",
+        "Biome": "Mountains",
+        "Resource": {
+            "Stone": 2,
+            "Iron": 1
+        }
+    },
+    {
+        "regionId": 83,
+        "regionCentre": [
+            513,
+            589
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            65,
+            79,
+            80,
+            88,
+            91,
+            93
+        ],
+        "building": "None",
+        "Biome": "Light Forest",
+        "Resource": {
+            "Wood": 2
+        }
+    },
+    {
+        "regionId": 84,
+        "regionCentre": [
+            509,
+            773
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            66,
+            67,
+            75,
+            76,
+            81,
+            82,
+            89
+        ],
+        "building": "None",
+        "Biome": "Meadowlands",
+        "Resource": {
+            "Wood": 2,
+            "Iron": 1
+        }
+    },
+    {
+        "regionId": 85,
+        "regionCentre": [
+            547,
+            1071
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            96,
+            73,
+            74,
+            105,
+            106,
+            61
+        ],
+        "building": "None",
+        "Biome": "Desert",
+        "Resource": {
+            "Gold": 3,
+            "Stone": 1
+        }
+    },
+    {
+        "regionId": 86,
+        "regionCentre": [
+            520,
+            490
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            72,
+            90,
+            91,
+            79
+        ],
+        "building": "None",
+        "Biome": "Meadowlands",
+        "Resource": {
+            "Wood": 2,
+            "Iron": 1
+        }
+    },
+    {
+        "regionId": 87,
+        "regionCentre": [
+            519,
+            939
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            75
+        ],
+        "building": "None",
+        "Biome": "Meadowlands",
+        "Resource": {
+            "Wood": 2,
+            "Iron": 1
+        }
+    },
+    {
+        "regionId": 88,
+        "regionCentre": [
+            552,
+            644
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            97,
+            80,
+            81,
+            83,
+            89,
+            93
+        ],
+        "building": "None",
+        "Biome": "Light Forest",
+        "Resource": {
+            "Wood": 2
+        }
+    },
+    {
+        "regionId": 89,
+        "regionCentre": [
+            559,
+            717
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            97,
+            75,
+            81,
+            84,
+            88
+        ],
+        "building": "None",
+        "Biome": "Hills",
+        "Resource": {
+            "Wood": 1,
+            "Iron": 1,
+            "Stone": 1
+        }
+    },
+    {
+        "regionId": 90,
+        "regionCentre": [
+            573,
+            453
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            103,
+            72,
+            107,
+            86,
+            91,
+            95
+        ],
+        "building": "None",
+        "Biome": "Dark Forest",
+        "Resource": {
+            "Wood": 4
+        }
+    },
+    {
+        "regionId": 91,
+        "regionCentre": [
+            595,
+            526
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            107,
+            79,
+            83,
+            86,
+            90,
+            93
+        ],
+        "building": "None",
+        "Biome": "Marsh",
+        "Resource": {
+            "Wood": 2
+        }
+    },
+    {
+        "regionId": 92,
+        "regionCentre": [
+            631,
+            1342
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            96,
+            68,
+            127
+        ],
+        "building": "None",
+        "Biome": "Desert",
+        "Resource": {
+            "Gold": 3,
+            "Stone": 1
+        }
+    },
+    {
+        "regionId": 93,
+        "regionCentre": [
+            613,
+            584
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            97,
+            108,
+            114,
+            83,
+            88,
+            91
+        ],
+        "building": "None",
+        "Biome": "Dark Forest",
+        "Resource": {
+            "Wood": 4
+        }
+    },
+    {
+        "regionId": 94,
+        "regionCentre": [
+            619,
+            767
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            104,
+            75,
+            110,
+            113,
+            123
+        ],
+        "building": "None",
+        "Biome": "Meadowlands",
+        "Resource": {
+            "Wood": 2,
+            "Iron": 1
+        }
+    },
+    {
+        "regionId": 95,
+        "regionCentre": [
+            602,
+            395
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            102,
+            70,
+            72,
+            103,
+            90
+        ],
+        "building": "None",
+        "Biome": "Meadowlands",
+        "Resource": {
+            "Wood": 2,
+            "Iron": 1
+        }
+    },
+    {
+        "regionId": 96,
+        "regionCentre": [
+            647,
+            1197
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            131,
+            134,
+            74,
+            106,
+            85,
+            92,
+            126,
+            127
+        ],
+        "building": "None",
+        "Biome": "Desert",
+        "Resource": {
+            "Gold": 3,
+            "Stone": 1
+        }
+    },
+    {
+        "regionId": 97,
+        "regionCentre": [
+            616,
+            676
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            75,
+            108,
+            110,
+            88,
+            89,
+            93
+        ],
+        "building": "None",
+        "Biome": "Light Forest",
+        "Resource": {
+            "Wood": 2
+        }
+    },
+    {
+        "regionId": 98,
+        "regionCentre": [
+            613,
+            23
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            112,
+            99,
+            111,
+            71
+        ],
+        "building": "None",
+        "Biome": "SnowyPeaks",
+        "Resource": {
+            "Stone": 2,
+            "Gold": 1
+        }
+    },
+    {
+        "regionId": 99,
+        "regionCentre": [
+            615,
+            75
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            98,
+            100,
+            111,
+            71
+        ],
+        "building": "None",
+        "Biome": "SnowyPeaks",
+        "Resource": {
+            "Stone": 2,
+            "Gold": 1
+        }
+    },
+    {
+        "regionId": 100,
+        "regionCentre": [
+            642,
+            131
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            99,
+            101,
+            71,
+            111,
+            116
+        ],
+        "building": "None",
+        "Biome": "Hills",
+        "Resource": {
+            "Wood": 1,
+            "Iron": 1,
+            "Stone": 1
+        }
+    },
+    {
+        "regionId": 101,
+        "regionCentre": [
+            708,
+            168
+        ],
+        "isWaterRegion": true,
+        "isLandRegion": false,
+        "regionOwner": "None",
+        "neighbours": [
+            100,
+            132,
+            102,
+            71,
+            136,
+            143,
+            116,
+            148,
+            152,
+            121
+        ],
+        "building": "None",
+        "Biome": "Ocean",
+        "Resource": "None"
+    },
+    {
+        "regionId": 102,
+        "regionCentre": [
+            648,
+            297
+        ],
+        "isWaterRegion": true,
+        "isLandRegion": false,
+        "regionOwner": "None",
+        "neighbours": [
+            130,
+            101,
+            70,
+            103,
+            133,
+            107,
+            108,
+            109,
+            114,
+            115,
+            118,
+            119,
+            121,
+            122,
+            125,
+            95
+        ],
+        "building": "None",
+        "Biome": "Ocean",
+        "Resource": "None"
+    },
+    {
+        "regionId": 103,
+        "regionCentre": [
+            635,
+            437
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            90,
+            107,
+            102,
+            95
+        ],
+        "building": "None",
+        "Biome": "Forest",
+        "Resource": {
+            "Wood": 3
+        }
+    },
+    {
+        "regionId": 104,
+        "regionCentre": [
+            683,
+            904
+        ],
+        "isWaterRegion": true,
+        "isLandRegion": false,
+        "regionOwner": "None",
+        "neighbours": [
+            128,
+            105,
+            75,
+            141,
+            113,
+            151,
+            120,
+            155,
+            124,
+            94
+        ],
+        "building": "None",
+        "Biome": "Ocean",
+        "Resource": "None"
+    },
+    {
+        "regionId": 105,
+        "regionCentre": [
+            758,
+            1064
+        ],
+        "isWaterRegion": true,
+        "isLandRegion": false,
+        "regionOwner": "None",
+        "neighbours": [
+            131,
+            134,
+            104,
+            73,
+            106,
+            85,
+            153,
+            126
+        ],
+        "building": "None",
+        "Biome": "Ocean",
+        "Resource": "None"
+    },
+    {
+        "regionId": 106,
+        "regionCentre": [
+            656,
+            1062
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            96,
+            105,
+            85,
+            126
+        ],
+        "building": "None",
+        "Biome": "Desert",
+        "Resource": {
+            "Gold": 3,
+            "Stone": 1
+        }
+    },
+    {
+        "regionId": 107,
+        "regionCentre": [
+            652,
+            497
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            102,
+            103,
+            114,
+            90,
+            91
+        ],
+        "building": "None",
+        "Biome": "Dark Forest",
+        "Resource": {
+            "Wood": 4
+        }
+    },
+    {
+        "regionId": 108,
+        "regionCentre": [
+            675,
+            619
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            97,
+            133,
+            102,
+            110,
+            114,
+            117,
+            93
+        ],
+        "building": "None",
+        "Biome": "Meadowlands",
+        "Resource": {
+            "Wood": 2,
+            "Iron": 1
+        }
+    },
+    {
+        "regionId": 109,
+        "regionCentre": [
+            672,
+            372
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            115,
+            125,
+            102
+        ],
+        "building": "None",
+        "Biome": "Meadowlands",
+        "Resource": {
+            "Wood": 2,
+            "Iron": 1
+        }
+    },
+    {
+        "regionId": 110,
+        "regionCentre": [
+            674,
+            702
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            97,
+            75,
+            108,
+            117,
+            123,
+            94
+        ],
+        "building": "None",
+        "Biome": "SnowyPeaks",
+        "Resource": {
+            "Stone": 2,
+            "Gold": 1
+        }
+    },
+    {
+        "regionId": 111,
+        "regionCentre": [
+            678,
+            69
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            129,
+            98,
+            99,
+            100,
+            132,
+            112,
+            116
+        ],
+        "building": "None",
+        "Biome": "Tundra",
+        "Resource": {
+            "Wood": 1,
+            "Stone": 2,
+            "Iron": 1
+        }
+    },
+    {
+        "regionId": 112,
+        "regionCentre": [
+            675,
+            22
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            129,
+            98,
+            111
+        ],
+        "building": "None",
+        "Biome": "SnowyPeaks",
+        "Resource": {
+            "Stone": 2,
+            "Gold": 1
+        }
+    },
+    {
+        "regionId": 113,
+        "regionCentre": [
+            702,
+            783
+        ],
+        "isWaterRegion": true,
+        "isLandRegion": false,
+        "regionOwner": "None",
+        "neighbours": [
+            104,
+            139,
+            141,
+            123,
+            94
+        ],
+        "building": "None",
+        "Biome": "Ocean",
+        "Resource": "None"
+    },
+    {
+        "regionId": 114,
+        "regionCentre": [
+            680,
+            560
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            107,
+            108,
+            93,
+            102
+        ],
+        "building": "None",
+        "Biome": "Dark Forest",
+        "Resource": {
+            "Wood": 4
+        }
+    },
+    {
+        "regionId": 115,
+        "regionCentre": [
+            708,
+            426
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            102,
+            135,
+            137,
+            109,
+            118,
+            125
+        ],
+        "building": "None",
+        "Biome": "Forest",
+        "Resource": {
+            "Wood": 3
+        }
+    },
+    {
+        "regionId": 116,
+        "regionCentre": [
+            704,
+            118
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            132,
+            100,
+            101,
+            111
+        ],
+        "building": "None",
+        "Biome": "Tundra",
+        "Resource": {
+            "Wood": 1,
+            "Stone": 2,
+            "Iron": 1
+        }
+    },
+    {
+        "regionId": 117,
+        "regionCentre": [
+            743,
+            663
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            133,
+            140,
+            108,
+            110,
+            149,
+            150,
+            123
+        ],
+        "building": "None",
+        "Biome": "SnowyPeaks",
+        "Resource": {
+            "Stone": 2,
+            "Gold": 1
+        }
+    },
+    {
+        "regionId": 118,
+        "regionCentre": [
+            707,
+            495
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            130,
+            115,
+            102,
+            135
+        ],
+        "building": "None",
+        "Biome": "Dark Forest",
+        "Resource": {
+            "Wood": 4
+        }
+    },
+    {
+        "regionId": 119,
+        "regionCentre": [
+            709,
+            253
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            136,
+            121,
+            122,
+            102
+        ],
+        "building": "None",
+        "Biome": "Meadowlands",
+        "Resource": {
+            "Wood": 2,
+            "Iron": 1
+        }
+    },
+    {
+        "regionId": 120,
+        "regionCentre": [
+            709,
+            903
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            104,
+            124
+        ],
+        "building": "None",
+        "Biome": "Meadowlands",
+        "Resource": {
+            "Wood": 2,
+            "Iron": 1
+        }
+    },
+    {
+        "regionId": 121,
+        "regionCentre": [
+            730,
+            219
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            136,
+            101,
+            102,
+            119
+        ],
+        "building": "None",
+        "Biome": "Marsh",
+        "Resource": {
+            "Wood": 2
+        }
+    },
+    {
+        "regionId": 122,
+        "regionCentre": [
+            709,
+            289
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            136,
+            125,
+            102,
+            119
+        ],
+        "building": "None",
+        "Biome": "Meadowlands",
+        "Resource": {
+            "Wood": 2,
+            "Iron": 1
+        }
+    },
+    {
+        "regionId": 123,
+        "regionCentre": [
+            721,
+            728
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            139,
+            140,
+            110,
+            113,
+            117,
+            94
+        ],
+        "building": "None",
+        "Biome": "Meadowlands",
+        "Resource": {
+            "Wood": 2,
+            "Iron": 1
+        }
+    },
+    {
+        "regionId": 124,
+        "regionCentre": [
+            709,
+            941
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            104,
+            120
+        ],
+        "building": "None",
+        "Biome": "Meadowlands",
+        "Resource": {
+            "Wood": 2,
+            "Iron": 1
+        }
+    },
+    {
+        "regionId": 125,
+        "regionCentre": [
+            735,
+            347
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            102,
+            136,
+            137,
+            109,
+            144,
+            115,
+            122
+        ],
+        "building": "None",
+        "Biome": "Meadowlands",
+        "Resource": {
+            "Wood": 2,
+            "Iron": 1
+        }
+    },
+    {
+        "regionId": 126,
+        "regionCentre": [
+            727,
+            1061
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            96,
+            105,
+            106,
+            131
+        ],
+        "building": "None",
+        "Biome": "Meadowlands",
+        "Resource": {
+            "Wood": 2,
+            "Iron": 1
+        }
+    },
+    {
+        "regionId": 127,
+        "regionCentre": [
+            745,
+            1299
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            96,
+            146,
+            92,
+            134
+        ],
+        "building": "None",
+        "Biome": "Desert",
+        "Resource": {
+            "Gold": 3,
+            "Stone": 1
+        }
+    },
+    {
+        "regionId": 128,
+        "regionCentre": [
+            711,
+            843
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            104
+        ],
+        "building": "None",
+        "Biome": "Meadowlands",
+        "Resource": {
+            "Wood": 2,
+            "Iron": 1
+        }
+    },
+    {
+        "regionId": 129,
+        "regionCentre": [
+            732,
+            26
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            112,
+            132,
+            142,
+            111
+        ],
+        "building": "None",
+        "Biome": "Tundra",
+        "Resource": {
+            "Wood": 1,
+            "Stone": 2,
+            "Iron": 1
+        }
+    },
+    {
+        "regionId": 130,
+        "regionCentre": [
+            722,
+            537
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            118,
+            133,
+            102,
+            138
+        ],
+        "building": "None",
+        "Biome": "Dark Forest",
+        "Resource": {
+            "Wood": 4
+        }
+    },
+    {
+        "regionId": 131,
+        "regionCentre": [
+            735,
+            1126
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            96,
+            105,
+            134,
+            126
+        ],
+        "building": "None",
+        "Biome": "Meadowlands",
+        "Resource": {
+            "Wood": 2,
+            "Iron": 1
+        }
+    },
+    {
+        "regionId": 132,
+        "regionCentre": [
+            744,
+            75
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            129,
+            101,
+            142,
+            111,
+            143,
+            116
+        ],
+        "building": "None",
+        "Biome": "Tundra",
+        "Resource": {
+            "Wood": 1,
+            "Stone": 2,
+            "Iron": 1
+        }
+    },
+    {
+        "regionId": 133,
+        "regionCentre": [
+            754,
+            599
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            130,
+            102,
+            138,
+            108,
+            117,
+            149
+        ],
+        "building": "None",
+        "Biome": "Forest",
+        "Resource": {
+            "Wood": 3
+        }
+    },
+    {
+        "regionId": 134,
+        "regionCentre": [
+            770,
+            1198
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            96,
+            131,
+            105,
+            153,
+            158,
+            127
+        ],
+        "building": "None",
+        "Biome": "Desert",
+        "Resource": {
+            "Gold": 3,
+            "Stone": 1
+        }
+    },
+    {
+        "regionId": 135,
+        "regionCentre": [
+            755,
+            488
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            137,
+            138,
+            115,
+            147,
+            118
+        ],
+        "building": "None",
+        "Biome": "Meadowlands",
+        "Resource": {
+            "Wood": 2,
+            "Iron": 1
+        }
+    },
+    {
+        "regionId": 136,
+        "regionCentre": [
+            774,
+            261
+        ],
+        "isWaterRegion": true,
+        "isLandRegion": false,
+        "regionOwner": "None",
+        "neighbours": [
+            163,
+            101,
+            154,
+            144,
+            145,
+            119,
+            152,
+            121,
+            122,
+            125
+        ],
+        "building": "None",
+        "Biome": "Ocean",
+        "Resource": "None"
+    },
+    {
+        "regionId": 137,
+        "regionCentre": [
+            785,
+            429
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            161,
+            135,
+            144,
+            115,
+            147,
+            125
+        ],
+        "building": "None",
+        "Biome": "Forest",
+        "Resource": {
+            "Wood": 3
+        }
+    },
+    {
+        "regionId": 138,
+        "regionCentre": [
+            778,
+            544
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            130,
+            133,
+            135,
+            147,
+            149
+        ],
+        "building": "None",
+        "Biome": "Meadowlands",
+        "Resource": {
+            "Wood": 2,
+            "Iron": 1
+        }
+    },
+    {
+        "regionId": 139,
+        "regionCentre": [
+            780,
+            767
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            140,
+            141,
+            113,
+            123,
+            157,
+            159
+        ],
+        "building": "None",
+        "Biome": "Light Forest",
+        "Resource": {
+            "Wood": 2
+        }
+    },
+    {
+        "regionId": 140,
+        "regionCentre": [
+            786,
+            717
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            139,
+            117,
+            150,
+            123,
+            159
+        ],
+        "building": "None",
+        "Biome": "Meadowlands",
+        "Resource": {
+            "Wood": 2,
+            "Iron": 1
+        }
+    },
+    {
+        "regionId": 141,
+        "regionCentre": [
+            781,
+            809
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            104,
+            139,
+            113,
+            151,
+            157
+        ],
+        "building": "None",
+        "Biome": "Forest",
+        "Resource": {
+            "Wood": 3
+        }
+    },
+    {
+        "regionId": 142,
+        "regionCentre": [
+            790,
+            28
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            129,
+            132,
+            156,
+            143
+        ],
+        "building": "None",
+        "Biome": "Tundra",
+        "Resource": {
+            "Wood": 1,
+            "Stone": 2,
+            "Iron": 1
+        }
+    },
+    {
+        "regionId": 143,
+        "regionCentre": [
+            791,
+            92
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            160,
+            132,
+            101,
+            142,
+            148,
+            156
+        ],
+        "building": "None",
+        "Biome": "Dark Forest",
+        "Resource": {
+            "Wood": 4
+        }
+    },
+    {
+        "regionId": 144,
+        "regionCentre": [
+            817,
+            357
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            161,
+            136,
+            137,
+            171,
+            154,
+            125
+        ],
+        "building": "None",
+        "Biome": "Dark Forest",
+        "Resource": {
+            "Wood": 4
+        }
+    },
+    {
+        "regionId": 145,
+        "regionCentre": [
+            798,
+            273
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            136,
+            154,
+            163
+        ],
+        "building": "None",
+        "Biome": "Marsh",
+        "Resource": {
+            "Wood": 2
+        }
+    },
+    {
+        "regionId": 146,
+        "regionCentre": [
+            830,
+            1323
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            174,
+            182,
+            158,
+            127
+        ],
+        "building": "None",
+        "Biome": "Desert",
+        "Resource": {
+            "Gold": 3,
+            "Stone": 1
+        }
+    },
+    {
+        "regionId": 147,
+        "regionCentre": [
+            823,
+            504
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            161,
+            164,
+            135,
+            137,
+            138,
+            173,
+            149
+        ],
+        "building": "None",
+        "Biome": "Meadowlands",
+        "Resource": {
+            "Wood": 2,
+            "Iron": 1
+        }
+    },
+    {
+        "regionId": 148,
+        "regionCentre": [
+            812,
+            149
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            160,
+            101,
+            166,
+            143,
+            152
+        ],
+        "building": "None",
+        "Biome": "Dark Forest",
+        "Resource": {
+            "Wood": 4
+        }
+    },
+    {
+        "regionId": 149,
+        "regionCentre": [
+            817,
+            602
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            164,
+            133,
+            165,
+            138,
+            147,
+            117,
+            150
+        ],
+        "building": "None",
+        "Biome": "Forest",
+        "Resource": {
+            "Wood": 3
+        }
+    },
+    {
+        "regionId": 150,
+        "regionCentre": [
+            845,
+            667
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            165,
+            167,
+            140,
+            117,
+            149,
+            159
+        ],
+        "building": "None",
+        "Biome": "Mountains",
+        "Resource": {
+            "Stone": 2,
+            "Iron": 1
+        }
+    },
+    {
+        "regionId": 151,
+        "regionCentre": [
+            826,
+            848
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            104,
+            169,
+            141,
+            155,
+            157
+        ],
+        "building": "None",
+        "Biome": "Forest",
+        "Resource": {
+            "Wood": 3
+        }
+    },
+    {
+        "regionId": 152,
+        "regionCentre": [
+            833,
+            198
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            163,
+            101,
+            166,
+            136,
+            170,
+            148
+        ],
+        "building": "None",
+        "Biome": "Dark Forest",
+        "Resource": {
+            "Wood": 4
+        }
+    },
+    {
+        "regionId": 153,
+        "regionCentre": [
+            903,
+            1105
+        ],
+        "isWaterRegion": true,
+        "isLandRegion": false,
+        "regionOwner": "None",
+        "neighbours": [
+            162,
+            194,
+            134,
+            105,
+            176,
+            177,
+            208,
+            155,
+            190,
+            158
+        ],
+        "building": "None",
+        "Biome": "Ocean",
+        "Resource": "None"
+    },
+    {
+        "regionId": 154,
+        "regionCentre": [
+            918,
+            277
+        ],
+        "isWaterRegion": true,
+        "isLandRegion": false,
+        "regionOwner": "None",
+        "neighbours": [
+            192,
+            163,
+            197,
+            136,
+            201,
+            170,
+            171,
+            205,
+            207,
+            144,
+            145,
+            186
+        ],
+        "building": "None",
+        "Biome": "Ocean",
+        "Resource": "None"
+    },
+    {
+        "regionId": 155,
+        "regionCentre": [
+            854,
+            942
+        ],
+        "isWaterRegion": true,
+        "isLandRegion": false,
+        "regionOwner": "None",
+        "neighbours": [
+            162,
+            104,
+            169,
+            176,
+            181,
+            151,
+            153,
+            190
+        ],
+        "building": "None",
+        "Biome": "Ocean",
+        "Resource": "None"
+    },
+    {
+        "regionId": 156,
+        "regionCentre": [
+            834,
+            38
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            160,
+            168,
+            142,
+            143
+        ],
+        "building": "None",
+        "Biome": "Tundra",
+        "Resource": {
+            "Wood": 1,
+            "Stone": 2,
+            "Iron": 1
+        }
+    },
+    {
+        "regionId": 157,
+        "regionCentre": [
+            839,
+            809
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            169,
+            139,
+            141,
+            175,
+            151,
+            159
+        ],
+        "building": "None",
+        "Biome": "Light Forest",
+        "Resource": {
+            "Wood": 2
+        }
+    },
+    {
+        "regionId": 158,
+        "regionCentre": [
+            856,
+            1230
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            134,
+            177,
+            146,
+            182,
+            153
+        ],
+        "building": "None",
+        "Biome": "Desert",
+        "Resource": {
+            "Gold": 3,
+            "Stone": 1
+        }
+    },
+    {
+        "regionId": 159,
+        "regionCentre": [
+            862,
+            758
+        ],
+        "isWaterRegion": true,
+        "isLandRegion": false,
+        "regionOwner": "None",
+        "neighbours": [
+            167,
+            139,
+            140,
+            175,
+            180,
+            150,
+            157
+        ],
+        "building": "None",
+        "Biome": "Ocean",
+        "Resource": "None"
+    },
+    {
+        "regionId": 160,
+        "regionCentre": [
+            851,
+            100
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            166,
+            168,
+            143,
+            178,
+            148,
+            156
+        ],
+        "building": "None",
+        "Biome": "Dark Forest",
+        "Resource": {
+            "Wood": 4
+        }
+    },
+    {
+        "regionId": 161,
+        "regionCentre": [
+            851,
+            436
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            137,
+            172,
+            173,
+            144,
+            147,
+            179
+        ],
+        "building": "None",
+        "Biome": "Forest",
+        "Resource": {
+            "Wood": 3
+        }
+    },
+    {
+        "regionId": 162,
+        "regionCentre": [
+            847,
+            1012
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            176,
+            153,
+            155
+        ],
+        "building": "None",
+        "Biome": "Meadowlands",
+        "Resource": {
+            "Wood": 2,
+            "Iron": 1
+        }
+    },
+    {
+        "regionId": 163,
+        "regionCentre": [
+            848,
+            253
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            136,
+            170,
+            145,
+            152,
+            154
+        ],
+        "building": "None",
+        "Biome": "Dark Forest",
+        "Resource": {
+            "Wood": 4
+        }
+    },
+    {
+        "regionId": 164,
+        "regionCentre": [
+            886,
+            527
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            165,
+            173,
+            147,
+            179,
+            149,
+            187,
+            189
+        ],
+        "building": "None",
+        "Biome": "Meadowlands",
+        "Resource": {
+            "Wood": 2,
+            "Iron": 1
+        }
+    },
+    {
+        "regionId": 165,
+        "regionCentre": [
+            918,
+            611
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            164,
+            196,
+            167,
+            202,
+            149,
+            150,
+            187
+        ],
+        "building": "None",
+        "Biome": "Dark Forest",
+        "Resource": {
+            "Wood": 4
+        }
+    },
+    {
+        "regionId": 166,
+        "regionCentre": [
+            880,
+            162
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            160,
+            170,
+            178,
+            148,
+            152,
+            186,
+            184
+        ],
+        "building": "None",
+        "Biome": "Dark Forest",
+        "Resource": {
+            "Wood": 4
+        }
+    },
+    {
+        "regionId": 167,
+        "regionCentre": [
+            905,
+            712
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            196,
+            165,
+            180,
+            150,
+            159
+        ],
+        "building": "None",
+        "Biome": "Large Hills",
+        "Resource": {
+            "Gold": 1,
+            "Iron": 2,
+            "Stone": 1
+        }
+    },
+    {
+        "regionId": 168,
+        "regionCentre": [
+            888,
+            36
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            160,
+            185,
+            178,
+            156
+        ],
+        "building": "None",
+        "Biome": "Tundra",
+        "Resource": {
+            "Wood": 1,
+            "Stone": 2,
+            "Iron": 1
+        }
+    },
+    {
+        "regionId": 169,
+        "regionCentre": [
+            877,
+            868
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            175,
+            181,
+            151,
+            183,
+            155,
+            157
+        ],
+        "building": "None",
+        "Biome": "Forest",
+        "Resource": {
+            "Wood": 3
+        }
+    },
+    {
+        "regionId": 170,
+        "regionCentre": [
+            883,
+            223
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            163,
+            166,
+            154,
+            152,
+            186
+        ],
+        "building": "None",
+        "Biome": "Dark Forest",
+        "Resource": {
+            "Wood": 4
+        }
+    },
+    {
+        "regionId": 171,
+        "regionCentre": [
+            898,
+            353
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            192,
+            172,
+            144,
+            154,
+            191
+        ],
+        "building": "None",
+        "Biome": "Dark Forest",
+        "Resource": {
+            "Wood": 4
+        }
+    },
+    {
+        "regionId": 172,
+        "regionCentre": [
+            903,
+            407
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            161,
+            171,
+            179,
+            191
+        ],
+        "building": "None",
+        "Biome": "Forest",
+        "Resource": {
+            "Wood": 3
+        }
+    },
+    {
+        "regionId": 173,
+        "regionCentre": [
+            894,
+            481
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            161,
+            147,
+            164,
+            179
+        ],
+        "building": "None",
+        "Biome": "Meadowlands",
+        "Resource": {
+            "Wood": 2,
+            "Iron": 1
+        }
+    },
+    {
+        "regionId": 174,
+        "regionCentre": [
+            920,
+            1344
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            200,
+            146,
+            182
+        ],
+        "building": "None",
+        "Biome": "Desert",
+        "Resource": {
+            "Gold": 3,
+            "Stone": 1
+        }
+    },
+    {
+        "regionId": 175,
+        "regionCentre": [
+            942,
+            841
+        ],
+        "isWaterRegion": true,
+        "isLandRegion": false,
+        "regionOwner": "None",
+        "neighbours": [
+            193,
+            169,
+            204,
+            206,
+            180,
+            183,
+            157,
+            159
+        ],
+        "building": "None",
+        "Biome": "Ocean",
+        "Resource": "None"
+    },
+    {
+        "regionId": 176,
+        "regionCentre": [
+            889,
+            1018
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            153,
+            162,
+            155
+        ],
+        "building": "None",
+        "Biome": "Meadowlands",
+        "Resource": {
+            "Wood": 2,
+            "Iron": 1
+        }
+    },
+    {
+        "regionId": 177,
+        "regionCentre": [
+            952,
+            1229
+        ],
+        "isWaterRegion": true,
+        "isLandRegion": false,
+        "regionOwner": "None",
+        "neighbours": [
+            203,
+            209,
+            182,
+            153,
+            158
+        ],
+        "building": "None",
+        "Biome": "Ocean",
+        "Resource": "None"
+    },
+    {
+        "regionId": 178,
+        "regionCentre": [
+            910,
+            91
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            160,
+            195,
+            166,
+            168,
+            188
+        ],
+        "building": "None",
+        "Biome": "Dark Forest",
+        "Resource": {
+            "Wood": 4
+        }
+    },
+    {
+        "regionId": 179,
+        "regionCentre": [
+            956,
+            468
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            161,
+            164,
+            199,
+            172,
+            173,
+            189,
+            191
+        ],
+        "building": "None",
+        "Biome": "Meadowlands",
+        "Resource": {
+            "Wood": 2,
+            "Iron": 1
+        }
+    },
+    {
+        "regionId": 180,
+        "regionCentre": [
+            967,
+            770
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            196,
+            167,
+            204,
+            175,
+            210,
+            159
+        ],
+        "building": "None",
+        "Biome": "Large Hills",
+        "Resource": {
+            "Gold": 1,
+            "Iron": 2,
+            "Stone": 1
+        }
+    },
+    {
+        "regionId": 181,
+        "regionCentre": [
+            920,
+            911
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            193,
+            194,
+            169,
+            183,
+            155,
+            190
+        ],
+        "building": "None",
+        "Biome": "Hills",
+        "Resource": {
+            "Wood": 1,
+            "Iron": 1,
+            "Stone": 1
+        }
+    },
+    {
+        "regionId": 182,
+        "regionCentre": [
+            941,
+            1277
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            203,
+            174,
+            177,
+            146,
+            158
+        ],
+        "building": "None",
+        "Biome": "Desert",
+        "Resource": {
+            "Gold": 3,
+            "Stone": 1
+        }
+    },
+    {
+        "regionId": 183,
+        "regionCentre": [
+            918,
+            872
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            169,
+            193,
+            181,
+            175
+        ],
+        "building": "None",
+        "Biome": "Light Forest",
+        "Resource": {
+            "Wood": 2
+        }
+    },
+    {
+        "regionId": 184,
+        "regionCentre": [
+            925,
+            167
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            186,
+            188,
+            197,
+            166
+        ],
+        "building": "None",
+        "Biome": "Marsh",
+        "Resource": {
+            "Wood": 2
+        }
+    },
+    {
+        "regionId": 185,
+        "regionCentre": [
+            937,
+            21
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            168,
+            195,
+            198
+        ],
+        "building": "None",
+        "Biome": "Tundra",
+        "Resource": {
+            "Wood": 1,
+            "Stone": 2,
+            "Iron": 1
+        }
+    },
+    {
+        "regionId": 186,
+        "regionCentre": [
+            926,
+            215
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            197,
+            166,
+            170,
+            184,
+            154
+        ],
+        "building": "None",
+        "Biome": "Marsh",
+        "Resource": {
+            "Wood": 2
+        }
+    },
+    {
+        "regionId": 187,
+        "regionCentre": [
+            1293,
+            735
+        ],
+        "isWaterRegion": true,
+        "isLandRegion": false,
+        "regionOwner": "None",
+        "neighbours": [
+            224,
+            164,
+            165,
+            228,
+            263,
+            293,
+            233,
+            202,
+            272,
+            210,
+            211,
+            275,
+            246,
+            216,
+            253,
+            189,
+            254
+        ],
+        "building": "None",
+        "Biome": "Ocean",
+        "Resource": "None"
+    },
+    {
+        "regionId": 188,
+        "regionCentre": [
+            950,
+            119
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            184,
+            178,
+            195,
+            197
+        ],
+        "building": "None",
+        "Biome": "Marsh",
+        "Resource": {
+            "Wood": 2
+        }
+    },
+    {
+        "regionId": 189,
+        "regionCentre": [
+            975,
+            554
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            164,
+            199,
+            179,
+            211,
+            187
+        ],
+        "building": "None",
+        "Biome": "Meadowlands",
+        "Resource": {
+            "Wood": 2,
+            "Iron": 1
+        }
+    },
+    {
+        "regionId": 190,
+        "regionCentre": [
+            940,
+            966
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            153,
+            194,
+            155,
+            181
+        ],
+        "building": "None",
+        "Biome": "Hills",
+        "Resource": {
+            "Wood": 1,
+            "Iron": 1,
+            "Stone": 1
+        }
+    },
+    {
+        "regionId": 191,
+        "regionCentre": [
+            989,
+            409
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            192,
+            199,
+            201,
+            171,
+            172,
+            179,
+            212,
+            213
+        ],
+        "building": "None",
+        "Biome": "Dark Forest",
+        "Resource": {
+            "Wood": 4
+        }
+    },
+    {
+        "regionId": 192,
+        "regionCentre": [
+            958,
+            347
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            201,
+            154,
+            171,
+            191
+        ],
+        "building": "None",
+        "Biome": "Marsh",
+        "Resource": {
+            "Wood": 2
+        }
+    },
+    {
+        "regionId": 193,
+        "regionCentre": [
+            967,
+            902
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            194,
+            206,
+            175,
+            181,
+            183
+        ],
+        "building": "None",
+        "Biome": "Meadowlands",
+        "Resource": {
+            "Wood": 2,
+            "Iron": 1
+        }
+    },
+    {
+        "regionId": 194,
+        "regionCentre": [
+            974,
+            960
+        ],
+        "isWaterRegion": true,
+        "isLandRegion": false,
+        "regionOwner": "None",
+        "neighbours": [
+            193,
+            206,
+            181,
+            153,
+            190
+        ],
+        "building": "None",
+        "Biome": "Ocean",
+        "Resource": "None"
+    },
+    {
+        "regionId": 195,
+        "regionCentre": [
+            980,
+            74
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            197,
+            198,
+            178,
+            185,
+            188
+        ],
+        "building": "None",
+        "Biome": "Marsh",
+        "Resource": {
+            "Wood": 2
+        }
+    },
+    {
+        "regionId": 196,
+        "regionCentre": [
+            995,
+            704
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            165,
+            167,
+            202,
+            210,
+            180
+        ],
+        "building": "None",
+        "Biome": "Light Forest",
+        "Resource": {
+            "Wood": 2
+        }
+    },
+    {
+        "regionId": 197,
+        "regionCentre": [
+            976,
+            164
+        ],
+        "isWaterRegion": true,
+        "isLandRegion": false,
+        "regionOwner": "None",
+        "neighbours": [
+            195,
+            198,
+            154,
+            205,
+            184,
+            186,
+            188
+        ],
+        "building": "None",
+        "Biome": "Ocean",
+        "Resource": "None"
+    },
+    {
+        "regionId": 198,
+        "regionCentre": [
+            1076,
+            104
+        ],
+        "isWaterRegion": true,
+        "isLandRegion": false,
+        "regionOwner": "None",
+        "neighbours": [
+            226,
+            195,
+            197,
+            249,
+            231,
+            205,
+            207,
+            245,
+            247,
+            185,
+            251,
+            252,
+            223
+        ],
+        "building": "None",
+        "Biome": "Ocean",
+        "Resource": "None"
+    },
+    {
+        "regionId": 199,
+        "regionCentre": [
+            1026,
+            502
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            179,
+            211,
+            213,
+            217,
+            189,
+            191
+        ],
+        "building": "None",
+        "Biome": "Meadowlands",
+        "Resource": {
+            "Wood": 2,
+            "Iron": 1
+        }
+    },
+    {
+        "regionId": 200,
+        "regionCentre": [
+            1026,
+            1351
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            203,
+            221,
+            174
+        ],
+        "building": "None",
+        "Biome": "Desert",
+        "Resource": {
+            "Gold": 3,
+            "Stone": 1
+        }
+    },
+    {
+        "regionId": 201,
+        "regionCentre": [
+            1005,
+            334
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            192,
+            207,
+            212,
+            154,
+            191
+        ],
+        "building": "None",
+        "Biome": "Marsh",
+        "Resource": {
+            "Wood": 2
+        }
+    },
+    {
+        "regionId": 202,
+        "regionCentre": [
+            1035,
+            657
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            210,
+            187,
+            196,
+            165
+        ],
+        "building": "None",
+        "Biome": "Light Forest",
+        "Resource": {
+            "Wood": 2
+        }
+    },
+    {
+        "regionId": 203,
+        "regionCentre": [
+            1022,
+            1296
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            200,
+            177,
+            209,
+            182,
+            215,
+            221
+        ],
+        "building": "None",
+        "Biome": "Desert",
+        "Resource": {
+            "Gold": 3,
+            "Stone": 1
+        }
+    },
+    {
+        "regionId": 204,
+        "regionCentre": [
+            1047,
+            828
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            229,
+            206,
+            175,
+            210,
+            180,
+            214,
+            216,
+            220
+        ],
+        "building": "None",
+        "Biome": "Mountains",
+        "Resource": {
+            "Stone": 2,
+            "Iron": 1
+        }
+    },
+    {
+        "regionId": 205,
+        "regionCentre": [
+            1005,
+            192
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            154,
+            197,
+            198,
+            207
+        ],
+        "building": "None",
+        "Biome": "Dark Forest",
+        "Resource": {
+            "Wood": 4
+        }
+    },
+    {
+        "regionId": 206,
+        "regionCentre": [
+            1030,
+            938
+        ],
+        "isWaterRegion": true,
+        "isLandRegion": false,
+        "regionOwner": "None",
+        "neighbours": [
+            193,
+            194,
+            227,
+            204,
+            175,
+            208,
+            214,
+            219,
+            222
+        ],
+        "building": "None",
+        "Biome": "Ocean",
+        "Resource": "None"
+    },
+    {
+        "regionId": 207,
+        "regionCentre": [
+            1042,
+            253
+        ],
+        "isWaterRegion": true,
+        "isLandRegion": false,
+        "regionOwner": "None",
+        "neighbours": [
+            198,
+            201,
+            205,
+            212,
+            154,
+            223
+        ],
+        "building": "None",
+        "Biome": "Ocean",
+        "Resource": "None"
+    },
+    {
+        "regionId": 208,
+        "regionCentre": [
+            1097,
+            1106
+        ],
+        "isWaterRegion": true,
+        "isLandRegion": false,
+        "regionOwner": "None",
+        "neighbours": [
+            227,
+            234,
+            237,
+            206,
+            240,
+            209,
+            248,
+            153,
+            218,
+            255
+        ],
+        "building": "None",
+        "Biome": "Ocean",
+        "Resource": "None"
+    },
+    {
+        "regionId": 209,
+        "regionCentre": [
+            1028,
+            1241
+        ],
+        "isWaterRegion": true,
+        "isLandRegion": false,
+        "regionOwner": "None",
+        "neighbours": [
+            203,
+            208,
+            177,
+            215,
+            218
+        ],
+        "building": "None",
+        "Biome": "Ocean",
+        "Resource": "None"
+    },
+    {
+        "regionId": 210,
+        "regionCentre": [
+            1057,
+            752
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            196,
+            202,
+            204,
+            180,
+            216,
+            187
+        ],
+        "building": "None",
+        "Biome": "Light Forest",
+        "Resource": {
+            "Wood": 2
+        }
+    },
+    {
+        "regionId": 211,
+        "regionCentre": [
+            1075,
+            590
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            224,
+            230,
+            199,
+            232,
+            217,
+            187,
+            189
+        ],
+        "building": "None",
+        "Biome": "Hills",
+        "Resource": {
+            "Wood": 1,
+            "Iron": 1,
+            "Stone": 1
+        }
+    },
+    {
+        "regionId": 212,
+        "regionCentre": [
+            1088,
+            341
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            191,
+            201,
+            207,
+            242,
+            244,
+            213,
+            223
+        ],
+        "building": "None",
+        "Biome": "Forest",
+        "Resource": {
+            "Wood": 3
+        }
+    },
+    {
+        "regionId": 213,
+        "regionCentre": [
+            1087,
+            418
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            199,
+            242,
+            212,
+            217,
+            191
+        ],
+        "building": "None",
+        "Biome": "Forest",
+        "Resource": {
+            "Wood": 3
+        }
+    },
+    {
+        "regionId": 214,
+        "regionCentre": [
+            1054,
+            904
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            220,
+            219,
+            204,
+            206
+        ],
+        "building": "None",
+        "Biome": "Large Hills",
+        "Resource": {
+            "Gold": 1,
+            "Iron": 2,
+            "Stone": 1
+        }
+    },
+    {
+        "regionId": 215,
+        "regionCentre": [
+            1064,
+            1250
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            209,
+            218,
+            203,
+            221
+        ],
+        "building": "None",
+        "Biome": "Desert",
+        "Resource": {
+            "Gold": 3,
+            "Stone": 1
+        }
+    },
+    {
+        "regionId": 216,
+        "regionCentre": [
+            1098,
+            801
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            229,
+            233,
+            204,
+            239,
+            210,
+            187
+        ],
+        "building": "None",
+        "Biome": "Light Forest",
+        "Resource": {
+            "Wood": 2
+        }
+    },
+    {
+        "regionId": 217,
+        "regionCentre": [
+            1115,
+            502
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            199,
+            232,
+            211,
+            243,
+            213,
+            250
+        ],
+        "building": "None",
+        "Biome": "Meadowlands",
+        "Resource": {
+            "Wood": 2,
+            "Iron": 1
+        }
+    },
+    {
+        "regionId": 218,
+        "regionCentre": [
+            1097,
+            1218
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            235,
+            237,
+            208,
+            209,
+            215,
+            221
+        ],
+        "building": "None",
+        "Biome": "Desert",
+        "Resource": {
+            "Gold": 3,
+            "Stone": 1
+        }
+    },
+    {
+        "regionId": 219,
+        "regionCentre": [
+            1091,
+            935
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            225,
+            206,
+            214,
+            220,
+            222
+        ],
+        "building": "None",
+        "Biome": "Large Hills",
+        "Resource": {
+            "Gold": 1,
+            "Iron": 2,
+            "Stone": 1
+        }
+    },
+    {
+        "regionId": 220,
+        "regionCentre": [
+            1094,
+            878
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            225,
+            229,
+            204,
+            214,
+            219
+        ],
+        "building": "None",
+        "Biome": "Forest",
+        "Resource": {
+            "Wood": 3
+        }
+    },
+    {
+        "regionId": 221,
+        "regionCentre": [
+            1105,
+            1314
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            200,
+            203,
+            236,
+            215,
+            218
+        ],
+        "building": "None",
+        "Biome": "Desert",
+        "Resource": {
+            "Gold": 3,
+            "Stone": 1
+        }
+    },
+    {
+        "regionId": 222,
+        "regionCentre": [
+            1105,
+            972
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            225,
+            227,
+            234,
+            206,
+            219
+        ],
+        "building": "None",
+        "Biome": "Forest",
+        "Resource": {
+            "Wood": 3
+        }
+    },
+    {
+        "regionId": 223,
+        "regionCentre": [
+            1139,
+            246
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            198,
+            207,
+            244,
+            212,
+            245
+        ],
+        "building": "None",
+        "Biome": "Dark Forest",
+        "Resource": {
+            "Wood": 4
+        }
+    },
+    {
+        "regionId": 224,
+        "regionCentre": [
+            1109,
+            688
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            228,
+            230,
+            238,
+            211,
+            187
+        ],
+        "building": "None",
+        "Biome": "Hills",
+        "Resource": {
+            "Wood": 1,
+            "Iron": 1,
+            "Stone": 1
+        }
+    },
+    {
+        "regionId": 225,
+        "regionCentre": [
+            1124,
+            923
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            229,
+            234,
+            240,
+            241,
+            219,
+            220,
+            222
+        ],
+        "building": "None",
+        "Biome": "Forest",
+        "Resource": {
+            "Wood": 3
+        }
+    },
+    {
+        "regionId": 226,
+        "regionCentre": [
+            1135,
+            33
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            249,
+            198
+        ],
+        "building": "None",
+        "Biome": "Marsh",
+        "Resource": {
+            "Wood": 2
+        }
+    },
+    {
+        "regionId": 227,
+        "regionCentre": [
+            1123,
+            1018
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            208,
+            234,
+            222,
+            206
+        ],
+        "building": "None",
+        "Biome": "Large Hills",
+        "Resource": {
+            "Gold": 1,
+            "Iron": 2,
+            "Stone": 1
+        }
+    },
+    {
+        "regionId": 228,
+        "regionCentre": [
+            1138,
+            746
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            224,
+            187,
+            238,
+            246
+        ],
+        "building": "None",
+        "Biome": "Meadowlands",
+        "Resource": {
+            "Wood": 2,
+            "Iron": 1
+        }
+    },
+    {
+        "regionId": 229,
+        "regionCentre": [
+            1133,
+            858
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            225,
+            204,
+            239,
+            241,
+            216,
+            220
+        ],
+        "building": "None",
+        "Biome": "Forest",
+        "Resource": {
+            "Wood": 3
+        }
+    },
+    {
+        "regionId": 230,
+        "regionCentre": [
+            1172,
+            635
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            224,
+            257,
+            263,
+            232,
+            238,
+            211
+        ],
+        "building": "None",
+        "Biome": "SnowyPeaks",
+        "Resource": {
+            "Stone": 2,
+            "Gold": 1
+        }
+    },
+    {
+        "regionId": 231,
+        "regionCentre": [
+            1132,
+            149
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            198
+        ],
+        "building": "None",
+        "Biome": "Dark Forest",
+        "Resource": {
+            "Wood": 4
+        }
+    },
+    {
+        "regionId": 232,
+        "regionCentre": [
+            1179,
+            579
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            230,
+            263,
+            211,
+            217,
+            250
+        ],
+        "building": "None",
+        "Biome": "Meadowlands",
+        "Resource": {
+            "Wood": 2,
+            "Iron": 1
+        }
+    },
+    {
+        "regionId": 233,
+        "regionCentre": [
+            1168,
+            809
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            258,
+            239,
+            216,
+            187,
+            253
+        ],
+        "building": "None",
+        "Biome": "Meadowlands",
+        "Resource": {
+            "Wood": 2,
+            "Iron": 1
+        }
+    },
+    {
+        "regionId": 234,
+        "regionCentre": [
+            1154,
+            985
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            225,
+            227,
+            208,
+            240,
+            222
+        ],
+        "building": "None",
+        "Biome": "Forest",
+        "Resource": {
+            "Wood": 3
+        }
+    },
+    {
+        "regionId": 235,
+        "regionCentre": [
+            1172,
+            1236
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            256,
+            261,
+            236,
+            237,
+            218
+        ],
+        "building": "None",
+        "Biome": "Desert",
+        "Resource": {
+            "Gold": 3,
+            "Stone": 1
+        }
+    },
+    {
+        "regionId": 236,
+        "regionCentre": [
+            1178,
+            1320
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            261,
+            235,
+            221,
+            262
+        ],
+        "building": "None",
+        "Biome": "Desert",
+        "Resource": {
+            "Gold": 3,
+            "Stone": 1
+        }
+    },
+    {
+        "regionId": 237,
+        "regionCentre": [
+            1175,
+            1211
+        ],
+        "isWaterRegion": true,
+        "isLandRegion": false,
+        "regionOwner": "None",
+        "neighbours": [
+            208,
+            256,
+            218,
+            235
+        ],
+        "building": "None",
+        "Biome": "Ocean",
+        "Resource": "None"
+    },
+    {
+        "regionId": 238,
+        "regionCentre": [
+            1169,
+            683
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            224,
+            257,
+            228,
+            230,
+            246
+        ],
+        "building": "None",
+        "Biome": "Meadowlands",
+        "Resource": {
+            "Wood": 2,
+            "Iron": 1
+        }
+    },
+    {
+        "regionId": 239,
+        "regionCentre": [
+            1183,
+            855
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            258,
+            229,
+            233,
+            240,
+            241,
+            216,
+            254
+        ],
+        "building": "None",
+        "Biome": "Meadowlands",
+        "Resource": {
+            "Wood": 2,
+            "Iron": 1
+        }
+    },
+    {
+        "regionId": 240,
+        "regionCentre": [
+            1177,
+            943
+        ],
+        "isWaterRegion": true,
+        "isLandRegion": false,
+        "regionOwner": "None",
+        "neighbours": [
+            225,
+            234,
+            239,
+            208,
+            241,
+            254
+        ],
+        "building": "None",
+        "Biome": "Ocean",
+        "Resource": "None"
+    },
+    {
+        "regionId": 241,
+        "regionCentre": [
+            1162,
+            903
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            240,
+            225,
+            229,
+            239
+        ],
+        "building": "None",
+        "Biome": "Large Hills",
+        "Resource": {
+            "Gold": 1,
+            "Iron": 2,
+            "Stone": 1
+        }
+    },
+    {
+        "regionId": 242,
+        "regionCentre": [
+            1198,
+            378
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            264,
+            268,
+            243,
+            244,
+            212,
+            213
+        ],
+        "building": "None",
+        "Biome": "Forest",
+        "Resource": {
+            "Wood": 3
+        }
+    },
+    {
+        "regionId": 243,
+        "regionCentre": [
+            1197,
+            452
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            264,
+            217,
+            242,
+            250
+        ],
+        "building": "None",
+        "Biome": "Meadowlands",
+        "Resource": {
+            "Wood": 2,
+            "Iron": 1
+        }
+    },
+    {
+        "regionId": 244,
+        "regionCentre": [
+            1213,
+            292
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            271,
+            242,
+            212,
+            245,
+            223
+        ],
+        "building": "None",
+        "Biome": "Dark Forest",
+        "Resource": {
+            "Wood": 4
+        }
+    },
+    {
+        "regionId": 245,
+        "regionCentre": [
+            1234,
+            244
+        ],
+        "isWaterRegion": true,
+        "isLandRegion": false,
+        "regionOwner": "None",
+        "neighbours": [
+            260,
+            198,
+            271,
+            244,
+            251,
+            223
+        ],
+        "building": "None",
+        "Biome": "Ocean",
+        "Resource": "None"
+    },
+    {
+        "regionId": 246,
+        "regionCentre": [
+            1215,
+            750
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            257,
+            228,
+            238,
+            275,
+            187
+        ],
+        "building": "None",
+        "Biome": "Large Hills",
+        "Resource": {
+            "Gold": 1,
+            "Iron": 2,
+            "Stone": 1
+        }
+    },
+    {
+        "regionId": 247,
+        "regionCentre": [
+            1208,
+            123
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            267,
+            251,
+            252,
+            198
+        ],
+        "building": "None",
+        "Biome": "Dark Forest",
+        "Resource": {
+            "Wood": 4
+        }
+    },
+    {
+        "regionId": 248,
+        "regionCentre": [
+            1189,
+            1098
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            208,
+            259,
+            255
+        ],
+        "building": "None",
+        "Biome": "Meadowlands",
+        "Resource": {
+            "Wood": 2,
+            "Iron": 1
+        }
+    },
+    {
+        "regionId": 249,
+        "regionCentre": [
+            1207,
+            33
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            226,
+            252,
+            198,
+            270
+        ],
+        "building": "None",
+        "Biome": "Dark Forest",
+        "Resource": {
+            "Wood": 4
+        }
+    },
+    {
+        "regionId": 250,
+        "regionCentre": [
+            1233,
+            536
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            263,
+            232,
+            264,
+            273,
+            243,
+            217
+        ],
+        "building": "None",
+        "Biome": "Meadowlands",
+        "Resource": {
+            "Wood": 2,
+            "Iron": 1
+        }
+    },
+    {
+        "regionId": 251,
+        "regionCentre": [
+            1212,
+            181
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            260,
+            198,
+            267,
+            245,
+            247
+        ],
+        "building": "None",
+        "Biome": "Dark Forest",
+        "Resource": {
+            "Wood": 4
+        }
+    },
+    {
+        "regionId": 252,
+        "regionCentre": [
+            1272,
+            73
+        ],
+        "isWaterRegion": true,
+        "isLandRegion": false,
+        "regionOwner": "None",
+        "neighbours": [
+            198,
+            267,
+            270,
+            278,
+            247,
+            249,
+            284
+        ],
+        "building": "None",
+        "Biome": "Ocean",
+        "Resource": "None"
+    },
+    {
+        "regionId": 253,
+        "regionCentre": [
+            1243,
+            808
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            258,
+            233,
+            265,
+            272,
+            187,
+            254
+        ],
+        "building": "None",
+        "Biome": "Light Forest",
+        "Resource": {
+            "Wood": 2
+        }
+    },
+    {
+        "regionId": 254,
+        "regionCentre": [
+            1302,
+            892
+        ],
+        "isWaterRegion": true,
+        "isLandRegion": false,
+        "regionOwner": "None",
+        "neighbours": [
+            258,
+            294,
+            265,
+            266,
+            269,
+            239,
+            240,
+            272,
+            282,
+            187,
+            253,
+            255
+        ],
+        "building": "None",
+        "Biome": "Ocean",
+        "Resource": "None"
+    },
+    {
+        "regionId": 255,
+        "regionCentre": [
+            1294,
+            1115
+        ],
+        "isWaterRegion": true,
+        "isLandRegion": false,
+        "regionOwner": "None",
+        "neighbours": [
+            256,
+            259,
+            291,
+            295,
+            266,
+            208,
+            274,
+            248,
+            281,
+            254
+        ],
+        "building": "None",
+        "Biome": "Ocean",
+        "Resource": "None"
+    },
+    {
+        "regionId": 256,
+        "regionCentre": [
+            1302,
+            1222
+        ],
+        "isWaterRegion": true,
+        "isLandRegion": false,
+        "regionOwner": "None",
+        "neighbours": [
+            261,
+            296,
+            235,
+            237,
+            276,
+            285,
+            255
+        ],
+        "building": "None",
+        "Biome": "Ocean",
+        "Resource": "None"
+    },
+    {
+        "regionId": 257,
+        "regionCentre": [
+            1244,
+            679
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            230,
+            263,
+            238,
+            275,
+            246
+        ],
+        "building": "None",
+        "Biome": "Plateau",
+        "Resource": {
+            "Iron": 2,
+            "Stone": 1
+        }
+    },
+    {
+        "regionId": 258,
+        "regionCentre": [
+            1237,
+            853
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            233,
+            265,
+            239,
+            253,
+            254
+        ],
+        "building": "None",
+        "Biome": "Tundra",
+        "Resource": {
+            "Wood": 1,
+            "Stone": 2,
+            "Iron": 1
+        }
+    },
+    {
+        "regionId": 259,
+        "regionCentre": [
+            1228,
+            1103
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            248,
+            255
+        ],
+        "building": "None",
+        "Biome": "Meadowlands",
+        "Resource": {
+            "Wood": 2,
+            "Iron": 1
+        }
+    },
+    {
+        "regionId": 260,
+        "regionCentre": [
+            1277,
+            200
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            267,
+            271,
+            245,
+            251,
+            284
+        ],
+        "building": "None",
+        "Biome": "Dark Forest",
+        "Resource": {
+            "Wood": 4
+        }
+    },
+    {
+        "regionId": 261,
+        "regionCentre": [
+            1262,
+            1265
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            256,
+            262,
+            235,
+            236,
+            276
+        ],
+        "building": "None",
+        "Biome": "Desert",
+        "Resource": {
+            "Gold": 3,
+            "Stone": 1
+        }
+    },
+    {
+        "regionId": 262,
+        "regionCentre": [
+            1267,
+            1338
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            277,
+            236,
+            261
+        ],
+        "building": "None",
+        "Biome": "Desert",
+        "Resource": {
+            "Gold": 3,
+            "Stone": 1
+        }
+    },
+    {
+        "regionId": 263,
+        "regionCentre": [
+            1324,
+            630
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            257,
+            293,
+            230,
+            232,
+            273,
+            275,
+            250,
+            187,
+            286
+        ],
+        "building": "None",
+        "Biome": "Forest",
+        "Resource": {
+            "Wood": 3
+        }
+    },
+    {
+        "regionId": 264,
+        "regionCentre": [
+            1308,
+            454
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            268,
+            273,
+            242,
+            243,
+            279,
+            250,
+            287
+        ],
+        "building": "None",
+        "Biome": "Light Forest",
+        "Resource": {
+            "Wood": 2
+        }
+    },
+    {
+        "regionId": 265,
+        "regionCentre": [
+            1281,
+            873
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            258,
+            253,
+            254
+        ],
+        "building": "None",
+        "Biome": "Forest",
+        "Resource": {
+            "Wood": 3
+        }
+    },
+    {
+        "regionId": 266,
+        "regionCentre": [
+            1289,
+            962
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            269,
+            274,
+            280,
+            254,
+            255
+        ],
+        "building": "None",
+        "Biome": "Light Forest",
+        "Resource": {
+            "Wood": 2
+        }
+    },
+    {
+        "regionId": 267,
+        "regionCentre": [
+            1309,
+            128
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            260,
+            252,
+            247,
+            251,
+            284
+        ],
+        "building": "None",
+        "Biome": "Dark Forest",
+        "Resource": {
+            "Wood": 4
+        }
+    },
+    {
+        "regionId": 268,
+        "regionCentre": [
+            1284,
+            366
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            264,
+            242,
+            279,
+            271
+        ],
+        "building": "None",
+        "Biome": "Forest",
+        "Resource": {
+            "Wood": 3
+        }
+    },
+    {
+        "regionId": 269,
+        "regionCentre": [
+            1301,
+            926
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            280,
+            266,
+            282,
+            254
+        ],
+        "building": "None",
+        "Biome": "Light Forest",
+        "Resource": {
+            "Wood": 2
+        }
+    },
+    {
+        "regionId": 270,
+        "regionCentre": [
+            1291,
+            24
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            249,
+            252,
+            278
+        ],
+        "building": "None",
+        "Biome": "Marsh",
+        "Resource": {
+            "Wood": 2
+        }
+    },
+    {
+        "regionId": 271,
+        "regionCentre": [
+            1302,
+            286
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            260,
+            268,
+            244,
+            245,
+            279,
+            283
+        ],
+        "building": "None",
+        "Biome": "Dark Forest",
+        "Resource": {
+            "Wood": 4
+        }
+    },
+    {
+        "regionId": 272,
+        "regionCentre": [
+            1293,
+            777
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            187,
+            253,
+            254
+        ],
+        "building": "None",
+        "Biome": "Light Forest",
+        "Resource": {
+            "Wood": 2
+        }
+    },
+    {
+        "regionId": 273,
+        "regionCentre": [
+            1331,
+            542
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            263,
+            264,
+            250,
+            286,
+            287
+        ],
+        "building": "None",
+        "Biome": "Light Forest",
+        "Resource": {
+            "Wood": 2
+        }
+    },
+    {
+        "regionId": 274,
+        "regionCentre": [
+            1305,
+            1016
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            280,
+            281,
+            266,
+            255
+        ],
+        "building": "None",
+        "Biome": "Light Forest",
+        "Resource": {
+            "Wood": 2
+        }
+    },
+    {
+        "regionId": 275,
+        "regionCentre": [
+            1325,
+            694
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            257,
+            187,
+            246,
+            263
+        ],
+        "building": "None",
+        "Biome": "Marsh",
+        "Resource": {
+            "Wood": 2
+        }
+    },
+    {
+        "regionId": 276,
+        "regionCentre": [
+            1337,
+            1265
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            256,
+            277,
+            285,
+            261
+        ],
+        "building": "None",
+        "Biome": "Hills",
+        "Resource": {
+            "Wood": 1,
+            "Iron": 1,
+            "Stone": 1
+        }
+    },
+    {
+        "regionId": 277,
+        "regionCentre": [
+            1345,
+            1336
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            288,
+            290,
+            276,
+            262
+        ],
+        "building": "None",
+        "Biome": "Desert",
+        "Resource": {
+            "Gold": 3,
+            "Stone": 1
+        }
+    },
+    {
+        "regionId": 278,
+        "regionCentre": [
+            1371,
+            41
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            289,
+            252,
+            284,
+            270
+        ],
+        "building": "None",
+        "Biome": "Dark Forest",
+        "Resource": {
+            "Wood": 4
+        }
+    },
+    {
+        "regionId": 279,
+        "regionCentre": [
+            1415,
+            412
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            264,
+            268,
+            271,
+            315,
+            307,
+            283,
+            287
+        ],
+        "building": "None",
+        "Biome": "Light Forest",
+        "Resource": {
+            "Wood": 2
+        }
+    },
+    {
+        "regionId": 280,
+        "regionCentre": [
+            1370,
+            968
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            291,
+            292,
+            266,
+            269,
+            274,
+            281,
+            282
+        ],
+        "building": "None",
+        "Biome": "Light Forest",
+        "Resource": {
+            "Wood": 2
+        }
+    },
+    {
+        "regionId": 281,
+        "regionCentre": [
+            1357,
+            1029
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            280,
+            274,
+            291,
+            255
+        ],
+        "building": "None",
+        "Biome": "Hills",
+        "Resource": {
+            "Wood": 1,
+            "Iron": 1,
+            "Stone": 1
+        }
+    },
+    {
+        "regionId": 282,
+        "regionCentre": [
+            1379,
+            909
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            292,
+            294,
+            297,
+            269,
+            280,
+            254
+        ],
+        "building": "None",
+        "Biome": "Light Forest",
+        "Resource": {
+            "Wood": 2
+        }
+    },
+    {
+        "regionId": 283,
+        "regionCentre": [
+            1407,
+            293
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            307,
+            284,
+            279,
+            271
+        ],
+        "building": "None",
+        "Biome": "Dark Forest",
+        "Resource": {
+            "Wood": 4
+        }
+    },
+    {
+        "regionId": 284,
+        "regionCentre": [
+            1435,
+            153
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            289,
+            260,
+            267,
+            308,
+            278,
+            313,
+            283,
+            252,
+            317
+        ],
+        "building": "None",
+        "Biome": "Dark Forest",
+        "Resource": {
+            "Wood": 4
+        }
+    },
+    {
+        "regionId": 285,
+        "regionCentre": [
+            1393,
+            1256
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            256,
+            288,
+            296,
+            276
+        ],
+        "building": "None",
+        "Biome": "Desert",
+        "Resource": {
+            "Gold": 3,
+            "Stone": 1
+        }
+    },
+    {
+        "regionId": 286,
+        "regionCentre": [
+            1435,
+            619
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            293,
+            263,
+            273,
+            309,
+            287
+        ],
+        "building": "None",
+        "Biome": "Light Forest",
+        "Resource": {
+            "Wood": 2
+        }
+    },
+    {
+        "regionId": 287,
+        "regionCentre": [
+            1492,
+            516
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            293,
+            264,
+            273,
+            309,
+            279,
+            315,
+            286,
+            319
+        ],
+        "building": "None",
+        "Biome": "Dark Forest",
+        "Resource": {
+            "Wood": 4
+        }
+    },
+    {
+        "regionId": 288,
+        "regionCentre": [
+            1405,
+            1314
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            296,
+            285,
+            290,
+            277
+        ],
+        "building": "None",
+        "Biome": "Desert",
+        "Resource": {
+            "Gold": 3,
+            "Stone": 1
+        }
+    },
+    {
+        "regionId": 289,
+        "regionCentre": [
+            1466,
+            27
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            320,
+            284,
+            278,
+            308
+        ],
+        "building": "None",
+        "Biome": "Tundra",
+        "Resource": {
+            "Wood": 1,
+            "Stone": 2,
+            "Iron": 1
+        }
+    },
+    {
+        "regionId": 290,
+        "regionCentre": [
+            1414,
+            1372
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            288,
+            296,
+            277
+        ],
+        "building": "None",
+        "Biome": "Desert",
+        "Resource": {
+            "Gold": 3,
+            "Stone": 1
+        }
+    },
+    {
+        "regionId": 291,
+        "regionCentre": [
+            1428,
+            1030
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            292,
+            295,
+            303,
+            280,
+            281,
+            255
+        ],
+        "building": "None",
+        "Biome": "Plateau",
+        "Resource": {
+            "Iron": 2,
+            "Stone": 1
+        }
+    },
+    {
+        "regionId": 292,
+        "regionCentre": [
+            1433,
+            972
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            291,
+            301,
+            303,
+            280,
+            282
+        ],
+        "building": "None",
+        "Biome": "Hills",
+        "Resource": {
+            "Wood": 1,
+            "Iron": 1,
+            "Stone": 1
+        }
+    },
+    {
+        "regionId": 293,
+        "regionCentre": [
+            1515,
+            740
+        ],
+        "isWaterRegion": true,
+        "isLandRegion": false,
+        "regionOwner": "None",
+        "neighbours": [
+            324,
+            287,
+            294,
+            263,
+            326,
+            328,
+            330,
+            305,
+            315,
+            309,
+            187,
+            286,
+            319
+        ],
+        "building": "None",
+        "Biome": "Ocean",
+        "Resource": "None"
+    },
+    {
+        "regionId": 294,
+        "regionCentre": [
+            1503,
+            831
+        ],
+        "isWaterRegion": true,
+        "isLandRegion": false,
+        "regionOwner": "None",
+        "neighbours": [
+            322,
+            293,
+            297,
+            329,
+            312,
+            282,
+            254
+        ],
+        "building": "None",
+        "Biome": "Ocean",
+        "Resource": "None"
+    },
+    {
+        "regionId": 295,
+        "regionCentre": [
+            1472,
+            1127
+        ],
+        "isWaterRegion": true,
+        "isLandRegion": false,
+        "regionOwner": "None",
+        "neighbours": [
+            291,
+            296,
+            302,
+            303,
+            314,
+            316,
+            318,
+            255
+        ],
+        "building": "None",
+        "Biome": "Ocean",
+        "Resource": "None"
+    },
+    {
+        "regionId": 296,
+        "regionCentre": [
+            1452,
+            1223
+        ],
+        "isWaterRegion": true,
+        "isLandRegion": false,
+        "regionOwner": "None",
+        "neighbours": [
+            256,
+            288,
+            290,
+            295,
+            298,
+            299,
+            300,
+            304,
+            306,
+            314,
+            285
+        ],
+        "building": "None",
+        "Biome": "Ocean",
+        "Resource": "None"
+    },
+    {
+        "regionId": 297,
+        "regionCentre": [
+            1457,
+            893
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            312,
+            282,
+            301,
+            294
+        ],
+        "building": "None",
+        "Biome": "Light Forest",
+        "Resource": {
+            "Wood": 2
+        }
+    },
+    {
+        "regionId": 298,
+        "regionCentre": [
+            1431,
+            1238
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            296,
+            306,
+            300
+        ],
+        "building": "None",
+        "Biome": "Desert",
+        "Resource": {
+            "Gold": 3,
+            "Stone": 1
+        }
+    },
+    {
+        "regionId": 299,
+        "regionCentre": [
+            1459,
+            1328
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            296,
+            304,
+            300,
+            310
+        ],
+        "building": "None",
+        "Biome": "Desert",
+        "Resource": {
+            "Gold": 3,
+            "Stone": 1
+        }
+    },
+    {
+        "regionId": 300,
+        "regionCentre": [
+            1449,
+            1280
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            296,
+            298,
+            299,
+            306,
+            310
+        ],
+        "building": "None",
+        "Biome": "Desert",
+        "Resource": {
+            "Gold": 3,
+            "Stone": 1
+        }
+    },
+    {
+        "regionId": 301,
+        "regionCentre": [
+            1512,
+            971
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            322,
+            292,
+            325,
+            297,
+            303,
+            312,
+            316
+        ],
+        "building": "None",
+        "Biome": "Desert",
+        "Resource": {
+            "Gold": 3,
+            "Stone": 1
+        }
+    },
+    {
+        "regionId": 302,
+        "regionCentre": [
+            1465,
+            1107
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            295
+        ],
+        "building": "None",
+        "Biome": "Meadowlands",
+        "Resource": {
+            "Wood": 2,
+            "Iron": 1
+        }
+    },
+    {
+        "regionId": 303,
+        "regionCentre": [
+            1485,
+            1033
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            291,
+            292,
+            295,
+            301,
+            316
+        ],
+        "building": "None",
+        "Biome": "Plateau",
+        "Resource": {
+            "Iron": 2,
+            "Stone": 1
+        }
+    },
+    {
+        "regionId": 304,
+        "regionCentre": [
+            1493,
+            1365
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            296,
+            299,
+            310
+        ],
+        "building": "None",
+        "Biome": "Desert",
+        "Resource": {
+            "Gold": 3,
+            "Stone": 1
+        }
+    },
+    {
+        "regionId": 305,
+        "regionCentre": [
+            1501,
+            716
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            309,
+            293
+        ],
+        "building": "None",
+        "Biome": "Marsh",
+        "Resource": {
+            "Wood": 2
+        }
+    },
+    {
+        "regionId": 306,
+        "regionCentre": [
+            1488,
+            1250
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            296,
+            298,
+            300,
+            310,
+            311,
+            314
+        ],
+        "building": "None",
+        "Biome": "Desert",
+        "Resource": {
+            "Gold": 3,
+            "Stone": 1
+        }
+    },
+    {
+        "regionId": 307,
+        "regionCentre": [
+            1547,
+            316
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            331,
+            315,
+            279,
+            313,
+            283
+        ],
+        "building": "None",
+        "Biome": "Dark Forest",
+        "Resource": {
+            "Wood": 4
+        }
+    },
+    {
+        "regionId": 308,
+        "regionCentre": [
+            1572,
+            80
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            320,
+            289,
+            284,
+            317
+        ],
+        "building": "None",
+        "Biome": "Tundra",
+        "Resource": {
+            "Wood": 1,
+            "Stone": 2,
+            "Iron": 1
+        }
+    },
+    {
+        "regionId": 309,
+        "regionCentre": [
+            1517,
+            635
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            287,
+            293,
+            305,
+            286,
+            319
+        ],
+        "building": "None",
+        "Biome": "Light Forest",
+        "Resource": {
+            "Wood": 2
+        }
+    },
+    {
+        "regionId": 310,
+        "regionCentre": [
+            1560,
+            1354
+        ],
+        "isWaterRegion": true,
+        "isLandRegion": false,
+        "regionOwner": "None",
+        "neighbours": [
+            321,
+            299,
+            300,
+            304,
+            306,
+            311
+        ],
+        "building": "None",
+        "Biome": "Ocean",
+        "Resource": "None"
+    },
+    {
+        "regionId": 311,
+        "regionCentre": [
+            1524,
+            1297
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            321,
+            306,
+            314,
+            310
+        ],
+        "building": "None",
+        "Biome": "Desert",
+        "Resource": {
+            "Gold": 3,
+            "Stone": 1
+        }
+    },
+    {
+        "regionId": 312,
+        "regionCentre": [
+            1531,
+            901
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            297,
+            322,
+            301,
+            294
+        ],
+        "building": "None",
+        "Biome": "Plateau",
+        "Resource": {
+            "Iron": 2,
+            "Stone": 1
+        }
+    },
+    {
+        "regionId": 313,
+        "regionCentre": [
+            1590,
+            217
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            331,
+            333,
+            334,
+            307,
+            284,
+            317
+        ],
+        "building": "None",
+        "Biome": "Dark Forest",
+        "Resource": {
+            "Wood": 4
+        }
+    },
+    {
+        "regionId": 314,
+        "regionCentre": [
+            1543,
+            1205
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            321,
+            323,
+            295,
+            296,
+            306,
+            311,
+            318
+        ],
+        "building": "None",
+        "Biome": "Desert",
+        "Resource": {
+            "Gold": 3,
+            "Stone": 1
+        }
+    },
+    {
+        "regionId": 315,
+        "regionCentre": [
+            1614,
+            430
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            293,
+            326,
+            331,
+            335,
+            307,
+            279,
+            287
+        ],
+        "building": "None",
+        "Biome": "Light Forest",
+        "Resource": {
+            "Wood": 2
+        }
+    },
+    {
+        "regionId": 316,
+        "regionCentre": [
+            1566,
+            1044
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            325,
+            295,
+            327,
+            301,
+            303,
+            318
+        ],
+        "building": "None",
+        "Biome": "Plateau",
+        "Resource": {
+            "Iron": 2,
+            "Stone": 1
+        }
+    },
+    {
+        "regionId": 317,
+        "regionCentre": [
+            1680,
+            128
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            320,
+            334,
+            308,
+            313,
+            284
+        ],
+        "building": "None",
+        "Biome": "Dark Forest",
+        "Resource": {
+            "Wood": 4
+        }
+    },
+    {
+        "regionId": 318,
+        "regionCentre": [
+            1575,
+            1120
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            323,
+            327,
+            295,
+            314,
+            316
+        ],
+        "building": "None",
+        "Biome": "Meadowlands",
+        "Resource": {
+            "Wood": 2,
+            "Iron": 1
+        }
+    },
+    {
+        "regionId": 319,
+        "regionCentre": [
+            1606,
+            605
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            293,
+            309,
+            287
+        ],
+        "building": "None",
+        "Biome": "Light Forest",
+        "Resource": {
+            "Wood": 2
+        }
+    },
+    {
+        "regionId": 320,
+        "regionCentre": [
+            1685,
+            21
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            289,
+            308,
+            317,
+            334
+        ],
+        "building": "None",
+        "Biome": "SnowyPeaks",
+        "Resource": {
+            "Stone": 2,
+            "Gold": 1
+        }
+    },
+    {
+        "regionId": 321,
+        "regionCentre": [
+            1639,
+            1296
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            323,
+            337,
+            310,
+            311,
+            314
+        ],
+        "building": "None",
+        "Biome": "Desert",
+        "Resource": {
+            "Gold": 3,
+            "Stone": 1
+        }
+    },
+    {
+        "regionId": 322,
+        "regionCentre": [
+            1628,
+            916
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            325,
+            294,
+            329,
+            301,
+            336,
+            338,
+            312
+        ],
+        "building": "None",
+        "Biome": "Light Forest",
+        "Resource": {
+            "Wood": 2
+        }
+    },
+    {
+        "regionId": 323,
+        "regionCentre": [
+            1652,
+            1176
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            321,
+            327,
+            341,
+            314,
+            318
+        ],
+        "building": "None",
+        "Biome": "Desert",
+        "Resource": {
+            "Gold": 3,
+            "Stone": 1
+        }
+    },
+    {
+        "regionId": 324,
+        "regionCentre": [
+            1670,
+            713
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            293,
+            328,
+            330,
+            332,
+            343
+        ],
+        "building": "None",
+        "Biome": "Light Forest",
+        "Resource": {
+            "Wood": 2
+        }
+    },
+    {
+        "regionId": 325,
+        "regionCentre": [
+            1658,
+            976
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            322,
+            327,
+            301,
+            338,
+            316
+        ],
+        "building": "None",
+        "Biome": "Hills",
+        "Resource": {
+            "Wood": 1,
+            "Iron": 1,
+            "Stone": 1
+        }
+    },
+    {
+        "regionId": 326,
+        "regionCentre": [
+            1658,
+            517
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            339,
+            330,
+            315,
+            293
+        ],
+        "building": "None",
+        "Biome": "Light Forest",
+        "Resource": {
+            "Wood": 2
+        }
+    },
+    {
+        "regionId": 327,
+        "regionCentre": [
+            1660,
+            1063
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            323,
+            325,
+            340,
+            316,
+            318
+        ],
+        "building": "None",
+        "Biome": "Desert",
+        "Resource": {
+            "Gold": 3,
+            "Stone": 1
+        }
+    },
+    {
+        "regionId": 328,
+        "regionCentre": [
+            1629,
+            779
+        ],
+        "isWaterRegion": true,
+        "isLandRegion": false,
+        "regionOwner": "None",
+        "neighbours": [
+            329,
+            324,
+            293,
+            332
+        ],
+        "building": "None",
+        "Biome": "Ocean",
+        "Resource": "None"
+    },
+    {
+        "regionId": 329,
+        "regionCentre": [
+            1660,
+            844
+        ],
+        "isWaterRegion": true,
+        "isLandRegion": false,
+        "regionOwner": "None",
+        "neighbours": [
+            322,
+            294,
+            328,
+            332,
+            336,
+            342
+        ],
+        "building": "None",
+        "Biome": "Ocean",
+        "Resource": "None"
+    },
+    {
+        "regionId": 330,
+        "regionCentre": [
+            1698,
+            628
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            344,
+            324,
+            293,
+            326
+        ],
+        "building": "None",
+        "Biome": "Light Forest",
+        "Resource": {
+            "Wood": 2
+        }
+    },
+    {
+        "regionId": 331,
+        "regionCentre": [
+            1712,
+            347
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            333,
+            335,
+            307,
+            313,
+            315
+        ],
+        "building": "None",
+        "Biome": "Dark Forest",
+        "Resource": {
+            "Wood": 4
+        }
+    },
+    {
+        "regionId": 332,
+        "regionCentre": [
+            1711,
+            778
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            324,
+            328,
+            329,
+            342,
+            343
+        ],
+        "building": "None",
+        "Biome": "Hills",
+        "Resource": {
+            "Wood": 1,
+            "Iron": 1,
+            "Stone": 1
+        }
+    },
+    {
+        "regionId": 333,
+        "regionCentre": [
+            1741,
+            277
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            313,
+            331,
+            334
+        ],
+        "building": "None",
+        "Biome": "Dark Forest",
+        "Resource": {
+            "Wood": 4
+        }
+    },
+    {
+        "regionId": 334,
+        "regionCentre": [
+            1777,
+            152
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            320,
+            313,
+            333,
+            317
+        ],
+        "building": "None",
+        "Biome": "Tundra",
+        "Resource": {
+            "Wood": 1,
+            "Stone": 2,
+            "Iron": 1
+        }
+    },
+    {
+        "regionId": 335,
+        "regionCentre": [
+            1761,
+            428
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            339,
+            331,
+            315
+        ],
+        "building": "None",
+        "Biome": "Light Forest",
+        "Resource": {
+            "Wood": 2
+        }
+    },
+    {
+        "regionId": 336,
+        "regionCentre": [
+            1764,
+            893
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            329,
+            322,
+            338,
+            342
+        ],
+        "building": "None",
+        "Biome": "Light Forest",
+        "Resource": {
+            "Wood": 2
+        }
+    },
+    {
+        "regionId": 337,
+        "regionCentre": [
+            1766,
+            1329
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            321,
+            341
+        ],
+        "building": "None",
+        "Biome": "Desert",
+        "Resource": {
+            "Gold": 3,
+            "Stone": 1
+        }
+    },
+    {
+        "regionId": 338,
+        "regionCentre": [
+            1770,
+            967
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            336,
+            322,
+            340,
+            325
+        ],
+        "building": "None",
+        "Biome": "Plateau",
+        "Resource": {
+            "Iron": 2,
+            "Stone": 1
+        }
+    },
+    {
+        "regionId": 339,
+        "regionCentre": [
+            1774,
+            517
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            344,
+            326,
+            335
+        ],
+        "building": "None",
+        "Biome": "Light Forest",
+        "Resource": {
+            "Wood": 2
+        }
+    },
+    {
+        "regionId": 340,
+        "regionCentre": [
+            1771,
+            1081
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            338,
+            341,
+            327
+        ],
+        "building": "None",
+        "Biome": "Desert",
+        "Resource": {
+            "Gold": 3,
+            "Stone": 1
+        }
+    },
+    {
+        "regionId": 341,
+        "regionCentre": [
+            1771,
+            1200
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            337,
+            323,
+            340
+        ],
+        "building": "None",
+        "Biome": "Desert",
+        "Resource": {
+            "Gold": 3,
+            "Stone": 1
+        }
+    },
+    {
+        "regionId": 342,
+        "regionCentre": [
+            1777,
+            842
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            336,
+            329,
+            332,
+            343
+        ],
+        "building": "None",
+        "Biome": "Hills",
+        "Resource": {
+            "Wood": 1,
+            "Iron": 1,
+            "Stone": 1
+        }
+    },
+    {
+        "regionId": 343,
+        "regionCentre": [
+            1788,
+            740
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            344,
+            324,
+            342,
+            332
+        ],
+        "building": "None",
+        "Biome": "Light Forest",
+        "Resource": {
+            "Wood": 2
+        }
+    },
+    {
+        "regionId": 344,
+        "regionCentre": [
+            1783,
+            615
+        ],
+        "isWaterRegion": false,
+        "isLandRegion": true,
+        "regionOwner": "None",
+        "neighbours": [
+            330,
+            339,
+            343
+        ],
+        "building": "None",
+        "Biome": "Light Forest",
+        "Resource": {
+            "Wood": 2
+        }
+    }
+]

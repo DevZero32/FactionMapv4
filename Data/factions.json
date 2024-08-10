@@ -1,0 +1,16 @@
+[
+    {
+        "name": "Bleeding Blades | Faction Hub",
+        "guild": 1074062206297178242,
+        "capital": 0,
+        "resources": {
+            "gold": 500,
+            "iron": 25,
+            "stone": 50,
+            "wood": 50,
+            "manpower": 20
+        },
+        "deployments": [],
+        "permissions": []
+    }
+]
