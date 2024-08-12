@@ -1,9 +1,16 @@
 {
-    "lastTurn": 1723311146.2848253,
-    "nextTurn": 1723321946.2848253,
+    "lastTurn": 1723493759.6049032,
+    "nextTurn": 1723504559.6049032,
     "turns": [
         {
-            "name": "Bleeding Blades | Faction Hub",
+            "id": 1074062206297178242,
+            "nextTurn": 0,
+            "deployments": [],
+            "regions": []
+        },
+        {
+            "id": 1193437860469157978,
+            "nextTurn": 0,
             "deployments": [],
             "regions": []
         }

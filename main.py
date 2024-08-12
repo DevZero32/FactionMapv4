@@ -1,7 +1,7 @@
 import discord
 from discord import app_commands
 from discord.ext import commands
-from Imports import jsonhandler, adminhandler, imagehandler,factionshandler,regionhandler,armyhandler,turnshandler,mediatorhandler,classhandler
+from Imports import jsonhandler, adminhandler, imagehandler,factionshandler,regionhandler,armyhandler,turnshandler,mediatorhandler,classhandler,economyHandler
 import os
 import asyncio
 
@@ -86,6 +86,16 @@ async def scout(interaction:discord.Interaction, region:int):
 
 # === ECONOMY ===
 
+@client.tree.command(name="trade",description="Send a trade request.")
+async def trade(interaction:discord.Interaction):
+  adminhandler.logInteraction(trade,interaction.user)
+  await economyHandler.trade(interaction)
+
+@client.tree.command(name="view_trades",description="List all trades in your faction.")
+async def view_trades(interaction:discord.Interaction):
+  adminhandler.logInteraction(view_trades,interaction.user)
+  await economyHandler.viewTrades(interaction)
+
 # ===REGION ===
 
 @client.tree.command(name="region_lookup", description=(f"Lookup a region. between 1 and {len(jsonhandler.getregionjson())}"))
@@ -111,13 +121,17 @@ async def build(interaction: discord.Interaction, building: discord.app_commands
   await interaction.response.send_message(msg)
 
 # === FACTION ===
+@client.tree.command(name="overview",description="Get an overview of your faction.")
+async def overview(interaction:discord.Interaction):
+  adminhandler.logInteraction(overview,interaction.user)
+  await factionshandler.factionOverview(interaction)
+
 
 @client.tree.command(name="setup",description="Establish your faction within faction map or update your factions logo.")
-async def Setup(interaction:discord.Interaction, logolink: str):
+async def Setup(interaction:discord.Interaction,alert_channel: discord.TextChannel, logolink: str):
   adminhandler.logInteraction(Setup,interaction.user)
-  msg = await factionshandler.setup(interaction,client,logolink)
-  
-  await interaction.response.send_message(msg)
+  await factionshandler.setup(interaction,client,logolink,alert_channel)
+
 
 @client.tree.command(name="capital",description = "Set/Update your capital | Update Costs: 750 Gold, 20 Iron, 50 Stone, 50 Wood")
 async def capital(interaction:discord.Interaction, region: int):
@@ -133,7 +147,7 @@ async def permissions (interaction:discord.Interaction):
   guild = interaction.guild
   name = guild.name
   
-  msg = await asyncio.to_thread(factionshandler.displayPermissions,interaction,name,client)
+  msg = await asyncio.to_thread(factionshandler.displayPermissions,interaction,interaction.guild.id,client)
   await interaction.response.send_message(msg)
 
 
@@ -198,17 +212,25 @@ async def redraw(interaction:discord.Interaction):
   adminhandler.logInteraction(redraw,interaction.user)
 
   member = interaction.user
-  channel = interaction.channel
   
   if not await adminhandler.admincheck(member,client): 
     await interaction.response.send_message("You require admin privlages to run this command.")
     return
   
-  await interaction.response.send_message("Redrawing faction map :map: borders!")
-  task1 = await asyncio.to_thread(imagehandler.redraw)
-  task2 = await asyncio.to_thread(imagehandler.assembleMap)
+  await interaction.response.defer()
+  await asyncio.to_thread(imagehandler.redraw)
+  await asyncio.to_thread(imagehandler.assembleMap)
 
-  await channel.send(f"{member.mention} Faction Map :map::gear: borders redrawn!", file=discord.File("Data/Map/Temp/mapOverview.png"))
+  Embed = discord.Embed(
+    colour=discord.Colour.blue(),
+    description="Faction Map borders redrawn"
+  )
+  Embed.set_footer(text="Open in browser for full view")
+
+  file = discord.File("Data/Map/Temp/mapOverview.png", filename="mapOverview.png")
+  Embed.set_image(url="attachment://mapOverview.png")
+
+  await interaction.followup.send(embed=Embed,file=file)
 
 @client.tree.command(name="associate_faction",description = "Used to give a faction permission to use faction map.")
 async def associatefaction(interaction:discord.Interaction,link: str):
@@ -241,15 +263,12 @@ discord.app_commands.Choice(name="Topography",value=3)])
 async def map(interaction:discord.Interaction,mode: discord.app_commands.Choice[int]):
   adminhandler.logInteraction(map,interaction.user)
   imagehandler.assembleMap()
+  await interaction.response.defer()
   if mode.name == "Default":
-    try:
-      return await interaction.response.send_message(file=discord.File(f"Data/Map/Temp/mapOverview.png"))
-    except: return await interaction.channel.send(f"{interaction.user.mention}",file=discord.File(f"Data/Map/Temp/mapOverview.png"))  
+    return await interaction.followup.send(file=discord.File(f"Data/Map/Temp/mapOverview.png"))
   mapFile = f"Data/Map/Temp/{(mode.name).lower()}Overview.png"
-  try:
-    await interaction.response.send_message(file=discord.File(mapFile))
-  except: await interaction.channel.send(f"{interaction.user.mention}",file=discord.File(mapFile))
-
+  await interaction.followup.send(file=discord.File(mapFile))
+  
 @client.tree.command(name="turn",description = "How long is left of the current turn")
 async def turn(interaction:discord.Interaction):
   adminhandler.logInteraction(turn,interaction.user)
@@ -259,6 +278,6 @@ async def turn(interaction:discord.Interaction):
   await interaction.response.send_message(f"Next turn is {format}")
 
 # === RUN ===
-imagehandler.generateMasks()
-imagehandler.redraw()
+#imagehandler.generateMasks()
+#imagehandler.redraw()
 client.run(token)

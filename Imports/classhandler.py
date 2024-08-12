@@ -2,12 +2,12 @@ from Imports import jsonhandler,turnshandler
 import numpy as np
 
 class factionClass():
-  def __init__(self, factionName, factions):
+  def __init__(self, factionId, factions):
     class turns:
-      def __init__(self,factionName):
+      def __init__(self,factionId):
         turns = turnshandler.getTurns()
         for turn in turns["turns"]:
-          if turn["name"] == factionName:
+          if turn["id"] == factionId:
               self.raw = turn
               self.deployments = turn["deployments"]
               self.regions = turn["regions"]
@@ -110,26 +110,31 @@ class factionClass():
               self.tierTwo = army_data["tierTwo"]
               self.faction = faction["name"]
     
-    for indexFaction in factions:
-        if indexFaction["name"] == factionName:
-            faction = indexFaction
-
-    def factionRegions(name):
+    def factionRegions(id):
       regions = jsonhandler.getregionjson()
 
       factionsRegions = []
       for region in regions:
-        if region["regionOwner"] == name: factionsRegions.append(region["regionId"])
+        if region["regionOwner"] == id: factionsRegions.append(region["regionId"])
       return factionsRegions
+    faction = None
+
+    for indexFaction in factions:
+        if indexFaction["guild"] == factionId:
+          faction = indexFaction
     
+    if type(faction) == type(None):
+       raise ValueError("faction was not found in classhandler.factionclass ident")
+            
     self.permissions = permissions(faction["permissions"])
     self.resources = resources(faction["resources"])
     self.deployments = deployments(faction["deployments"])
     self.name = faction["name"]
     self.guild = faction["guild"]
     self.capital = faction["capital"]
-    self.regions = factionRegions(faction["name"])
+    self.regions = factionRegions(faction["guild"])
     self.turns = turns(faction["name"])
+    self.alert = faction["alert"]
 
 class regionClass():
   def __init__(self,regions,regionId):

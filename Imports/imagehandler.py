@@ -37,27 +37,27 @@ def redraw():
   mapBorders = Image.open("Data/Map/MapBorders.png").convert("RGBA")
 
   for faction in jsonhandler.getfactionsjson():
-    factionBorders = compositePaste(mapBorders,faction["name"])
+    compositePaste(mapBorders,faction["guild"])
   
   addBuildings()
   assembleMap.cache_clear()
 
 
-def updateFactionBorders(factionName):
+def updateFactionBorders(factionId):
   try:
     mapImage = Image.open("Data/Map/Temp/borderLayer.png").convert("RGBA")
   except: mapImage = Image.open("Data/Map/MapBorders.png").convert("RGBA")
   
   factions = jsonhandler.getfactionsjson()
   for faction in factions:
-    if faction["name"] != factionName:
+    if faction["guild"] != factionId:
       continue
-    compositePaste(mapImage,factionName)
+    compositePaste(mapImage,factionId)
 
   assembleMap.cache_clear()
   assembleMap()
 
-def compositePaste(baseImage,factionName):
+def compositePaste(baseImage,factionId):
   def calculateOffset(image, center):
     # Get the size of the image
     img_width, img_height = image.size
@@ -95,14 +95,14 @@ def compositePaste(baseImage,factionName):
   except: pass
   # === Faction Id ===
   for factionIndex in jsonhandler.getfactionsjson():
-    if factionIndex["name"] == factionName:
+    if factionIndex["guild"] == factionId:
       factionId = factionIndex["guild"]
       break
   # === Mask creation ===
   factionMask = Image.new("RGBA",baseImage.size,(255,255,255,0))
 
   for region in  jsonhandler.getregionjson():
-    if region["regionOwner"] != factionIndex["name"]: continue
+    if region["regionOwner"] != factionIndex["guild"]: continue
     regionId = region["regionId"]
 
     mask = Image.open(f"Data/Map/Temp/Masks/{regionId}.png").convert("RGBA")
@@ -153,7 +153,7 @@ def addBuildings():
     region = classhandler.regionClass(regions,region["regionId"])
     deploymentPresence = False
     for faction in factions:
-      faction = classhandler.factionClass(faction["name"],factions)
+      faction = classhandler.factionClass(faction["guild"],factions)
       for deployment in faction.deployments.raw:
         deployment = armyhandler.getDeploymentClass(faction,deployment["id"])
         if deployment.region == region.id:
@@ -177,7 +177,7 @@ def addDeployments():
   # === Get all regions with a deployment
   deploymentRegions = []
   for faction in factions:
-    faction = classhandler.factionClass(faction["name"],factions)
+    faction = classhandler.factionClass(faction["guild"],factions)
     for deployment in faction.deployments.raw:
       if deployment["region"] != deploymentRegions:
         deploymentRegions.append(deployment["region"])

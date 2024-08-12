@@ -1,6 +1,6 @@
 import json
 import discord
-from Imports import turnshandler
+from Imports import turnshandler,classhandler
 from discord.ext import commands
 from functools import lru_cache
 
@@ -120,12 +120,25 @@ async def remove_verifiedfaction(interaction,factionName,id):
       json.dump(factions, file, indent=4)
 
 # === Turn handleing + Setup ===
+def updateAlert(guildId,AlertChannelId):
+  factions = getfactionsjson()
 
-async def setup_faction(name,guild_id,client,interaction):
+  for faction in factions:
+    factionId = faction["guild"]
+    if factionId == guildId:
+      faction["alert"] = AlertChannelId
+      
+  with open("Data/factions.json","w") as file:
+    json.dump(factions,file,indent = 4)
+    file.close()
+
+
+async def setup_faction(name,guild_id,client,interaction,alertChannel):
   new_faction = {
     
         "name": name,
         "guild": guild_id,
+        "alert": alertChannel,
         "capital": 0,
         "resources": {
             "gold": 500,
@@ -143,5 +156,18 @@ async def setup_faction(name,guild_id,client,interaction):
   factions.append(new_faction)
   with open("Data/factions.json", "w") as file:
     json.dump(factions, file, indent=4)
-  turnshandler.addFactionTurn(name)
-  return (f"`{name}` set-up! set some permissions with `/set_permissions` then you can run `/capital`.")
+  turnshandler.addFactionTurn(guild_id)
+
+  embed = discord.Embed(
+    color=discord.Color(int('5865f2',16)),
+    description=f"""
+You're almost ready to join the faction map!
+
+Just set up your permissions using `/set_permissions`, and then you can choose your capital location with `/capital`.
+"""
+)
+  faction = classhandler.factionClass(interaction.guild.id,getfactionsjson())
+
+  file = discord.File(f"Data/Logos/{faction.guild}.png",filename=f"{faction.guild}.png")
+  embed.set_author(name=f"{faction.name} Setup!",icon_url=f"attachment://{faction.guild}.png")
+  return await interaction.response.send_message(embed=embed,file=file)

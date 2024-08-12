@@ -37,7 +37,7 @@ async def createChannel(interaction,client,battleInfo,mainguild=1074062206297178
   region = classhandler.regionClass(jsonhandler.getregionjson(),battleInfo.region)
   nearbyFactions = []
   for faction in jsonhandler.getfactionsjson():
-    faction = classhandler.factionClass(faction["name"],jsonhandler.getfactionsjson())
+    faction = classhandler.factionClass(faction["guild"],jsonhandler.getfactionsjson())
 
     for deployment in faction.deployments.raw:
       if deployment["region"] in region.neighbours or deployment["region"] == region.id:
@@ -177,7 +177,7 @@ The chosen mediator for this battle is {mediator.mention}
   except: await channel.send(f"`{battleInfo.defendingFaction.name}` owner couldnt be located, please find a representive.")
 
   # === Adding Mediator Json ===
-  addMediatorJson(channel.id,battleInfo.attackingFaction.name,battleInfo.attackingDeployment.id,battleInfo.defendingFaction.name,battleInfo.defendingDeployment.id,battleInfo.defendingDeployment.region)
+  addMediatorJson(channel.id,battleInfo.attackingFaction.id,battleInfo.attackingDeployment.id,battleInfo.defendingFaction.id,battleInfo.defendingDeployment.id,battleInfo.defendingDeployment.region)
 
 async def victor(interaction,client,winningFaction,score):
   # === Permissions Check ===
@@ -290,7 +290,12 @@ async def reinforce(interaction,client,factionName,deploymentName,side):
     return f"This channel is not hosting terms for a battle." 
   channelData = mediatorClass(channelId)
   # === Faction & Deployment Get ===
-  faction = classhandler.factionClass(factionName.name,jsonhandler.getfactionsjson())
+  for faction in jsonhandler.getfactionsjson():
+    if factionName == faction["name"]:
+      factionId = faction["guild"]
+      break
+
+  faction = classhandler.factionClass(factionId,jsonhandler.getfactionsjson())
   for deploymentIndex in faction.deployments.raw:
     if deploymentIndex["name"] == deploymentName: deploymentId = deploymentIndex["id"]
   try:
@@ -331,7 +336,12 @@ async def remove_reinforcement(interaction,client,factionName,deploymentName):
     return f"This channel is not hosting terms for a battle." 
   channelData = mediatorClass(channelId)
   # === Faction & Deployment Get ===
-  faction = classhandler.factionClass(factionName.name,jsonhandler.getfactionsjson())
+  for faction in jsonhandler.getfactionsjson():
+    if factionName == faction["name"]:
+      factionId = faction["guild"]
+      break
+
+  faction = classhandler.factionClass(factionId,jsonhandler.getfactionsjson())
   for deploymentIndex in faction.deployments.raw:
     if deploymentIndex["name"] == deploymentName: deploymentId = deploymentIndex["id"]
   try:
@@ -419,7 +429,13 @@ async def giveManpower(interaction,client,factionName,manpower):
   if permission == False:
     return "You do not have permission to use this command." 
   
-  faction = classhandler.factionClass(factionName.name,jsonhandler.getfactionsjson())
+  #name to id
+  for i in jsonhandler.getfactionsjson():
+    if i["name"] == factionName:
+      factionId = i["guild"]
+      break
+
+  faction = classhandler.factionClass(factionId,jsonhandler.getfactionsjson())
   factionManpower = faction.resources.manpower
   factionManpower += manpower
   resourcesDict = {"gold": faction.resources.gold,"iron": faction.resources.iron,"stone": faction.resources.stone,"wood": faction.resources.wood,"manpower": factionManpower}

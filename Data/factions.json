@@ -2,6 +2,7 @@
     {
         "name": "Bleeding Blades | Faction Hub",
         "guild": 1074062206297178242,
+        "alert": 1128626203260092426,
         "capital": 0,
         "resources": {
             "gold": 500,
@@ -11,6 +12,41 @@
             "manpower": 20
         },
         "deployments": [],
-        "permissions": []
+        "permissions": [
+            {
+                "roleId": 1074841275825659934,
+                "rolePermissions": {
+                    "army": true,
+                    "region": true,
+                    "faction": true,
+                    "trade": true
+                }
+            }
+        ]
+    },
+    {
+        "name": "Bleeding Faction",
+        "guild": 1193437860469157978,
+        "alert": 1194638722466058280,
+        "capital": 227,
+        "resources": {
+            "gold": 3504,
+            "iron": 93,
+            "stone": 174,
+            "wood": 170,
+            "manpower": 20
+        },
+        "deployments": [],
+        "permissions": [
+            {
+                "roleId": 1193439503675838474,
+                "rolePermissions": {
+                    "army": true,
+                    "region": true,
+                    "faction": true,
+                    "trade": true
+                }
+            }
+        ]
     }
 ]

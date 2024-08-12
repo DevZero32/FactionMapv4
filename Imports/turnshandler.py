@@ -9,7 +9,7 @@ def getTurns():
   """
   lastTurn = ["lastTurn"]
   nextTurn = ["nextTurn"]
-  turns = ["turns]
+  turns = ["turns"]
   """
   with open("Data/turns.json") as file:
       turns = json.load(file)
@@ -25,13 +25,13 @@ def updateTurns(lastTurn,nextTurn):
    with open("Data/turns.json","w") as file:
       json.dump(turns, file, indent=4)
 
-def addFactionTurn(factionName):
+def addFactionTurn(factionId):
   turns = getTurns()
 
   factions = jsonhandler.getfactionsjson()
-  factionInstance = classhandler.factionClass(factionName,factions) 
+  factionInstance = classhandler.factionClass(factionId,factions) 
   factionDict ={
-    "name": factionInstance.name,
+    "id": factionInstance.guild,
     "deployments": [],
     "regions": []
   }
@@ -48,9 +48,9 @@ def resetTurns():
     turnsList = [] 
 
     for faction in factions:
-        factionInstance = classhandler.factionClass(faction["name"],factions) 
+        factionInstance = classhandler.factionClass(faction["guild"],factions) 
         factionDict ={
-          "name": factionInstance.name,
+          "id": factionInstance.guild,
           "deployments": [],
           "regions": []
         }
@@ -111,7 +111,7 @@ async def initialiseTurnSequence():
   def distributeResources():
     factions = jsonhandler.getfactionsjson()
     for faction in factions:
-      faction = classhandler.factionClass(faction["name"],factions)
+      faction = classhandler.factionClass(faction["guild"],factions)
       factionRegions = faction.regions
       
       resources = faction.resources
@@ -178,7 +178,7 @@ def logTurn(factionName, objectType, id):
         json.dump(turns, file, indent=4)
   
 
-def checkLogs(factionName, objectType, id):
+def checkLogs(factionId, objectType, id):
     """
     Check if a given ID is logged under a specific faction and object type.
 
@@ -190,18 +190,15 @@ def checkLogs(factionName, objectType, id):
     Returns:
         bool: True if the ID is found under the specified faction and object type, False otherwise.
     """
-    factions = jsonhandler.getfactionsjson()
-    for faction in factions:
-      if faction["name"] == factionName:
-        faction = classhandler.factionClass(factionName, factions)
-        break
+    faction = classhandler.factionClass(factionId, jsonhandler.getfactionsjson())
+  
     if objectType == "deployments": #In battle check
       mediatorData = mediatorhandler.getMediatorJson()
       for channelData in mediatorData:
         channelData = mediatorhandler.mediatorClass(channelData["id"])
         allDeployments = channelData.attackingFactionDeployments + channelData.defendingFactionDeployments
         for data in allDeployments:
-           if id == data["id"] and factionName == data["faction"]:
+           if id == data["id"] and factionId == data["faction"]:
             return True
     if objectType == "regions":
       mediatorData = mediatorhandler.getMediatorJson()

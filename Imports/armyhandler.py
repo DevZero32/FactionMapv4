@@ -46,7 +46,7 @@ def displaydeployments(interaction):
   if interaction.guild.name not in factionNames:
     return (f"{interaction.guild.name} is not a faction.") # Check if the provided factionName is valid
 
-  faction = classhandler.factionClass(interaction.guild.name, jsonhandler.getfactionsjson())
+  faction = classhandler.factionClass(interaction.guild.id, jsonhandler.getfactionsjson())
   #Permission check
   member = interaction.user
   permissions = factionshandler.checkPermissions(interaction,member)
@@ -65,7 +65,7 @@ def displaydeployments(interaction):
 
   for deployment in deployments.raw:
       deployment = getDeploymentClass(faction,deployment["id"])
-      turned = turnshandler.checkLogs(faction.name,"deployments",deployment.id)
+      turned = turnshandler.checkLogs(faction.guild,"deployments",deployment.id)
       
       msg += f"""
 **{deployment.name}**
@@ -87,7 +87,7 @@ def formDeployment(interaction,region,name):
     return (f"{interaction.guild.name} is not a faction")
 
   #Faction Permissions check
-  faction = classhandler.factionClass(interaction.guild.name,factions)
+  faction = classhandler.factionClass(interaction.guild.id,factions)
 
   permissions = factionshandler.checkPermissions(interaction,interaction.user)
   if permissions["army"] == False: return "You lack permissions to do this."
@@ -139,7 +139,7 @@ def disbandDeployment(interaction,name):
     return (f"{interaction.guild.name} is not a faction")
 
   #Faction Permissions check
-  faction = classhandler.factionClass(interaction.guild.name,factions)
+  faction = classhandler.factionClass(interaction.guild.id,factions)
 
   permissions = factionshandler.checkPermissions(interaction,interaction.user)
   if permissions["army"] == False: return "You lack permissions to do this."
@@ -185,7 +185,7 @@ def rallyDeployment(interaction,infType,quantity,deploymentName):
   permissions = factionshandler.checkPermissions(interaction,member)
   if permissions["army"] == False: return "You lack permission to access deployments."
   
-  faction = classhandler.factionClass(interaction.guild.name,factions)
+  faction = classhandler.factionClass(interaction.guild.id,factions)
   deployments = faction.deployments
   #deployment existance check
   if deploymentName not in [deployment["name"] for deployment in deployments.raw]:
@@ -204,9 +204,9 @@ def rallyDeployment(interaction,infType,quantity,deploymentName):
   if region.owner != faction.name:
     return f"{faction.name} must own the region to rally."
   #turn check
-  if turnshandler.checkLogs(faction.name,"deployment",deploymentId) == True:
+  if turnshandler.checkLogs(faction.guild,"deployment",deploymentId) == True:
     return f"`{deployment.name}` has already been interacted with for this turn."
-  if turnshandler.checkLogs(faction.name,"regions",region.id) == True:
+  if turnshandler.checkLogs(faction.guild,"regions",region.id) == True:
     return f"`Region {region.id}` has already been interacted with for this turn."
   
   #formatting inf type
@@ -257,7 +257,7 @@ def marchDeployment(interaction,deploymentName,regionId):
   if interaction.guild.id not in [faction["guild"] for faction in factions]:
     return f"{interaction.guild.name} is not a faction."
   
-  faction = classhandler.factionClass(interaction.guild.name,factions)
+  faction = classhandler.factionClass(interaction.guild.id,factions)
   # === Region Existance Check ====
   if not 0 < regionId <= len(jsonhandler.getregionjson()): return f"`Region {regionId}` is not a valid region."
   region = classhandler.regionClass(jsonhandler.getregionjson(),regionId)
@@ -290,7 +290,7 @@ def marchDeployment(interaction,deploymentName,regionId):
   elif region.water and (deploymentRegion.building != "Port" and deploymentRegion.land == True):
     return f"To cross into the sea, You must do that a port. `Region {deploymentRegion.id} is not a port.`"
   # === Turn Check ===
-  if turnshandler.checkLogs(faction.name,"deployments",deployment.id) == True:
+  if turnshandler.checkLogs(faction.guild,"deployments",deployment.id) == True:
     return f"`Deployment {deployment.name}` has already been interacted with this turn."
   # === Region attack'd check ===
   mediatorData = mediatorhandler.getMediatorJson()
@@ -324,7 +324,7 @@ async def attackDeployment(interaction, client, deploymentName, targetName):
   def getFactionViaDeployment(deploymentName):
     factions = jsonhandler.getfactionsjson()
     for faction in factions:
-      faction = classhandler.factionClass(faction["name"],factions)
+      faction = classhandler.factionClass(faction["guild"],factions)
       deployments = faction.deployments.raw
       for deployment in deployments:
         if deployment["name"] == deploymentName: 
@@ -343,7 +343,7 @@ async def attackDeployment(interaction, client, deploymentName, targetName):
       if deployment["name"] == deploymentName:
         return deployment
  
-  attackingFaction = classhandler.factionClass(interaction.guild.name, factions)
+  attackingFaction = classhandler.factionClass(interaction.guild.id, factions)
   # === Deployment Existance Check ===
   attackingDeploymentFound = False
   for attackingDeployment in attackingFaction.deployments.raw:
@@ -404,7 +404,7 @@ def occupyRegion(interaction,client,regionId):
   factions = jsonhandler.getfactionsjson()
   if interaction.guild.id not in [faction["guild"] for faction in factions]:
       return f"{interaction.guild.name} is not a faction."
-  faction = classhandler.factionClass(interaction.guild.name,factions)
+  faction = classhandler.factionClass(interaction.guild.id,factions)
   # === Region Existance Check ====
   if not 0 < regionId <= len(jsonhandler.getregionjson()): return f"`Region {regionId}` is not a valid region."
   region = classhandler.regionClass(jsonhandler.getregionjson(),regionId)
@@ -432,7 +432,7 @@ def occupyRegion(interaction,client,regionId):
     if deploymentIndex["region"] != regionId:
       continue
     deploymentIndex = getDeploymentClass(faction,deploymentIndex["id"])
-    if turnshandler.checkLogs(faction.name,"deployments",deploymentIndex.id) == False:
+    if turnshandler.checkLogs(faction.guild,"deployments",deploymentIndex.id) == False:
       attackingDeploymentAva = True
       attackingAvaDeployments.append(deploymentIndex.id)
 
@@ -474,9 +474,9 @@ def occupyRegion(interaction,client,regionId):
     jsonhandler.save_factions(oldFactionGuild,jsonhandler.getfactionsjson(),oldFactionId,oldFaction.resources.raw,oldFaction.deployments.raw,0,oldFaction.permissions.raw)
 
 
-  jsonhandler.save_regions(jsonhandler.getregionjson(),regionId,owner=faction.name,building=region.building)
+  jsonhandler.save_regions(jsonhandler.getregionjson(),regionId,owner=faction.guild,building=region.building)
   imagehandler.assembleMap.cache_clear()
-  imagehandler.updateFactionBorders(faction.name)
+  imagehandler.updateFactionBorders(faction.id)
   return (f"`Faction {faction.name}` now owns `Region {regionId}`")
 
 def scoutRegion(interaction,regionId):
@@ -484,7 +484,7 @@ def scoutRegion(interaction,regionId):
   factions = jsonhandler.getfactionsjson()
   if interaction.guild.id not in [faction["guild"] for faction in factions]:
       return f"{interaction.guild.name} is not a faction."
-  faction = classhandler.factionClass(interaction.guild.name,factions)
+  faction = classhandler.factionClass(interaction.guild.id,factions)
   # === Region Existance Check ====
   if not 0 < regionId <= len(jsonhandler.getregionjson()): return f"`Region {regionId}` is not a valid region."
   region = classhandler.regionClass(jsonhandler.getregionjson(),regionId)
@@ -517,7 +517,7 @@ def scoutRegion(interaction,regionId):
  """
   found = False
   for faction in factions:
-    faction = classhandler.factionClass(faction["name"],factions)
+    faction = classhandler.factionClass(faction["guild"],factions)
     for deployment in faction.deployments.raw:
       deployment = getDeploymentClass(faction,deployment["id"])
       if deployment.region == regionId:

@@ -1,1 +1,1058 @@
-[]
+[
+    {
+        "User:": "thewolf3152",
+        "Function:": "map",
+        "Date": "10/08/2024",
+        "Time": "21:16:48"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "map",
+        "Date": "10/08/2024",
+        "Time": "21:26:17"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "map",
+        "Date": "10/08/2024",
+        "Time": "21:28:01"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "user_lookup",
+        "Date": "10/08/2024",
+        "Time": "21:28:30"
+    },
+    {
+        "User:": "fregapane.",
+        "Function:": "armies",
+        "Date": "10/08/2024",
+        "Time": "21:30:19"
+    },
+    {
+        "User:": "fregapane.",
+        "Function:": "map",
+        "Date": "10/08/2024",
+        "Time": "21:30:52"
+    },
+    {
+        "User:": "fregapane.",
+        "Function:": "map",
+        "Date": "10/08/2024",
+        "Time": "21:31:03"
+    },
+    {
+        "User:": "fregapane.",
+        "Function:": "map",
+        "Date": "10/08/2024",
+        "Time": "21:31:16"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "redraw",
+        "Date": "10/08/2024",
+        "Time": "21:37:55"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "redraw",
+        "Date": "10/08/2024",
+        "Time": "21:57:02"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "redraw",
+        "Date": "10/08/2024",
+        "Time": "22:00:33"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "redraw",
+        "Date": "10/08/2024",
+        "Time": "22:02:04"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "redraw",
+        "Date": "10/08/2024",
+        "Time": "22:02:31"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "redraw",
+        "Date": "10/08/2024",
+        "Time": "22:04:32"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "redraw",
+        "Date": "10/08/2024",
+        "Time": "22:06:49"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "redraw",
+        "Date": "10/08/2024",
+        "Time": "22:07:50"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "user_lookup",
+        "Date": "11/08/2024",
+        "Time": "16:49:52"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "user_lookup",
+        "Date": "11/08/2024",
+        "Time": "16:53:11"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "user_lookup",
+        "Date": "11/08/2024",
+        "Time": "16:53:47"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "user_lookup",
+        "Date": "11/08/2024",
+        "Time": "16:55:53"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "associate_faction",
+        "Date": "11/08/2024",
+        "Time": "19:16:44"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "setup",
+        "Date": "11/08/2024",
+        "Time": "19:16:55"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "set_permissions",
+        "Date": "11/08/2024",
+        "Time": "19:17:08"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "map",
+        "Date": "11/08/2024",
+        "Time": "19:17:15"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "capital",
+        "Date": "11/08/2024",
+        "Time": "19:17:46"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "map",
+        "Date": "11/08/2024",
+        "Time": "19:17:53"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "overview",
+        "Date": "11/08/2024",
+        "Time": "19:40:18"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "overview",
+        "Date": "11/08/2024",
+        "Time": "19:40:27"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "overview",
+        "Date": "11/08/2024",
+        "Time": "19:40:51"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "overview",
+        "Date": "11/08/2024",
+        "Time": "19:42:03"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "overview",
+        "Date": "11/08/2024",
+        "Time": "19:43:07"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "overview",
+        "Date": "11/08/2024",
+        "Time": "19:45:37"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "overview",
+        "Date": "11/08/2024",
+        "Time": "19:46:10"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "overview",
+        "Date": "11/08/2024",
+        "Time": "19:50:57"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "redraw",
+        "Date": "11/08/2024",
+        "Time": "20:31:21"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "redraw",
+        "Date": "11/08/2024",
+        "Time": "20:34:46"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "redraw",
+        "Date": "11/08/2024",
+        "Time": "20:35:54"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "redraw",
+        "Date": "11/08/2024",
+        "Time": "20:37:47"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "redraw",
+        "Date": "11/08/2024",
+        "Time": "20:41:20"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "redraw",
+        "Date": "11/08/2024",
+        "Time": "20:42:23"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "redraw",
+        "Date": "11/08/2024",
+        "Time": "20:43:10"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "redraw",
+        "Date": "11/08/2024",
+        "Time": "20:46:35"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "map",
+        "Date": "11/08/2024",
+        "Time": "20:46:51"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "redraw",
+        "Date": "11/08/2024",
+        "Time": "20:48:57"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "overview",
+        "Date": "11/08/2024",
+        "Time": "22:36:18"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "overview",
+        "Date": "11/08/2024",
+        "Time": "22:40:52"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "overview",
+        "Date": "11/08/2024",
+        "Time": "22:41:30"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "overview",
+        "Date": "11/08/2024",
+        "Time": "22:42:43"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "overview",
+        "Date": "11/08/2024",
+        "Time": "22:43:15"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "overview",
+        "Date": "11/08/2024",
+        "Time": "22:44:43"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "overview",
+        "Date": "11/08/2024",
+        "Time": "22:44:52"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "overview",
+        "Date": "11/08/2024",
+        "Time": "22:45:56"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "overview",
+        "Date": "11/08/2024",
+        "Time": "22:46:29"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "overview",
+        "Date": "11/08/2024",
+        "Time": "22:47:01"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "overview",
+        "Date": "11/08/2024",
+        "Time": "22:48:55"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "overview",
+        "Date": "11/08/2024",
+        "Time": "22:55:33"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "overview",
+        "Date": "11/08/2024",
+        "Time": "22:56:30"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "overview",
+        "Date": "11/08/2024",
+        "Time": "23:07:38"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "overview",
+        "Date": "11/08/2024",
+        "Time": "23:07:56"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "overview",
+        "Date": "11/08/2024",
+        "Time": "23:08:13"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "overview",
+        "Date": "11/08/2024",
+        "Time": "23:08:59"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "overview",
+        "Date": "11/08/2024",
+        "Time": "23:09:43"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "overview",
+        "Date": "11/08/2024",
+        "Time": "23:10:14"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "overview",
+        "Date": "11/08/2024",
+        "Time": "23:11:28"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "overview",
+        "Date": "11/08/2024",
+        "Time": "23:11:48"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "overview",
+        "Date": "11/08/2024",
+        "Time": "23:12:55"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "overview",
+        "Date": "11/08/2024",
+        "Time": "23:16:06"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "overview",
+        "Date": "11/08/2024",
+        "Time": "23:16:43"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "overview",
+        "Date": "11/08/2024",
+        "Time": "23:17:40"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "overview",
+        "Date": "11/08/2024",
+        "Time": "23:18:19"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "overview",
+        "Date": "11/08/2024",
+        "Time": "23:18:50"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "overview",
+        "Date": "11/08/2024",
+        "Time": "23:20:30"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "overview",
+        "Date": "11/08/2024",
+        "Time": "23:21:16"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "overview",
+        "Date": "11/08/2024",
+        "Time": "23:21:27"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "overview",
+        "Date": "11/08/2024",
+        "Time": "23:25:19"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "overview",
+        "Date": "11/08/2024",
+        "Time": "23:25:43"
+    },
+    {
+        "User:": "simonfirefighter",
+        "Function:": "overview",
+        "Date": "11/08/2024",
+        "Time": "23:27:19"
+    },
+    {
+        "User:": "drakesdrs",
+        "Function:": "overview",
+        "Date": "11/08/2024",
+        "Time": "23:30:35"
+    },
+    {
+        "User:": "fregapane.",
+        "Function:": "overview",
+        "Date": "11/08/2024",
+        "Time": "23:37:39"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "overview",
+        "Date": "11/08/2024",
+        "Time": "23:38:26"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "view_trades",
+        "Date": "12/08/2024",
+        "Time": "00:18:30"
+    },
+    {
+        "User:": "corrpz_2121",
+        "Function:": "overview",
+        "Date": "12/08/2024",
+        "Time": "00:58:07"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "view_trades",
+        "Date": "12/08/2024",
+        "Time": "01:06:19"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "view_trades",
+        "Date": "12/08/2024",
+        "Time": "01:09:09"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "view_trades",
+        "Date": "12/08/2024",
+        "Time": "01:10:50"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "view_trades",
+        "Date": "12/08/2024",
+        "Time": "01:12:51"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "view_trades",
+        "Date": "12/08/2024",
+        "Time": "01:13:10"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "view_trades",
+        "Date": "12/08/2024",
+        "Time": "01:15:57"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "view_trades",
+        "Date": "12/08/2024",
+        "Time": "01:20:35"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "view_trades",
+        "Date": "12/08/2024",
+        "Time": "01:20:50"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "view_trades",
+        "Date": "12/08/2024",
+        "Time": "01:28:13"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "view_trades",
+        "Date": "12/08/2024",
+        "Time": "01:28:52"
+    },
+    {
+        "User:": "norwegianironwrath",
+        "Function:": "overview",
+        "Date": "12/08/2024",
+        "Time": "01:28:53"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "view_trades",
+        "Date": "12/08/2024",
+        "Time": "01:29:05"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "view_trades",
+        "Date": "12/08/2024",
+        "Time": "01:45:54"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "view_trades",
+        "Date": "12/08/2024",
+        "Time": "01:59:00"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "view_trades",
+        "Date": "12/08/2024",
+        "Time": "02:00:57"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "view_trades",
+        "Date": "12/08/2024",
+        "Time": "02:01:42"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "view_trades",
+        "Date": "12/08/2024",
+        "Time": "02:05:02"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "view_trades",
+        "Date": "12/08/2024",
+        "Time": "02:10:45"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "view_trades",
+        "Date": "12/08/2024",
+        "Time": "02:11:13"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "trade",
+        "Date": "12/08/2024",
+        "Time": "02:14:45"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "trade",
+        "Date": "12/08/2024",
+        "Time": "02:15:08"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "trade",
+        "Date": "12/08/2024",
+        "Time": "02:15:14"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "trade",
+        "Date": "12/08/2024",
+        "Time": "02:19:18"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "trade",
+        "Date": "12/08/2024",
+        "Time": "08:54:05"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "trade",
+        "Date": "12/08/2024",
+        "Time": "08:54:38"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "trade",
+        "Date": "12/08/2024",
+        "Time": "08:56:46"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "trade",
+        "Date": "12/08/2024",
+        "Time": "09:03:39"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "trade",
+        "Date": "12/08/2024",
+        "Time": "09:05:35"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "trade",
+        "Date": "12/08/2024",
+        "Time": "09:06:26"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "trade",
+        "Date": "12/08/2024",
+        "Time": "09:30:32"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "trade",
+        "Date": "12/08/2024",
+        "Time": "09:31:13"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "trade",
+        "Date": "12/08/2024",
+        "Time": "09:32:00"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "trade",
+        "Date": "12/08/2024",
+        "Time": "09:32:47"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "trade",
+        "Date": "12/08/2024",
+        "Time": "09:35:32"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "faction_lookup",
+        "Date": "12/08/2024",
+        "Time": "09:44:39"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "trade",
+        "Date": "12/08/2024",
+        "Time": "09:47:14"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "trade",
+        "Date": "12/08/2024",
+        "Time": "09:56:46"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "trade",
+        "Date": "12/08/2024",
+        "Time": "09:57:40"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "trade",
+        "Date": "12/08/2024",
+        "Time": "09:58:41"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "trade",
+        "Date": "12/08/2024",
+        "Time": "10:01:18"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "trade",
+        "Date": "12/08/2024",
+        "Time": "10:01:53"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "trade",
+        "Date": "12/08/2024",
+        "Time": "10:02:37"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "trade",
+        "Date": "12/08/2024",
+        "Time": "10:03:37"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "trade",
+        "Date": "12/08/2024",
+        "Time": "10:08:11"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "trade",
+        "Date": "12/08/2024",
+        "Time": "10:09:12"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "setup",
+        "Date": "12/08/2024",
+        "Time": "10:54:34"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "setup",
+        "Date": "12/08/2024",
+        "Time": "10:58:34"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "setup",
+        "Date": "12/08/2024",
+        "Time": "10:59:21"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "setup",
+        "Date": "12/08/2024",
+        "Time": "11:02:25"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "setup",
+        "Date": "12/08/2024",
+        "Time": "11:16:38"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "setup",
+        "Date": "12/08/2024",
+        "Time": "11:17:01"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "setup",
+        "Date": "12/08/2024",
+        "Time": "11:27:04"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "setup",
+        "Date": "12/08/2024",
+        "Time": "11:27:35"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "setup",
+        "Date": "12/08/2024",
+        "Time": "11:38:15"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "setup",
+        "Date": "12/08/2024",
+        "Time": "11:43:57"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "trade",
+        "Date": "12/08/2024",
+        "Time": "12:16:04"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "trade",
+        "Date": "12/08/2024",
+        "Time": "12:18:14"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "trade",
+        "Date": "12/08/2024",
+        "Time": "12:22:27"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "trade",
+        "Date": "12/08/2024",
+        "Time": "12:24:24"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "trade",
+        "Date": "12/08/2024",
+        "Time": "12:28:01"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "trade",
+        "Date": "12/08/2024",
+        "Time": "12:32:53"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "trade",
+        "Date": "12/08/2024",
+        "Time": "12:36:04"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "trade",
+        "Date": "12/08/2024",
+        "Time": "12:36:40"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "trade",
+        "Date": "12/08/2024",
+        "Time": "12:42:04"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "trade",
+        "Date": "12/08/2024",
+        "Time": "12:43:15"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "trade",
+        "Date": "12/08/2024",
+        "Time": "12:51:43"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "trade",
+        "Date": "12/08/2024",
+        "Time": "12:53:04"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "trade",
+        "Date": "12/08/2024",
+        "Time": "12:54:49"
+    },
+    {
+        "User:": "drakesdrs",
+        "Function:": "overview",
+        "Date": "12/08/2024",
+        "Time": "13:27:37"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "overview",
+        "Date": "12/08/2024",
+        "Time": "15:08:27"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "trade",
+        "Date": "12/08/2024",
+        "Time": "16:35:20"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "trade",
+        "Date": "12/08/2024",
+        "Time": "16:45:34"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "trade",
+        "Date": "12/08/2024",
+        "Time": "16:45:48"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "trade",
+        "Date": "12/08/2024",
+        "Time": "17:07:45"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "trade",
+        "Date": "12/08/2024",
+        "Time": "17:08:23"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "trade",
+        "Date": "12/08/2024",
+        "Time": "17:09:45"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "trade",
+        "Date": "12/08/2024",
+        "Time": "18:55:11"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "trade",
+        "Date": "12/08/2024",
+        "Time": "18:55:35"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "trade",
+        "Date": "12/08/2024",
+        "Time": "18:58:51"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "set_permissions",
+        "Date": "12/08/2024",
+        "Time": "18:59:43"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "set_permissions",
+        "Date": "12/08/2024",
+        "Time": "19:00:35"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "trade",
+        "Date": "12/08/2024",
+        "Time": "19:01:34"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "trade",
+        "Date": "12/08/2024",
+        "Time": "19:03:53"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "trade",
+        "Date": "12/08/2024",
+        "Time": "19:05:16"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "trade",
+        "Date": "12/08/2024",
+        "Time": "19:11:34"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "trade",
+        "Date": "12/08/2024",
+        "Time": "19:13:10"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "trade",
+        "Date": "12/08/2024",
+        "Time": "19:14:25"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "map",
+        "Date": "12/08/2024",
+        "Time": "22:25:03"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "capital",
+        "Date": "12/08/2024",
+        "Time": "22:25:22"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "capital",
+        "Date": "12/08/2024",
+        "Time": "22:41:02"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "capital",
+        "Date": "12/08/2024",
+        "Time": "22:44:52"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "capital",
+        "Date": "12/08/2024",
+        "Time": "22:47:08"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "capital",
+        "Date": "12/08/2024",
+        "Time": "22:47:25"
+    },
+    {
+        "User:": "thewolf3152",
+        "Function:": "capital",
+        "Date": "12/08/2024",
+        "Time": "22:48:44"
+    }
+]

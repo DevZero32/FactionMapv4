@@ -1,0 +1,35 @@
+[
+    {
+        "tradeName": "accept test",
+        "id": 1,
+        "offeringFactionId": 1193437860469157978,
+        "offeringResource": "gold",
+        "offeringQuanitity": 10,
+        "receivingFactionId": 1074062206297178242,
+        "receivingResource": "manpower",
+        "receivingQuanitiy": 5,
+        "tradeAccepted": true
+    },
+    {
+        "tradeName": "spam text",
+        "id": 2,
+        "offeringFactionId": 1193437860469157978,
+        "offeringResource": "gold",
+        "offeringQuanitity": 10,
+        "receivingFactionId": 1074062206297178242,
+        "receivingResource": "manpower",
+        "receivingQuanitiy": 5,
+        "tradeAccepted": true
+    },
+    {
+        "tradeName": "spam test 2",
+        "id": 3,
+        "offeringFactionId": 1193437860469157978,
+        "offeringResource": "gold",
+        "offeringQuanitity": 10,
+        "receivingFactionId": 1074062206297178242,
+        "receivingResource": "manpower",
+        "receivingQuanitiy": 5,
+        "tradeAccepted": true
+    }
+]

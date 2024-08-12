@@ -5170,14 +5170,14 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1193437860469157978,
         "neighbours": [
             208,
             234,
             222,
             206
         ],
-        "building": "None",
+        "building": "Capital",
         "Biome": "Large Hills",
         "Resource": {
             "Gold": 1,

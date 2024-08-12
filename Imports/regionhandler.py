@@ -33,7 +33,7 @@ def build(interaction,regionId,building):
   faction = classhandler.factionClass(region.owner,jsonhandler.getfactionsjson())
   
   #Turn handling
-  if turnshandler.checkLogs(faction.name,"regions",region.id):
+  if turnshandler.checkLogs(faction.guild,"regions",region.id):
     return f"`Region {region.id}` has already been interacted with."
   
   resources = faction.resources
@@ -62,9 +62,9 @@ def build(interaction,regionId,building):
   resources.wood -= costs["wood"]
 
   resourcesDict = {'gold': resources.gold, 'iron': resources.iron, 'stone': resources.stone, 'wood': resources.wood, 'manpower': resources.manpower}
-  jsonhandler.save_regions(jsonhandler.getregionjson(),region.id,faction.name,region.building)
+  jsonhandler.save_regions(jsonhandler.getregionjson(),region.id,faction.id,region.building)
   jsonhandler.save_factions(interaction.guild,jsonhandler.getfactionsjson(),interaction.guild.id,resourcesDict,faction.deployments.raw,faction.capital,faction.permissions.raw)
-  turnshandler.logTurn(faction.name,"regions",region.id)
+  turnshandler.logTurn(faction.id,"regions",region.id)
   imagehandler.assembleMap.cache_clear()
   return (f"{building} built at {region.id}")
 
@@ -97,7 +97,7 @@ def capital(interaction,regionId):
   factions = jsonhandler.getfactionsjson()
   if interaction.guild.id not in [faction["guild"] for faction in factions]:
     return f"{interaction.guild.name} is not a faction. please run `/setup` before setting up a capital."
-  faction = classhandler.factionClass(interaction.guild.name,factions)
+  faction = classhandler.factionClass(interaction.guild.id,factions)
   
   #Check Permissions
   permissions = factionshandler.checkPermissions(interaction,interaction.user)
@@ -105,15 +105,15 @@ def capital(interaction,regionId):
   region = classhandler.regionClass(jsonhandler.getregionjson(),regionId)
   if region.owner != "None" and region.owner != faction.name: return f"`Region {region.id}` is occupied, please find another region."
   #Turn handling
-  if turnshandler.checkLogs(faction.name,"regions",region.id):
+  if turnshandler.checkLogs(faction.guild,"regions",region.id):
     return f"`Region {region.id}` has already been interacted with."
 
   if faction.capital == 0 and len(faction.regions) == 0:
     capital = regionId
     regions = jsonhandler.getregionjson()
-    jsonhandler.save_regions(regions,region.id,faction.name,"Capital")
+    jsonhandler.save_regions(regions,region.id,faction.guild,"Capital")
     jsonhandler.save_factions(interaction.guild,factions,faction.guild,faction.resources.raw,faction.deployments.raw,capital,faction.permissions.raw)
-    imagehandler.updateFactionBorders(faction.name)
+    imagehandler.updateFactionBorders(faction.id)
     imagehandler.addBuilding(regionId)
     return f"`Faction {faction.name}` initated! Welcome to Faction Map!"
   else:
@@ -137,8 +137,8 @@ def capital(interaction,regionId):
     resources.wood -= costs["wood"]
 
     resourcesDict = {'gold': resources.gold, 'iron': resources.iron, 'stone': resources.stone, 'wood': resources.wood, 'manpower': resources.manpower}
-    jsonhandler.save_regions(jsonhandler.getregionjson(),faction.capital,faction.name,"None")
-    jsonhandler.save_regions(jsonhandler.getregionjson(),region.id,faction.name,region.building)
+    jsonhandler.save_regions(jsonhandler.getregionjson(),faction.capital,faction.guild,"None")
+    jsonhandler.save_regions(jsonhandler.getregionjson(),region.id,faction.guild,region.building)
     jsonhandler.save_factions(interaction.guild,jsonhandler.getfactionsjson(),interaction.guild.id,resourcesDict,faction.deployments.raw,faction.capital,faction.permissions.raw)
     turnshandler.logTurn(faction.name,"regions",region.id)
     return (f"`{building}` built at `Region {region.id}`")
