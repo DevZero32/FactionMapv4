@@ -17,7 +17,7 @@ async def on_ready():
   print(f"{client.user} is now online.")
   try: print(f"{len(await client.tree.sync())} Commands Synced.")
   except Exception as e: print(f"Error with sync: {e}")
-  await turnshandler.initialiseTurnSequence()
+  await turnshandler.initialiseTurnSequence(client)
 
 @client.tree.command(name="test",description = "This command is used for testing.")
 async def Test(interaction:discord.Interaction):

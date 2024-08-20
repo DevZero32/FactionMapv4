@@ -1,7 +1,11 @@
 import json
 import asyncio
 import time
-from Imports import classhandler,jsonhandler,mediatorhandler
+from Imports import classhandler,jsonhandler,mediatorhandler,economyHandler
+import discord
+from discord import ui
+from discord import app_commands
+from discord.ext import commands
 
 # === GET ===
 
@@ -64,11 +68,14 @@ def resetTurns():
     with open("Data/turns.json","w") as file:
         json.dump(turnsJson, file, indent=4)
 
-async def initialiseTurnSequence():
+async def initialiseTurnSequence(client):
+  print("AH")
   tickTime = time.time()
-  hours = 3 * 3600
-  
-  async def turnSequence(currentTime, hours):
+  #hours = 3 * 3600
+  hours = 20
+
+  async def turnSequence(currentTime, hours,client):
+    print("AH2")
     currentTime = time.time()
     turns = getTurns()
     if turns["nextTurn"] < currentTime:  
@@ -76,14 +83,16 @@ async def initialiseTurnSequence():
       updateTurns(currentTime,currentTime+hours)
     
     while True:
+      print("AH3")
       currentTime = time.time()
       nextTurn = getTurns()["nextTurn"]
       timeDif = nextTurn - currentTime
       await asyncio.sleep(timeDif)
-
+      print("turn")
       currentTime = time.time()
       resetTurns()
       distributeResources()
+      await distributeTrades(client)
       updateTurns(currentTime,currentTime+hours)
   
   def save_factions(factions,factionGuildId,resources,deployments,capital,permissions):
@@ -107,7 +116,92 @@ async def initialiseTurnSequence():
     with open("Data/factions.json","w") as file:
       json.dump(factions,file,indent = 4)
       file.close()
-  
+
+  async def distributeTrades(client):
+    async def successNotify(offeringFactionId, receivingFactionId, client):
+      # Embed
+      embed = discord.Embed(
+        color=discord.Color(int('5865f2',16)),
+        description=f"""Trade successful, view all trades with `/view_trades`"""
+      )
+      embed.set_footer(text="Trade occurs every turn.")
+      embed.set_author(name=f"Trade success",icon_url=f"https://cdn.discordapp.com/attachments/763309644261097492/1143966676661059635/image.png?ex=66baf53d&is=66b9a3bd&hm=7ebd69b2962ef32b2ecbcf59771a304dbd773c2d6e6a20f96458bc98cee77b83&")
+
+      # Offering faction
+      offeringFaction = classhandler.factionClass(offeringFactionId, jsonhandler.getfactionsjson())
+      offeringGuild = client.get_guild(offeringFaction.guild)
+      offeringAlertChannel = offeringGuild.get_channel(offeringFaction.alert)
+      
+      # Send the embed to the offering faction's alert channel
+      await offeringAlertChannel.send(embed=embed)
+
+      # Receiving faction
+      receivingFaction = classhandler.factionClass(receivingFactionId, jsonhandler.getfactionsjson())
+      receivingGuild = client.get_guild(receivingFaction.guild)
+      receivingAlertChannel = receivingGuild.get_channel(receivingFaction.alert)
+      
+      # Send the embed to the receiving faction's alert channel
+      await receivingAlertChannel.send(embed=embed)
+
+    async def cancelNotify(offeringFactionId, receivingFactionId, client):
+      # Embed
+      embed = discord.Embed(
+        color=discord.Color(int('eb3d47', 16)),
+        description=f"A trade has been canceled due to a lack of resources on either side."
+      )
+      embed.set_footer(text="view all trades with `/view_trades`")
+      embed.set_author(
+          name=f"Trade canceled",
+          icon_url="https://cdn.discordapp.com/attachments/763309644261097492/1143966731421896704/image.png?ex=66ba4c8a&is=66b8fb0a&hm=3a8bab4488268865b8094ca7b2a60e7ee406a651729634ebe3d7185a4c9277bc&"
+      )
+
+      # Offering faction
+      offeringFaction = classhandler.factionClass(offeringFactionId, jsonhandler.getfactionsjson())
+      offeringGuild = client.get_guild(offeringFaction.guild)
+      offeringAlertChannel = offeringGuild.get_channel(offeringFaction.alert)
+      
+      # Send the embed to the offering faction's alert channel
+      await offeringAlertChannel.send(embed=embed)
+
+      # Receiving faction
+      receivingFaction = classhandler.factionClass(receivingFactionId, jsonhandler.getfactionsjson())
+      receivingGuild = client.get_guild(receivingFaction.guild)
+      receivingAlertChannel = receivingGuild.get_channel(receivingFaction.alert)
+      
+      # Send the embed to the receiving faction's alert channel
+      await receivingAlertChannel.send(embed=embed)
+      
+    for trade in economyHandler.getTrades():
+      if trade["tradeAccepted"] == False:
+        continue
+
+      
+      offeringFaction = classhandler.factionClass(trade["offeringFactionId"],jsonhandler.getfactionsjson())
+      offeringResource = trade["offeringResource"]
+      offeringQuanitity = trade["offeringQuanitity"]
+    
+      receivingFaction = classhandler.factionClass(trade["receivingFactionId"],jsonhandler.getfactionsjson())
+      receivingResource = trade["receivingResource"]
+      receivingQuanitiy = trade["receivingQuanitiy"]
+
+      if offeringFaction.resources.raw[offeringResource] < offeringQuanitity or receivingFaction.resources.raw[receivingResource] < receivingQuanitiy:
+        await cancelNotify(offeringFaction.guild,receivingFaction.guild,client)
+        continue
+      
+      # do trade
+      offeringFactionResources = offeringFaction.resources.raw
+      receivingFactionResources = receivingFaction.resources.raw
+
+      offeringFactionResources[receivingResource] + receivingQuanitiy
+      offeringFactionResources[offeringResource] - offeringQuanitity
+
+      receivingFactionResources[offeringResource] + offeringQuanitity
+      receivingFactionResources[receivingResource] - receivingQuanitiy
+
+      save_factions(jsonhandler.getfactionsjson(),offeringFaction.guild,offeringFactionResources,offeringFaction.deployments.raw,offeringFaction.capital,offeringFaction.permissions.raw)
+      save_factions(jsonhandler.getfactionsjson(),receivingFaction.guild,receivingFactionResources,receivingFaction.deployments.raw,receivingFaction.capital,receivingFaction.permissions.raw)
+      await successNotify(offeringFaction.guild,receivingFaction.guild,client)
+
   def distributeResources():
     factions = jsonhandler.getfactionsjson()
     for faction in factions:
@@ -153,32 +247,38 @@ async def initialiseTurnSequence():
       save_factions(factions,faction.guild,resourcesDict,faction.deployments.raw,faction.capital,faction.permissions.raw)
       
   # === Run ====
-  asyncio.create_task(turnSequence(tickTime, hours))
+  asyncio.create_task(turnSequence(tickTime, hours,client))
 
 # === LOGGING ===
 
-def logTurn(factionName, objectType, id):
+def logTurn(factionId, objectType, objectId,duration):
     """
     Log a turn action for a specific faction.
 
     Args:
-        factionName (str): The name of the faction to log the action for.
+        factionId (str): The id of the faction to log the action for.
         objectType (str): The type of object to log ('deployments' or 'regions').
-        id (int): The ID of the object related to the action.
+        objectId (int): The ID of the object related to the action.
+        duration (int): The duration of the local turn
 
     Updates the turns.json file with the logged action for the given faction.
     """
     turns = getTurns()
     for turnIndex in turns["turns"]:
-        if turnIndex["name"] == factionName:
-            turnIndex[objectType].append(id)
+        if turnIndex["id"] == factionId:
+            obj = {
+               "id": objectId,
+               "lastTurn": time.time(),
+               "nextTurn": time.time() + duration
+               }
+            turnIndex[objectType].append(obj)
             break
 
     with open("Data/turns.json","w") as file:
         json.dump(turns, file, indent=4)
   
 
-def checkLogs(factionId, objectType, id):
+def checkLogs(factionId, objectType, objectId):
     """
     Check if a given ID is logged under a specific faction and object type.
 
@@ -193,20 +293,28 @@ def checkLogs(factionId, objectType, id):
     faction = classhandler.factionClass(factionId, jsonhandler.getfactionsjson())
   
     if objectType == "deployments": #In battle check
+      #check if in mediator
       mediatorData = mediatorhandler.getMediatorJson()
       for channelData in mediatorData:
         channelData = mediatorhandler.mediatorClass(channelData["id"])
         allDeployments = channelData.attackingFactionDeployments + channelData.defendingFactionDeployments
         for data in allDeployments:
-           if id == data["id"] and factionId == data["faction"]:
+           if objectId == data["id"] and factionId == data["faction"]:
             return True
+      #check if already turned
+      for i in faction.turns.deployments:
+         if i["id"] == objectId:
+            if i["nextTurn"] > time.time(): return True
+    
     if objectType == "regions":
+      #check if in mediator
       mediatorData = mediatorhandler.getMediatorJson()
       for channelData in mediatorData:
-         if id == channelData["region"]:
+         if objectId == channelData["region"]:
             return True
-    if objectType == "deployments":
-      if id in faction.turns.deployments: return True
-    elif objectType == "regions":
-      if id in faction.turns.regions: return True
+      #check if already turned
+      for i in faction.turns.regions:
+         if i["id"] == objectId:
+            if i["nextTurn"] > time.time(): return True
+
     return False

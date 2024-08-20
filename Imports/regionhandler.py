@@ -1,4 +1,5 @@
 from Imports import jsonhandler,classhandler,factionshandler,turnshandler, imagehandler, armyhandler
+import time
 
 def regionlookup(interaction, region,regions):
   if not (1 <= region <= len(regions)): return (f"Region must between 1 and {len(regions)}")
@@ -64,7 +65,7 @@ def build(interaction,regionId,building):
   resourcesDict = {'gold': resources.gold, 'iron': resources.iron, 'stone': resources.stone, 'wood': resources.wood, 'manpower': resources.manpower}
   jsonhandler.save_regions(jsonhandler.getregionjson(),region.id,faction.id,region.building)
   jsonhandler.save_factions(interaction.guild,jsonhandler.getfactionsjson(),interaction.guild.id,resourcesDict,faction.deployments.raw,faction.capital,faction.permissions.raw)
-  turnshandler.logTurn(faction.id,"regions",region.id)
+  turnshandler.logTurn(faction.guild,"regions",region.id,turnshandler.getTurns()["nextTurn"] - time.time())
   imagehandler.assembleMap.cache_clear()
   return (f"{building} built at {region.id}")
 
@@ -140,5 +141,5 @@ def capital(interaction,regionId):
     jsonhandler.save_regions(jsonhandler.getregionjson(),faction.capital,faction.guild,"None")
     jsonhandler.save_regions(jsonhandler.getregionjson(),region.id,faction.guild,region.building)
     jsonhandler.save_factions(interaction.guild,jsonhandler.getfactionsjson(),interaction.guild.id,resourcesDict,faction.deployments.raw,faction.capital,faction.permissions.raw)
-    turnshandler.logTurn(faction.name,"regions",region.id)
+    turnshandler.logTurn(faction.guild,"regions",region.id,turnshandler.getTurns()["nextTurn"] - time.time())
     return (f"`{building}` built at `Region {region.id}`")

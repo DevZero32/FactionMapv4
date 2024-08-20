@@ -1,16 +1,14 @@
 {
-    "lastTurn": 1723493759.6049032,
-    "nextTurn": 1723504559.6049032,
+    "lastTurn": 1724184802.736122,
+    "nextTurn": 1724184822.736122,
     "turns": [
         {
             "id": 1074062206297178242,
-            "nextTurn": 0,
             "deployments": [],
             "regions": []
         },
         {
             "id": 1193437860469157978,
-            "nextTurn": 0,
             "deployments": [],
             "regions": []
         }

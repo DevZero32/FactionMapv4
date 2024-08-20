@@ -1,4 +1,5 @@
 from Imports import jsonhandler ,factionshandler,classhandler,regionhandler,turnshandler,mediatorhandler,imagehandler
+import time
 
 def getDeploymentClass(faction, id):
   """
@@ -226,7 +227,7 @@ def rallyDeployment(interaction,infType,quantity,deploymentName):
 
   #Army limiting
   deploymentSize = deployment.tierOne + deployment.tierTwo + quantity
-  deploymentLimit = 38
+  deploymentLimit = 40
   if deploymentSize > deploymentLimit:
     return f"Exceeded deployment limit of {deploymentLimit}"
   deploymentsRaw = deployments.raw
@@ -247,8 +248,8 @@ def rallyDeployment(interaction,infType,quantity,deploymentName):
   manpower = resources.manpower - costs["manpower"]*quantity
   resourcesDict = {"gold": gold, "iron": resources.iron, "stone": resources.stone, "wood": resources.wood, "manpower": manpower}
   jsonhandler.save_factions(interaction.guild,factions,faction.guild,resourcesDict,deployments.raw,faction.capital,faction.permissions.raw)
-  turnshandler.logTurn(faction.name,"deployments",deploymentId)
-  turnshandler.logTurn(faction.name,"regions",region.id)
+  turnshandler.logTurn(faction.guild,"deployments",deploymentId,turnshandler.getTurns()["nextTurn"] - time.time())
+  turnshandler.logTurn(faction.guild,"regions",region.id,turnshandler.getTurns()["nextTurn"] - time.time())
   return f"{deploymentName} has rallied {quantity} {infType.lower()}."
 
 def marchDeployment(interaction,deploymentName,regionId):
@@ -305,7 +306,7 @@ def marchDeployment(interaction,deploymentName,regionId):
       break
   # === Saving & Logging Turn ===
   jsonhandler.save_factions(interaction.guild,factions,interaction.guild.id,faction.resources.raw,deployments,faction.capital,faction.permissions.raw)
-  turnshandler.logTurn(faction.name,"deployments",deployment.id)
+  turnshandler.logTurn(faction.guild,"deployments",deployment.id,min(max(((deployment.tierOne + deployment.tierTwo)*600),3600*3),3600))
   if deploymentRegion.building == "None" or region.building == "None": imagehandler.assembleMap.cache_clear()
   return f"`Deployment {deployment.name}` has marched to `Region {region.id}`"
 
@@ -455,7 +456,7 @@ def occupyRegion(interaction,client,regionId):
   
    # === Logging Turn ===
   for deploymentIndex in attackingAvaDeployments:
-    turnshandler.logTurn(faction.name,"deployments",deploymentIndex)
+    turnshandler.logTurn(faction.guild,"deployments",deploymentIndex,turnshandler.getTurns()["nextTurn"] - time.time())
 
   # === Saving occupation
   
