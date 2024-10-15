@@ -76,6 +76,7 @@ Teir one: {deployment.tierOne}
 Teir two: {deployment.tierTwo}
 
 Interacted: {turned}
+Next interaction: <t:{deployment.nextTurn:.0f}:R>
 *Has the deployment been interacted or in battle.*
 
 """
@@ -92,11 +93,6 @@ def formDeployment(interaction,region,name):
 
   permissions = factionshandler.checkPermissions(interaction,interaction.user)
   if permissions["army"] == False: return "You lack permissions to do this."
-  # === Name Check ===
-  #for faction in factions:
-  #  factionI = classhandler.factionClass(faction["name"],factions)
-  #  deploymentNames = [d["name"] for d in factionI.deployments.raw]
-  #  if name in deploymentNames: return f"`Name {name}` is already taken."
       
   #Region Check
   if regionhandler.regionOwnership(faction,region) == False: return (f"`Region {region}` is not owned by `Faction {faction.name}` ")
@@ -202,7 +198,7 @@ def rallyDeployment(interaction,infType,quantity,deploymentName):
   region = classhandler.regionClass(jsonhandler.getregionjson(),deployment.region)
   if region.building not in ["Fort","Capital"]:
     return f"{deployment.name} must be located in a fort or capital to rally to."
-  if region.owner != faction.name:
+  if region.owner != faction.guild:
     return f"{faction.name} must own the region to rally."
   #turn check
   if turnshandler.checkLogs(faction.guild,"deployment",deploymentId) == True:
@@ -227,7 +223,7 @@ def rallyDeployment(interaction,infType,quantity,deploymentName):
 
   #Army limiting
   deploymentSize = deployment.tierOne + deployment.tierTwo + quantity
-  deploymentLimit = 40
+  deploymentLimit = 50
   if deploymentSize > deploymentLimit:
     return f"Exceeded deployment limit of {deploymentLimit}"
   deploymentsRaw = deployments.raw

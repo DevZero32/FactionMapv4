@@ -94,7 +94,12 @@ async def trade(interaction:discord.Interaction):
 @client.tree.command(name="view_trades",description="List all trades in your faction.")
 async def view_trades(interaction:discord.Interaction):
   adminhandler.logInteraction(view_trades,interaction.user)
-  await economyHandler.viewTrades(interaction)
+  await economyHandler.viewTrades(interaction,client)
+
+@client.tree.command(name="cancel_trade",description="Cancel a trade")
+async def cancel_trades(interaction:discord.Interaction):
+  adminhandler.logInteraction(view_trades,interaction.user)
+  await economyHandler.cancelTrade(interaction)
 
 # ===REGION ===
 

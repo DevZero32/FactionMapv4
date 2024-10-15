@@ -5,10 +5,10 @@
         "alert": 1128626203260092426,
         "capital": 0,
         "resources": {
-            "gold": 500,
-            "iron": 25,
-            "stone": 50,
-            "wood": 50,
+            "gold": 664,
+            "iron": 160,
+            "stone": 182,
+            "wood": 551,
             "manpower": 20
         },
         "deployments": [],
@@ -30,13 +30,21 @@
         "alert": 1194638722466058280,
         "capital": 227,
         "resources": {
-            "gold": 18524,
-            "iron": 433,
-            "stone": 794,
-            "wood": 770,
-            "manpower": 20
+            "gold": 220744,
+            "iron": 5023,
+            "stone": 9164,
+            "wood": 8870,
+            "manpower": 10
         },
-        "deployments": [],
+        "deployments": [
+            {
+                "id": 1,
+                "name": "test army",
+                "region": 234,
+                "tierOne": 10,
+                "tierTwo": 0
+            }
+        ],
         "permissions": [
             {
                 "roleId": 1193439503675838474,

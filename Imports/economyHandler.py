@@ -236,10 +236,10 @@ def createTrade(tradeName,receivingFactionId,offeringFactionId,offeringResource,
        "id": id,
         "offeringFactionId": offeringFactionId,
         "offeringResource": offeringResource,
-        "offeringQuanitity": offeringQuanitiy,
+        "offeringQuantity": offeringQuanitiy,
         "receivingFactionId": receivingFactionId,
         "receivingResource": receivingResource,
-        "receivingQuanitiy": receivingQuanitiy,
+        "receivingQuantity": receivingQuanitiy,
         "tradeAccepted": False
      }
      trades.append(trade)
@@ -266,8 +266,6 @@ def updateTrade(tradeId: int,isAccepted: bool):
      with open("Data/trades.json","w") as file:
         json.dump(trades,file,indent = 4)
 
-       
-
 def getTrades():
   """
   Gives Raw Json Data of trades.json
@@ -276,10 +274,133 @@ def getTrades():
     jsondata = json.loads(file.read())
   return jsondata
 
+def getFactionTrades(guildId):
+    """
+    guildId: id of faction
+
+    returns all of the trade instances where the faction is referanced
+    """
+    return [trade for trade in getTrades() if guildId in [trade["offeringFactionId"], trade["receivingFactionId"]]]
 
 # === Commands ===
 async def trade(interaction):
-   await interaction.response.send_modal(createTradeClass())
+   # === Faction Existance Check ====
+     factions = jsonhandler.getfactionsjson()
+     if interaction.guild.id not in [faction["guild"] for faction in factions]:
+          return await interaction.response.send_message(f"{interaction.guild.name} is not a faction. please run `/setup`.")
+  
+     #Check Permissions
+     permissions = factionshandler.checkPermissions(interaction,interaction.user)
+     if permissions["trade"] == False : return await interaction.response.send_message("You lack permissions to trade.")
 
-async def viewTrades(interaction):
-    pass
+     await interaction.response.send_modal(createTradeClass())
+
+async def cancelTrade(interaction):
+    # === Faction Existance Check ====
+     factions = jsonhandler.getfactionsjson()
+     if interaction.guild.id not in [faction["guild"] for faction in factions]:
+          return await interaction.response.send_message(f"{interaction.guild.name} is not a faction. please run `/setup`.")
+  
+     #Check Permissions
+     permissions = factionshandler.checkPermissions(interaction,interaction.user)
+     if permissions["trade"] == False : return await interaction.response.send_message("You lack permissions to trade.")
+
+     view = cancelTradeView(interaction)
+     await interaction.response.send_message(view=view)
+
+class cancelTradeView(discord.ui.View):
+    def __init__(self, interaction, timeout: float = None):
+        super().__init__(timeout=timeout)
+        self.guildId = interaction.guild.id
+        self.add_item(self.CancelTradeSelect(self.guildId))
+
+    class CancelTradeSelect(discord.ui.Select):
+        def __init__(self, guildId: int):
+            # Create options from faction trades
+            options = [
+                discord.SelectOption(label=trade["tradeName"], value=trade["id"]) 
+                for trade in getFactionTrades(guildId)
+            ]
+
+            # Initialize the Select component
+            super().__init__(
+                placeholder="Select the trade you wish to cancel.",
+                options=options
+            )
+
+        async def callback(self, interaction: discord.Interaction):
+            trades = getTrades()
+            tradeId = int(self.values[0])
+            # Find and remove the selected trade
+            for trade in trades:
+               if trade["id"] == tradeId:
+                    trades.remove(trade)     
+
+                    # Determine the other faction ID
+                    if interaction.guild.id == trade["offeringFactionId"]:
+                        otherFaction = trade["receivingFactionId"]
+                    else:
+                        otherFaction = trade["offeringFactionId"]
+
+                    # Save the updated trades to the file
+                    with open("Data/trades.json", "w") as file:
+                        json.dump(trades, file, indent=4)
+
+                    # Create an alert embed
+                    embed = discord.Embed(
+                        color=discord.Color(int('eb3d47', 16)),
+                        description=f"Trade `{trade['tradeName']}` has been canceled, view all trades with `/view_trades`"
+                    )
+                    embed.set_footer(text="Trade occurs every turn.")
+                    embed.set_author(
+                        name="Trade canceled",
+                        icon_url="https://cdn.discordapp.com/attachments/763309644261097492/1143966731421896704/image.png?ex=66ba4c8a&is=66b8fb0a&hm=3a8bab4488268865b8094ca7b2a60e7ee406a651729634ebe3d7185a4c9277bc&"
+                    )
+
+                    # Send alert to the other faction
+                    otherFactionObj = classhandler.factionClass(otherFaction, jsonhandler.getfactionsjson())
+                    offeringGuild = interaction.client.get_guild(otherFactionObj.guild)
+                    alertChannel = offeringGuild.get_channel(otherFactionObj.alert)
+                    await alertChannel.send(embed=embed)
+
+                    # Respond to the original interaction
+                    await interaction.response.send_message(f"Trade `{trade['tradeName']}` has been canceled.")
+                    break
+
+async def viewTrades(interaction,client):
+     #faction existance check
+     if interaction.guild.id not in [i["guild"]for i in jsonhandler.getfactionsjson()]:
+          embed = discord.Embed(
+          color=discord.Color(int('eb3d47',16)),
+          description="This server isn't a regocnised faction.")
+          embed.set_footer(text="authorise to faction map before interacting")
+          embed.set_author(name="Trade rejected",icon_url="https://cdn.discordapp.com/attachments/763309644261097492/1143966731421896704/image.png?ex=66ba4c8a&is=66b8fb0a&hm=3a8bab4488268865b8094ca7b2a60e7ee406a651729634ebe3d7185a4c9277bc&")
+          return await interaction.response.send_message(embed=embed)
+     #permisions
+     if factionshandler.checkPermissions(interaction,interaction.user)["trade"] == False:
+          embed = discord.Embed(
+          color=discord.Color(int('eb3d47',16)),
+          description="You lack the trade permission to use this.")
+          embed.set_footer(text="use /set_permissions to set permissions")
+          embed.set_author(name="Trade rejected",icon_url="https://cdn.discordapp.com/attachments/763309644261097492/1143966731421896704/image.png?ex=66ba4c8a&is=66b8fb0a&hm=3a8bab4488268865b8094ca7b2a60e7ee406a651729634ebe3d7185a4c9277bc&")
+          return await interaction.response.send_message(embed=embed)
+    
+
+     trades = getTrades()
+     desc = ""
+
+     for trade in trades:
+          of = client.get_guild(trade["offeringFactionId"])
+          rf = client.get_guild(trade["receivingFactionId"])
+          if interaction.guild.id in [trade["offeringFactionId"],trade["receivingFactionId"]]:
+              desc += f"""
+**{trade["tradeName"]}**
+
+{of.name} - {rf.name}
+{trade["offeringQuantity"]} {trade["offeringResource"]} - {trade["receivingQuantity"]} {trade["receivingResource"]}
+     """
+     embed = discord.Embed(color=discord.Color(int('5865f2',16)),description=desc)
+     embed.set_footer(text=f"All trades with reference to this faction.")
+     embed.set_author(name="Trade Summary",icon_url=f"https://cdn.discordapp.com/attachments/763309644261097492/1143966676661059635/image.png?ex=66c8243d&is=66c6d2bd&hm=880007a97a8c4ad1156d3e429073a4c0019d1fdbe426c43b28c2c038396bd8d3&")
+     await interaction.response.send_message(embed=embed,ephemeral=True)
+

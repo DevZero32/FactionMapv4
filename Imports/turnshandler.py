@@ -69,13 +69,10 @@ def resetTurns():
         json.dump(turnsJson, file, indent=4)
 
 async def initialiseTurnSequence(client):
-  print("AH")
   tickTime = time.time()
-  #hours = 3 * 3600
-  hours = 20
-
+  hours = 3 * 3600
+  #hours = 5
   async def turnSequence(currentTime, hours,client):
-    print("AH2")
     currentTime = time.time()
     turns = getTurns()
     if turns["nextTurn"] < currentTime:  
@@ -83,12 +80,10 @@ async def initialiseTurnSequence(client):
       updateTurns(currentTime,currentTime+hours)
     
     while True:
-      print("AH3")
       currentTime = time.time()
       nextTurn = getTurns()["nextTurn"]
       timeDif = nextTurn - currentTime
       await asyncio.sleep(timeDif)
-      print("turn")
       currentTime = time.time()
       resetTurns()
       distributeResources()
@@ -106,8 +101,7 @@ async def initialiseTurnSequence(client):
     """
 
     for faction in factions:
-      factionId = faction["guild"]
-      if factionId == factionGuildId:
+      if faction["guild"] == factionGuildId:
         faction["capital"] = capital
         faction["deployments"] = deployments
         faction["resources"] = resources
@@ -118,14 +112,14 @@ async def initialiseTurnSequence(client):
       file.close()
 
   async def distributeTrades(client):
-    async def successNotify(offeringFactionId, receivingFactionId, client):
+    async def successNotify(offeringFactionId, receivingFactionId, client,tradeName):
       # Embed
       embed = discord.Embed(
         color=discord.Color(int('5865f2',16)),
         description=f"""Trade successful, view all trades with `/view_trades`"""
       )
       embed.set_footer(text="Trade occurs every turn.")
-      embed.set_author(name=f"Trade success",icon_url=f"https://cdn.discordapp.com/attachments/763309644261097492/1143966676661059635/image.png?ex=66baf53d&is=66b9a3bd&hm=7ebd69b2962ef32b2ecbcf59771a304dbd773c2d6e6a20f96458bc98cee77b83&")
+      embed.set_author(name=f"Trade {tradeName} successful",icon_url=f"https://cdn.discordapp.com/attachments/763309644261097492/1143966676661059635/image.png?ex=66baf53d&is=66b9a3bd&hm=7ebd69b2962ef32b2ecbcf59771a304dbd773c2d6e6a20f96458bc98cee77b83&")
 
       # Offering faction
       offeringFaction = classhandler.factionClass(offeringFactionId, jsonhandler.getfactionsjson())
@@ -143,7 +137,7 @@ async def initialiseTurnSequence(client):
       # Send the embed to the receiving faction's alert channel
       await receivingAlertChannel.send(embed=embed)
 
-    async def cancelNotify(offeringFactionId, receivingFactionId, client):
+    async def cancelNotify(offeringFactionId, receivingFactionId, client,tradeName,tradeId):
       # Embed
       embed = discord.Embed(
         color=discord.Color(int('eb3d47', 16)),
@@ -151,7 +145,7 @@ async def initialiseTurnSequence(client):
       )
       embed.set_footer(text="view all trades with `/view_trades`")
       embed.set_author(
-          name=f"Trade canceled",
+          name=f"Trade {tradeName} canceled",
           icon_url="https://cdn.discordapp.com/attachments/763309644261097492/1143966731421896704/image.png?ex=66ba4c8a&is=66b8fb0a&hm=3a8bab4488268865b8094ca7b2a60e7ee406a651729634ebe3d7185a4c9277bc&"
       )
 
@@ -171,6 +165,15 @@ async def initialiseTurnSequence(client):
       # Send the embed to the receiving faction's alert channel
       await receivingAlertChannel.send(embed=embed)
       
+      #cancel trade
+      trades = economyHandler.getTrades()
+      for trade in trades:
+         if trade["id"] == tradeId:
+            trades.remove(trade)
+            break
+      with open("Data\trades.json","w") as file:
+         json.dump(trades,file,indent=4)
+
     for trade in economyHandler.getTrades():
       if trade["tradeAccepted"] == False:
         continue
@@ -178,14 +181,14 @@ async def initialiseTurnSequence(client):
       
       offeringFaction = classhandler.factionClass(trade["offeringFactionId"],jsonhandler.getfactionsjson())
       offeringResource = trade["offeringResource"]
-      offeringQuanitity = trade["offeringQuanitity"]
+      offeringQuanitity = trade["offeringQuantity"]
     
       receivingFaction = classhandler.factionClass(trade["receivingFactionId"],jsonhandler.getfactionsjson())
       receivingResource = trade["receivingResource"]
-      receivingQuanitiy = trade["receivingQuanitiy"]
+      receivingQuanitiy = trade["receivingQuantity"]
 
       if offeringFaction.resources.raw[offeringResource] < offeringQuanitity or receivingFaction.resources.raw[receivingResource] < receivingQuanitiy:
-        await cancelNotify(offeringFaction.guild,receivingFaction.guild,client)
+        await cancelNotify(offeringFaction.guild,receivingFaction.guild,client,trade["tradeName"])
         continue
       
       # do trade
@@ -200,7 +203,7 @@ async def initialiseTurnSequence(client):
 
       save_factions(jsonhandler.getfactionsjson(),offeringFaction.guild,offeringFactionResources,offeringFaction.deployments.raw,offeringFaction.capital,offeringFaction.permissions.raw)
       save_factions(jsonhandler.getfactionsjson(),receivingFaction.guild,receivingFactionResources,receivingFaction.deployments.raw,receivingFaction.capital,receivingFaction.permissions.raw)
-      await successNotify(offeringFaction.guild,receivingFaction.guild,client)
+      await successNotify(offeringFaction.guild,receivingFaction.guild,client,trade["tradeName"])
 
   def distributeResources():
     factions = jsonhandler.getfactionsjson()
@@ -234,12 +237,13 @@ async def initialiseTurnSequence(client):
               gold += capitalTax
       
       # Count the number of regions with a fort
-      fortRegionsCount = len([regionId for regionId in faction.regions
-                                if classhandler.regionClass(regions, regionId).building == 'Fort'])
-      villageRegionsCount = len([regionId for regionId in faction.regions
-        if classhandler.regionClass(regions, regionId).building == 'Village'])
+      fortRegionsCount = len([regionId for regionId in faction.regions if classhandler.regionClass(regions, regionId).building == 'Fort'])
+      villageRegionsCount = len([regionId for regionId in faction.regions if classhandler.regionClass(regions, regionId).building == 'Village'])
+      portRegionsCount = len([regionId for regionId in faction.regions if classhandler.regionClass(regions, regionId).building == 'Port'])
+      PortCost = 10
       FortCost = 50
       gold -= (FortCost*fortRegionsCount)
+      gold -= (PortCost*portRegionsCount)
       villageIncome = 20
       gold += (villageIncome*villageRegionsCount)
 
@@ -266,6 +270,16 @@ def logTurn(factionId, objectType, objectId,duration):
     turns = getTurns()
     for turnIndex in turns["turns"]:
         if turnIndex["id"] == factionId:
+            #existance handling
+            for i in turnIndex[objectType]:
+               if i["id"] == objectId:
+                  i["lastTurn"] = time.time()
+                  i["nextTurn"] = time.time() + duration
+
+                  with open("Data/turns.json","w") as file:
+                    json.dump(turns, file, indent=4)
+                  break
+            #normal conditions
             obj = {
                "id": objectId,
                "lastTurn": time.time(),

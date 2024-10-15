@@ -63,16 +63,6 @@ class factionClass():
           self.raw = faction["deployments"]
           self.armies = self.Armies(deployments)
   
-      class ArmyIdClass:
-        def __init__(self, army_data):
-          self.raw = army_data
-          self.id = army_data["id"]
-          self.name = army_data["name"]
-          self.region = army_data["region"]
-          self.tierOne = army_data["tierOne"]
-          self.tierTwo = army_data["tierTwo"]
-          self.faction = faction["name"]
-  
       class Armies:
           def __init__(self, armies):
               """
@@ -109,6 +99,13 @@ class factionClass():
               self.tierOne = army_data["tierOne"]
               self.tierTwo = army_data["tierTwo"]
               self.faction = faction["name"]
+              #get next turn
+              for i in turnshandler.getTurns()["turns"]:
+                if i["id"] == faction["guild"]:
+                  for d in i["deployments"]:
+                     if d["id"] == army_data["id"]:
+                      self.nextTurn = d["nextTurn"]
+                      break
     
     def factionRegions(id):
       regions = jsonhandler.getregionjson()
@@ -133,7 +130,7 @@ class factionClass():
     self.guild = faction["guild"]
     self.capital = faction["capital"]
     self.regions = factionRegions(faction["guild"])
-    self.turns = turns(faction["name"])
+    self.turns = turns(faction["guild"])
     self.alert = faction["alert"]
 
 class regionClass():

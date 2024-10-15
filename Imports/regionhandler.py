@@ -86,7 +86,7 @@ def regionOwnership(faction,region):
   
   if not (1 <= region <= len(regions)): return False
   region = classhandler.regionClass(regions,region)
-  if faction.name != region.owner: return False
+  if faction.guild != region.owner: return False
   return True
 
 def capital(interaction,regionId):
