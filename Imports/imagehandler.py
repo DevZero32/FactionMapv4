@@ -213,7 +213,7 @@ def assembleMap():
     except FileNotFoundError: 
       buildingImage = addBuildings()
     deploymentImage = addDeployments()
-    titlesImage = Image.open("Data/Map/MapTitles.png").convert("RGBA")
+    titlesImage = Image.open("Data/Map/mapTitles.png").convert("RGBA")
     overviewImage = Image.open("Data/Map/MapOverview.png").convert("RGBA")    
       
     
@@ -228,7 +228,7 @@ def assembleMap():
       borderImage = Image.open("Data/Map/Temp/borderLayer.png").convert("RGBA")
     except FileNotFoundError:
       borderImage = Image.open("Data/Map/MapBorders.png").convert("RGBA")
-    titlesImage = Image.open("Data/Map/MapTitles.png").convert("RGBA")
+    titlesImage = Image.open("Data/Map/mapTitles.png").convert("RGBA")
     overviewImage = Image.open("Data/Map/MapOverview.png").convert("RGBA")  
       
     borderImage.paste(titlesImage,(0,0),titlesImage)
@@ -237,7 +237,7 @@ def assembleMap():
   # === Topograhy ===
   def Topograhy():
     borderImage = Image.open("Data/Map/MapBorders.png").convert("RGBA")
-    titlesImage = Image.open("Data/Map/MapTitles.png").convert("RGBA")
+    titlesImage = Image.open("Data/Map/mapTitles.png").convert("RGBA")
     biomeImage = Image.open("Data/Map/BiomesMap.png").convert("RGBA")
       
     borderImage.paste(titlesImage,(0,0),titlesImage)
@@ -287,7 +287,7 @@ def generateMasks():
     if region["Biome"] == "Ocean": continue
     region = classhandler.regionClass(regions,region["regionId"])
     
-    borderImage = Image.open("Data/Map/MapBorders.png").convert("RGBA")
+    borderImage = Image.open("Data/Map/mapBorders.png").convert("RGBA")
     width, height = borderImage.size
     regionCordinates = findCordinatesWithinBorder(borderImage,region.centre)
 

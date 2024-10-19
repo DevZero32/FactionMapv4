@@ -72,8 +72,8 @@ def displaydeployments(interaction):
 **{deployment.name}**
 
 Location: {deployment.region}
-Teir one: {deployment.tierOne}
-Teir two: {deployment.tierTwo}
+Tier one: {deployment.tierOne}
+Tier two: {deployment.tierTwo}
 
 Interacted: {turned}
 Next interaction: <t:{deployment.nextTurn:.0f}:R>
@@ -104,9 +104,14 @@ def formDeployment(interaction,region,name):
   #Resource check
   if faction.resources.gold <= 49:
     return (f"{faction.name} lack enough gold for make a deployment")
-
   deployments = faction.deployments.raw
-  names = [deployment["name"] for deployment in deployments]
+  names = [
+    deployment["name"]
+    for faction in factions
+    if "deployments" in faction and isinstance(faction["deployments"], list)
+    for deployment in faction["deployments"]
+    if "name" in deployment
+]
   if name in names: return "That name is already taken."
   try:
     highestId = 0
@@ -310,12 +315,12 @@ async def attackDeployment(interaction, client, deploymentName, targetName):
   # === Faction Existence Check ===
   factions = jsonhandler.getfactionsjson()
   if interaction.guild.id not in [faction["guild"] for faction in factions]:
-      return f"{interaction.guild.name} is not a faction."
+      return await interaction.followup.send(f"{interaction.guild.name} is not a faction.")
 
   # === Permission Check ====
   member = interaction.user
   permissions = factionshandler.checkPermissions(interaction,member)
-  if permissions["army"] == False: return "You lack permission to access deployments."
+  if permissions["army"] == False: return await interaction.followup.send("You lack permission to access deployments.")
 
   # === Faction Retrieval ===
   def getFactionViaDeployment(deploymentName):
@@ -348,26 +353,26 @@ async def attackDeployment(interaction, client, deploymentName, targetName):
       attackingDeploymentFound = True
       break
   if attackingDeploymentFound == False:
-    return f"{deploymentName} could not be found."
+    return await interaction.followup.send(f"{deploymentName} could not be found.")
   attackingDeployment = getDeploymentClass(attackingFaction,deploymentIdViaName(attackingFaction,deploymentName))
   # === Turn check ===
-  if turnshandler.checkLogs(attackingDeployment.faction,"deployments",attackingDeployment.id) == True:
-    return f"`Deployment {attackingDeployment.name}` has been interacted with."
+  if turnshandler.checkLogs(attackingDeployment.guild,"deployments",attackingDeployment.id) == True:
+    return await interaction.followup.send(f"`Deployment {attackingDeployment.name}` has been interacted with.")
     
   
   # === Troop size check ===
   if not attackingDeployment.tierOne + attackingDeployment.tierTwo > 0:
-    return f"`Deployment {deploymentName}` has no troops to attack with."
+    return await interaction.followup.send(f"`Deployment {deploymentName}` has no troops to attack with.")
 
   defendingFaction = getFactionViaDeployment(targetName)
-  if defendingFaction == False: return f"{targetName} could not be found."
+  if defendingFaction == False: return await interaction.followup.send(f"{targetName} could not be found.")
   defendingDeployment = getDeploymentClassMethodTwo(defendingFaction,deploymentViaName(defendingFaction,targetName),deploymentIdViaName(defendingFaction,targetName))
 
   # === Nearby Check ===
 
   attackingDeploymentRegion = classhandler.regionClass(jsonhandler.getregionjson(),attackingDeployment.region)
   if defendingDeployment.region not in attackingDeploymentRegion.neighbours and defendingDeployment.region != attackingDeployment.region:
-    return f"{targetName} is not close enough to be attacked."
+    return await interaction.followup.send(f"{targetName} is not close enough to be attacked.")
   # === Battle pre existance check ===
   battleData = mediatorhandler.getMediatorJson()
   allDeployments = []
@@ -383,7 +388,7 @@ async def attackDeployment(interaction, client, deploymentName, targetName):
     deploymentIndex = getDeploymentClass(deploymentFaction ,deploymentIndex["id"])
     if deploymentFaction.name == defendingDeployment.faction and deploymentIndex.id == defendingDeployment.id:
         return f"`Deployment {defendingDeployment.name}` is already in a battle"
-  await interaction.response.send_message(f"`Deployment {deploymentName}` has begun a battle with `Enemy Deployment {targetName}`")
+  await interaction.followup.send(f"`Deployment {deploymentName}` has begun a battle with `Enemy Deployment {targetName}`")
 
   # === Mediator Channel Creation ===
   class BattleInfoClass():
@@ -468,12 +473,14 @@ def occupyRegion(interaction,client,regionId):
     oldFactionId = getFactionIdViaName(region.owner)
     oldFactionGuild = client.get_guild(oldFactionId)
     oldFaction = classhandler.factionClass(region.owner,jsonhandler.getfactionsjson())
+    imagehandler.assembleMap.cache_clear()
     jsonhandler.save_factions(oldFactionGuild,jsonhandler.getfactionsjson(),oldFactionId,oldFaction.resources.raw,oldFaction.deployments.raw,0,oldFaction.permissions.raw)
+    
 
 
   jsonhandler.save_regions(jsonhandler.getregionjson(),regionId,owner=faction.guild,building=region.building)
   imagehandler.assembleMap.cache_clear()
-  imagehandler.updateFactionBorders(faction.id)
+  imagehandler.updateFactionBorders(faction.guild)
   return (f"`Faction {faction.name}` now owns `Region {regionId}`")
 
 def scoutRegion(interaction,regionId):
@@ -522,8 +529,8 @@ def scoutRegion(interaction,regionId):
         header += f"""
 **{deployment.name}**
 
-Teir one: {deployment.tierOne}
-Teir two: {deployment.tierTwo}
+Tier one: {deployment.tierOne}
+Tier two: {deployment.tierTwo}
 
 """
   if not found:

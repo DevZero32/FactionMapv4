@@ -1,5 +1,6 @@
 import json
 import time
+import math
 from random import choice
 from Imports import classhandler,jsonhandler,adminhandler,armyhandler
 
@@ -24,12 +25,15 @@ async def createChannel(interaction,client,battleInfo,mainguild=1074062206297178
   defendingGuild = client.get_guild(battleInfo.defendingFaction.guild)
   guild = client.get_guild(mainguild)
   # Channel creation
-  category = guild.get_channel(1187054838287171704)
+  category = guild.get_channel(1296537719555752076)
   channel = await guild.create_text_channel(f"{battleInfo.attackingFaction.name[0:5]}_V_{battleInfo.defendingFaction.name[0:5]}_R{battleInfo.region}", category=category)
   channel.position = len(category.text_channels)
   channel.topic = f"ATK:{battleInfo.attackingFaction.name} DEF:{battleInfo.defendingFaction.name}"
-  #removing verfied permissions
+  #removing verified permissions
   await channel.set_permissions(target=guild.get_role(1100828097173000333),view_channel=False,read_messages=False,read_message_history=False)
+  #removing unverified permissions
+  await channel.set_permissions(target=guild.get_role(1100827903089971220),view_channel=False,read_messages=False,read_message_history=False)
+
   #mediator
   mediators = guild.get_role(1162115972124114975)
   mediator = choice(mediators.members)
@@ -177,7 +181,7 @@ The chosen mediator for this battle is {mediator.mention}
   except: await channel.send(f"`{battleInfo.defendingFaction.name}` owner couldnt be located, please find a representive.")
 
   # === Adding Mediator Json ===
-  addMediatorJson(channel.id,battleInfo.attackingFaction.id,battleInfo.attackingDeployment.id,battleInfo.defendingFaction.id,battleInfo.defendingDeployment.id,battleInfo.defendingDeployment.region)
+  addMediatorJson(channel.id,battleInfo.attackingFaction.guild,battleInfo.attackingDeployment.id,battleInfo.defendingFaction.guild,battleInfo.defendingDeployment.id,battleInfo.defendingDeployment.region)
 
 async def victor(interaction,client,winningFaction,score):
   # === Permissions Check ===
@@ -196,6 +200,7 @@ async def victor(interaction,client,winningFaction,score):
     return "Score has not been formatted correctly;'Attackers-Defenders' (e.g., 5-1) "
   attackingScore = int(score.split("-")[0])
   defendingScore = int(score.split("-")[1])
+  print(attackingScore,defendingScore)
   if not 0 <= attackingScore <= 5 or not 0 <= defendingScore <= 5:
     return "Score must range between 0-5."
   # === Get channel Class ===
@@ -217,12 +222,12 @@ async def victor(interaction,client,winningFaction,score):
   for deploymentData in channelData.attackingFactionDeployments:
     faction = classhandler.factionClass(deploymentData["faction"],jsonhandler.getfactionsjson())
     deployment = armyhandler.getDeploymentClass(faction,deploymentData["id"])
-    try:
-      Dpercentage = defendingScore//5
-    except ZeroDivisionError: Dpercentage = 0
+    try: Dpercentage = defendingScore/5
+    except ZeroDivisionError: 
+        Dpercentage = 0
     if Dpercentage != 0:
-      tierOne = deployment.tierOne/Dpercentage
-      tierTwo = deployment.tierTwo/Dpercentage
+      tierOne = math.floor(deployment.tierOne*Dpercentage)
+      tierTwo = math.floor(deployment.tierTwo*Dpercentage)
     else:  
         tierOne,tierTwo = deployment.tierOne,deployment.tierTwo
     
@@ -245,14 +250,15 @@ async def victor(interaction,client,winningFaction,score):
   for deploymentData in channelData.defendingFactionDeployments:
     faction = classhandler.factionClass(deploymentData["faction"],jsonhandler.getfactionsjson())
     deployment = armyhandler.getDeploymentClass(faction,deploymentData["id"])
-    try:
-      Apercentage = attackingScore//5
-    except ZeroDivisionError: Apercentage = 0
+    try: Apercentage = attackingScore/5
+    except ZeroDivisionError: 
+        Apercentage = 0
     if Apercentage != 0:
-      tierOne = deployment.tierOne/Apercentage
-      tierTwo = deployment.tierTwo/Apercentage
+      tierOne = math.floor(deployment.tierOne*Apercentage)
+      tierTwo = math.floor(deployment.tierTwo*Apercentage)
+    else:  
+        tierOne,tierTwo = deployment.tierOne,deployment.tierTwo
 
-    else:  tierOne,tierTwo = deployment.tierOne,deployment.tierTwo
     deployments = faction.deployments.raw
     for deploymentIndex in deployments:
         if deploymentIndex["id"] == deploymentData["id"]:
@@ -269,7 +275,7 @@ async def victor(interaction,client,winningFaction,score):
   msg = f"""
 # BATTLE OUTCOME {score}!
 
-{winningFaction} was victourious!
+{classhandler.factionClass(winningFaction,jsonhandler.getfactionsjson()).name} was victourious!
 
 The attacking team suffered an attrition of {Dpercentage*100}%
 The defending team suffered an attrition of {Apercentage*100}%
@@ -431,7 +437,7 @@ async def giveManpower(interaction,client,factionName,manpower):
   
   #name to id
   for i in jsonhandler.getfactionsjson():
-    if i["name"] == factionName:
+    if i["name"] == factionName.name:
       factionId = i["guild"]
       break
 

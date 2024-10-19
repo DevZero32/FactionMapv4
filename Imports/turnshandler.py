@@ -127,7 +127,10 @@ async def initialiseTurnSequence(client):
       offeringAlertChannel = offeringGuild.get_channel(offeringFaction.alert)
       
       # Send the embed to the offering faction's alert channel
-      await offeringAlertChannel.send(embed=embed)
+      try:
+        await offeringAlertChannel.send(embed=embed)
+      except Exception:
+        print(f"Cannot send in {offeringFactionId}")
 
       # Receiving faction
       receivingFaction = classhandler.factionClass(receivingFactionId, jsonhandler.getfactionsjson())
@@ -135,7 +138,10 @@ async def initialiseTurnSequence(client):
       receivingAlertChannel = receivingGuild.get_channel(receivingFaction.alert)
       
       # Send the embed to the receiving faction's alert channel
-      await receivingAlertChannel.send(embed=embed)
+      try:
+        await receivingAlertChannel.send(embed=embed)
+      except Exception:
+        print(f"Cannot message send in {receivingFactionId}")
 
     async def cancelNotify(offeringFactionId, receivingFactionId, client,tradeName,tradeId):
       # Embed
@@ -155,7 +161,11 @@ async def initialiseTurnSequence(client):
       offeringAlertChannel = offeringGuild.get_channel(offeringFaction.alert)
       
       # Send the embed to the offering faction's alert channel
-      await offeringAlertChannel.send(embed=embed)
+      try:
+        await offeringAlertChannel.send(embed=embed)
+      except Exception:
+        print(f"Cannot send in {offeringFactionId}")
+
 
       # Receiving faction
       receivingFaction = classhandler.factionClass(receivingFactionId, jsonhandler.getfactionsjson())
@@ -163,7 +173,10 @@ async def initialiseTurnSequence(client):
       receivingAlertChannel = receivingGuild.get_channel(receivingFaction.alert)
       
       # Send the embed to the receiving faction's alert channel
-      await receivingAlertChannel.send(embed=embed)
+      try:
+        await receivingAlertChannel.send(embed=embed)
+      except Exception:
+        print(f"Cannot message send in {receivingFactionId}")
       
       #cancel trade
       trades = economyHandler.getTrades()
@@ -230,10 +243,10 @@ async def initialiseTurnSequence(client):
             elif resource == "Gold":
                 gold += amount
             if region.building == "Capital":
-              wood += 10
-              iron += 5
-              stone += 10
-              capitalTax = 250
+              wood += 5
+              iron += 3
+              stone += 3
+              capitalTax = 150
               gold += capitalTax
       
       # Count the number of regions with a fort
@@ -275,6 +288,10 @@ def logTurn(factionId, objectType, objectId,duration):
                if i["id"] == objectId:
                   i["lastTurn"] = time.time()
                   i["nextTurn"] = time.time() + duration
+                  
+                  #edge case
+                  if i["nextTurn"] > turns["nextTurn"]: 
+                    i["nextTurn"] = turns["nextTurn"]
 
                   with open("Data/turns.json","w") as file:
                     json.dump(turns, file, indent=4)
@@ -291,6 +308,28 @@ def logTurn(factionId, objectType, objectId,duration):
     with open("Data/turns.json","w") as file:
         json.dump(turns, file, indent=4)
   
+def checkRegionInteraction(regionId: int) -> bool:
+  """
+    Check if a given ID is logged under a specific faction and object type.
+
+    Args:
+        regionId - The id of the region you wish to check
+
+    Returns:
+        bool: True if the ID is found under the specified faction and object type, False otherwise.
+  """
+  regions = jsonhandler.getregionjson()
+  factions = jsonhandler.getfactionsjson()
+  region = classhandler.regionClass(regions,regionId=regionId)
+  if region.owner == "None":
+    return False
+  faction = classhandler.factionClass(region.owner,factions)
+
+  for i in faction.turns.regions:
+      if i["id"] == regionId:
+        if i["nextTurn"] > time.time(): return True
+  return False
+
 
 def checkLogs(factionId, objectType, objectId):
     """

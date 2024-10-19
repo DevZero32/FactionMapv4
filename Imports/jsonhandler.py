@@ -101,10 +101,8 @@ async def add_verifiedfaction(interaction,factionName,id): #Add a faction to ver
   factions = getverifiedfactionsjson()
   
   for faction in factions:
-    if faction["guild"] == id or faction["name"] == factionName:
-        existing_name = faction["name"]
-        await interaction.response.send_message(f"This guild is already occupied; `{existing_name}`.")
-        return "occupied"
+    if faction["guild"] == id:
+        return False
   newfaction = {
       "name": factionName,
       "guild": id
@@ -112,6 +110,7 @@ async def add_verifiedfaction(interaction,factionName,id): #Add a faction to ver
   factions.append(newfaction)
   with open("Data/verifiedfactions.json", "w") as file:
       json.dump(factions, file, indent=4)
+  return True
 
 async def remove_verifiedfaction(interaction,factionName,id):
   factions = getverifiedfactionsjson()

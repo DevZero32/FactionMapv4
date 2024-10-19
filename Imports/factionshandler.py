@@ -14,8 +14,8 @@ async def associatefaction(interaction,link,client):
   guildName = guild.name
 
   addfaction = await jsonhandler.add_verifiedfaction(interaction,guildName,guildId)
-  if addfaction == "occupied": return (f"`{guildName}` has already been added to verified factions.")
-  return (f"`{guildName}` has been added to verified factions.")
+  if addfaction == False: return await interaction.response.send_message(f"`{guildName}` has already been added to verified factions.")
+  return await interaction.response.send_message(f"`{guildName}` has been added to verified factions.")
 
 # === HELPER ===
 def getRolesPermissions(faction,roleId): #Faction being class
@@ -27,6 +27,10 @@ def checkPermissions(interaction,member):
   faction = classhandler.factionClass(interaction.guild.id,jsonhandler.getfactionsjson())
   roles = member.roles
   permissions = {"army": False,"region": False, "faction": False, "trade": False}
+  #admin bypass
+  if interaction.user.guild_permissions.administrator:
+    return {"army": True,"region": True, "faction": True, "trade": True}
+
   for role in roles:
     roleId = role.id
     rolePermissions = getRolesPermissions(faction,roleId)
@@ -175,9 +179,7 @@ Contact {wolf} for futher assistance.
       except Exception as e:
        return await errorMsg(interaction)
   
-  list = []
-  for authorised_faction in authorised_factions:
-    list.append(authorised_faction["guild"])
+  list = [authorised_faction["guild"] for authorised_faction in authorised_factions]
   if guild_id not in list:
     embed = discord.Embed(
       color=discord.Color(int('eb3d47',16)),
@@ -186,8 +188,11 @@ Contact {wolf} for futher assistance.
     embed.set_footer(text="Associate before attempting to setup your faction.")
     embed.set_author(name="Access denied",icon_url="https://cdn.discordapp.com/attachments/763309644261097492/1143966731421896704/image.png?ex=66ba4c8a&is=66b8fb0a&hm=3a8bab4488268865b8094ca7b2a60e7ee406a651729634ebe3d7185a4c9277bc&")
     await interaction.response.send_message(embed=embed)
-
-    await jsonhandler.setup_faction(name,guild_id,client,interaction,alertChannel.id)
+  try:
+    await imagehandler.save_image(logolink,guild_id)
+  except Exception as e:
+       return await errorMsg(interaction)
+  await jsonhandler.setup_faction(name,guild_id,client,interaction,alertChannel.id)
   
 # === LOOKUP ===
 
@@ -255,18 +260,18 @@ async def factionOverview(interaction):
 
   for region in faction.regions:
     region = classhandler.regionClass(jsonhandler.getregionjson(),region)
-    if region.building in ["None","Port"]:
+    if region.building == "None":
       continue
 
     inflowDict = {"Capital":250,"Village":20}
-    outflowDict = {"Fort":50 }
+    outflowDict = {"Fort":50 , "Port": 10}
     
     #inflow
     if region.building in inflowDict:
-      inflow =+ inflowDict[region.building]
+      inflow = inflow + inflowDict[region.building]
 
     elif region.building in outflowDict:
-      outflow =+ outflowDict[region.building]
+      outflow = outflow + outflowDict[region.building]
     
 
   embed = discord.Embed(

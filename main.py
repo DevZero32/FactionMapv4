@@ -68,8 +68,9 @@ async def march(interaction:discord.Interaction,deployment:str , region:int):
 @client.tree.command(name="attack",description = "Attack a deployment.")
 async def attack(interaction:discord.Interaction, deployment:str , target:str): 
   adminhandler.logInteraction(attack,interaction.user)
-  
+  await interaction.response.defer()
   await armyhandler.attackDeployment(interaction,client,deployment,target)
+
 @client.tree.command(name="occupy",description = "Occupy a region.")
 async def occupy(interaction:discord.Interaction, region:int): 
   adminhandler.logInteraction(occupy,interaction.user)
@@ -77,6 +78,7 @@ async def occupy(interaction:discord.Interaction, region:int):
   try:
     await interaction.response.send_message(msg,ephemeral=True)
   except: await interaction.channel.send(msg)
+  
 @client.tree.command(name="scout",description = "Scout a region for deployments.")
 async def scout(interaction:discord.Interaction, region:int): 
   adminhandler.logInteraction(scout,interaction.user)
@@ -241,8 +243,7 @@ async def redraw(interaction:discord.Interaction):
 async def associatefaction(interaction:discord.Interaction,link: str):
   adminhandler.logInteraction(associatefaction,interaction.user)
   
-  msg = await factionshandler.associatefaction(interaction,link,client)
-  await interaction.response.send_message(msg)
+  await factionshandler.associatefaction(interaction,link,client)
   # === MISC ===
 
 @client.tree.command(name="user_lookup",description = "Lookup a user.") #Looks up a user, responds with the servers that they are in (that the bot is in as well)
@@ -267,7 +268,7 @@ discord.app_commands.Choice(name="Political",value=2),
 discord.app_commands.Choice(name="Topography",value=3)])
 async def map(interaction:discord.Interaction,mode: discord.app_commands.Choice[int]):
   adminhandler.logInteraction(map,interaction.user)
-  imagehandler.assembleMap()
+  await asyncio.to_thread(imagehandler.assembleMap)
   await interaction.response.defer()
   if mode.name == "Default":
     return await interaction.followup.send(file=discord.File(f"Data/Map/Temp/mapOverview.png"))

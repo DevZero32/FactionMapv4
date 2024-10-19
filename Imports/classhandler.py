@@ -99,12 +99,18 @@ class factionClass():
               self.tierOne = army_data["tierOne"]
               self.tierTwo = army_data["tierTwo"]
               self.faction = faction["name"]
+              self.guild = faction["guild"]
               #get next turn
-              for i in turnshandler.getTurns()["turns"]:
-                if i["id"] == faction["guild"]:
-                  for d in i["deployments"]:
-                     if d["id"] == army_data["id"]:
-                      self.nextTurn = d["nextTurn"]
+              for turn in turnshandler.getTurns()["turns"]:
+                if turn["id"] == faction["guild"]:
+                  #In the event that the deployment has never been interacted so turn data never existed
+                  deploymentIds = [d["id"]for d in turn["deployments"]]
+                  if army_data["id"] not in deploymentIds:
+                    self.nextTurn = 0
+                    break
+                  for deployment in turn["deployments"]:
+                     if deployment["id"] == army_data["id"]:
+                      self.nextTurn = deployment["nextTurn"]
                       break
     
     def factionRegions(id):

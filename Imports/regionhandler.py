@@ -8,18 +8,26 @@ def regionlookup(interaction, region,regions):
   if region.water == True: 
     landType = "Water" 
   else: landType = "Land"
+
+  regionOwner = "None"
+  if region.owner != "None":
+     regionOwner = classhandler.factionClass(region.owner,jsonhandler.getfactionsjson()).name
+
   msg =(f""" 
   
 # Region {region.id}
 
-Faction: {region.owner}
+Faction: {regionOwner}
 
 Building: {region.building}
 Resources: {", ".join(region.resources)}
 Neighbours: {", ".join(str(neighbour) for neighbour in region.neighbours)}
 
 LandType: {landType}
-Biome: {region.biome}""")
+Biome: {region.biome}
+
+Interacted: {turnshandler.checkRegionInteraction(region.id)}
+   """)
 
   return msg
 
@@ -29,7 +37,7 @@ def build(interaction,regionId,building):
   permissions = factionshandler.checkPermissions(interaction,interaction.user)
   if permissions["region"] == False: return "You lack permissions to build."
   region = classhandler.regionClass(jsonhandler.getregionjson(),regionId)
-  if interaction.guild.name != region.owner: return "You must own this region to build on it"
+  if interaction.guild.id != region.owner: return "You must own this region to build on it"
   #Vers
   faction = classhandler.factionClass(region.owner,jsonhandler.getfactionsjson())
   
@@ -63,7 +71,7 @@ def build(interaction,regionId,building):
   resources.wood -= costs["wood"]
 
   resourcesDict = {'gold': resources.gold, 'iron': resources.iron, 'stone': resources.stone, 'wood': resources.wood, 'manpower': resources.manpower}
-  jsonhandler.save_regions(jsonhandler.getregionjson(),region.id,faction.id,region.building)
+  jsonhandler.save_regions(jsonhandler.getregionjson(),region.id,faction.guild,region.building)
   jsonhandler.save_factions(interaction.guild,jsonhandler.getfactionsjson(),interaction.guild.id,resourcesDict,faction.deployments.raw,faction.capital,faction.permissions.raw)
   turnshandler.logTurn(faction.guild,"regions",region.id,turnshandler.getTurns()["nextTurn"] - time.time())
   imagehandler.assembleMap.cache_clear()
@@ -104,7 +112,7 @@ def capital(interaction,regionId):
   permissions = factionshandler.checkPermissions(interaction,interaction.user)
   if permissions["region"] == False : return "You lack permissions to build a capital."
   region = classhandler.regionClass(jsonhandler.getregionjson(),regionId)
-  if region.owner != "None" and region.owner != faction.name: return f"`Region {region.id}` is occupied, please find another region."
+  if region.owner != "None" and region.owner != faction.guild: return f"`Region {region.id}` is occupied, please find another region."
   #Turn handling
   if turnshandler.checkLogs(faction.guild,"regions",region.id):
     return f"`Region {region.id}` has already been interacted with."
@@ -114,11 +122,11 @@ def capital(interaction,regionId):
     regions = jsonhandler.getregionjson()
     jsonhandler.save_regions(regions,region.id,faction.guild,"Capital")
     jsonhandler.save_factions(interaction.guild,factions,faction.guild,faction.resources.raw,faction.deployments.raw,capital,faction.permissions.raw)
-    imagehandler.updateFactionBorders(faction.id)
+    imagehandler.updateFactionBorders(faction.guild)
     imagehandler.addBuilding(regionId)
     return f"`Faction {faction.name}` initated! Welcome to Faction Map!"
   else:
-    if region.owner != faction.name: return "You must own this region to build here."
+    if region.owner != faction.guild: return "You must own this region to build here."
     resources = faction.resources
     building = "Capital"
 
@@ -142,4 +150,5 @@ def capital(interaction,regionId):
     jsonhandler.save_regions(jsonhandler.getregionjson(),region.id,faction.guild,region.building)
     jsonhandler.save_factions(interaction.guild,jsonhandler.getfactionsjson(),interaction.guild.id,resourcesDict,faction.deployments.raw,faction.capital,faction.permissions.raw)
     turnshandler.logTurn(faction.guild,"regions",region.id,turnshandler.getTurns()["nextTurn"] - time.time())
+    imagehandler.assembleMap.cache_clear()
     return (f"`{building}` built at `Region {region.id}`")
