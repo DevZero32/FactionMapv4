@@ -180,7 +180,7 @@ async def capital(interaction,regionId):
     resourcesDict = {'gold': resources.gold, 'iron': resources.iron, 'stone': resources.stone, 'wood': resources.wood, 'manpower': resources.manpower}
     jsonhandler.save_regions(jsonhandler.getregionjson(),faction.capital,faction.guild,"None")
     jsonhandler.save_regions(jsonhandler.getregionjson(),region.id,faction.guild,region.building)
-    jsonhandler.save_factions(interaction.guild,jsonhandler.getfactionsjson(),interaction.guild.id,resourcesDict,faction.deployments.raw,faction.capital,faction.permissions.raw)
+    jsonhandler.save_factions(interaction.guild,jsonhandler.getfactionsjson(),interaction.guild.id,resourcesDict,faction.deployments.raw,region.id,faction.permissions.raw)
     turnshandler.logTurn(faction.guild,"regions",region.id,turnshandler.getTurns()["nextTurn"] - time.time())
     imagehandler.assembleMap.cache_clear()
     embed = embedhandler.positiveEmbed(f"{building} has been built at {region.id}","Map will be updating to display your new building",f"{building} built")

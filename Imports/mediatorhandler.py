@@ -1,6 +1,7 @@
 import json
 import time
 import math
+import discord
 from random import choice
 from Imports import classhandler,jsonhandler,adminhandler,armyhandler,embedhandler
 
@@ -19,6 +20,27 @@ class mediatorClass():
         self.defendingFactionDeployments = data["defendingDeployments"]
         self.region = data["region"]
         break
+
+async def listPermissionedMembers(faction: classhandler.factionClass,guild: discord.guild,client: discord.client) -> list:
+  mainGuild = client.get_guild(1074062206297178242)
+
+  permissions = faction.permissions.raw
+  armyPermissions = [role["id"] for role in permissions if role["army"]]
+  permissionable = [guild.owner]
+  for member in guild.members:
+    # check if in mainguild
+    if mainGuild.get_member(member) is None:
+      continue
+    #append if admin
+    if member.guild_permissions.administrator:
+      permissionable.append(member)
+      continue
+    #append if has army perms
+    if any(roleId in armyPermissions for roleId in [role.id for role in member.roles]):
+      permissionable.append(member)
+  return permissionable
+
+
 
 async def createChannel(interaction,client,battleInfo,mainguild=1074062206297178242):
   attackingGuild = client.get_guild(battleInfo.attackingFaction.guild)
@@ -76,14 +98,19 @@ Battle rules and preset terms listed in: https://discord.com/channels/1074062206
 The chosen mediator for this battle is {mediator.mention}
 """
   await channel.send(msg)
-  try:
-    await channel.set_permissions(target=attackingGuild.owner,view_channel=True,read_messages=True,read_message_history=True)
-    await channel.send(f"{attackingGuild.owner.mention}")
-  except: await channel.send(f"`{battleInfo.attackingFaction.name}` owner couldnt be located, please find a representive.")
-  try:
-    await channel.set_permissions(target=defendingGuild.owner,view_channel=True,read_messages=True,read_message_history=True)
-    await channel.send(f"{defendingGuild.owner.mention}")
-  except: await channel.send(f"`{battleInfo.defendingFaction.name}` owner couldnt be located, please find a representive.")
+
+  # Assign permissions to users who are in the server & have permission for army / admin
+
+  attackingPermissioned = await listPermissionedMembers(faction=battleInfo.attackingFaction,guild=attackingGuild,client=client)
+  defendingPermissioned = await listPermissionedMembers(faction=battleInfo.defendingFaction,guild=defendingGuild,client=client)
+  for member in attackingPermissioned:
+    await channel.set_permissions(target=member,view_channel=True,read_messages=True,read_message_history=True)
+  for member in defendingPermissioned:
+    await channel.set_permissions(target=member,view_channel=True,read_messages=True,read_message_history=True)
+  
+  # Mention users with their faction
+  await channel.send(f"{battleInfo.attackingFaction.name}: {' '.join([member.mention for member in attackingPermissioned])}")
+  await channel.send(f"{battleInfo.defendingFaction.name}: {' '.join([member.mention for member in defendingPermissioned])}")
 
   # === Adding Mediator Json ===
   addMediatorJson(channel.id,battleInfo.attackingFaction.guild,battleInfo.attackingDeployment.id,battleInfo.defendingFaction.guild,battleInfo.defendingDeployment.id,battleInfo.defendingDeployment.region)

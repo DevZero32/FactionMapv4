@@ -431,6 +431,11 @@ async def attackDeployment(interaction, client, deploymentName, targetName):
   
   defendingDeployment = getDeploymentClassMethodTwo(defendingFaction,deploymentViaName(defendingFaction,targetName),deploymentIdViaName(defendingFaction,targetName))
 
+  # === Same faction check ===
+  if defendingDeployment.guild == attackingDeployment.guild:
+    embed = embedhandler.dangerEmbed("You cannot attack yourself","","Command denied")
+    return await interaction.followup.send(embed=embed)
+
   # === Nearby Check ===
 
   attackingDeploymentRegion = classhandler.regionClass(jsonhandler.getregionjson(),attackingDeployment.region)
