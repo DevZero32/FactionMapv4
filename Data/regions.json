@@ -191,7 +191,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1269140771508846714,
         "neighbours": [
             19,
             2,
@@ -213,7 +213,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1269140771508846714,
         "neighbours": [
             2,
             9,
@@ -282,7 +282,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1269140771508846714,
         "neighbours": [
             34,
             4,
@@ -392,7 +392,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1269140771508846714,
         "neighbours": [
             24,
             2,
@@ -434,7 +434,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1269140771508846714,
         "neighbours": [
             10,
             11,
@@ -443,7 +443,7 @@
             24,
             27
         ],
-        "building": "None",
+        "building": "Village",
         "Biome": "Hills",
         "Resource": {
             "Wood": 1,
@@ -459,7 +459,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1269140771508846714,
         "neighbours": [
             3,
             11,
@@ -482,7 +482,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1193437860469157978,
         "neighbours": [
             33,
             8,
@@ -491,7 +491,7 @@
             20,
             61
         ],
-        "building": "None",
+        "building": "Capital",
         "Biome": "Desert",
         "Resource": {
             "Gold": 3,
@@ -506,7 +506,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1269140771508846714,
         "neighbours": [
             27,
             19,
@@ -652,7 +652,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1295054227571216426,
         "neighbours": [
             17,
             44,
@@ -721,14 +721,14 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1295054227571216426,
         "neighbours": [
             61,
             12,
             29,
             23
         ],
-        "building": "None",
+        "building": "Port",
         "Biome": "Desert",
         "Resource": {
             "Gold": 3,
@@ -743,7 +743,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1269140771508846714,
         "neighbours": [
             36,
             5,
@@ -752,7 +752,7 @@
             47,
             18
         ],
-        "building": "None",
+        "building": "Village",
         "Biome": "Large Hills",
         "Resource": {
             "Gold": 1,
@@ -768,7 +768,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1272283180795298004,
         "neighbours": [
             37,
             38,
@@ -792,7 +792,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1269140771508846714,
         "neighbours": [
             32,
             34,
@@ -818,13 +818,13 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1272283180795298004,
         "neighbours": [
             35,
             26,
             27
         ],
-        "building": "None",
+        "building": "Capital",
         "Biome": "Large Hills",
         "Resource": {
             "Gold": 1,
@@ -864,7 +864,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1269140771508846714,
         "neighbours": [
             28,
             54
@@ -883,7 +883,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1269140771508846714,
         "neighbours": [
             57,
             28,
@@ -925,7 +925,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1275043988860305451,
         "neighbours": [
             64,
             34,
@@ -996,14 +996,14 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1269140771508846714,
         "neighbours": [
             40,
             27,
             28,
             53
         ],
-        "building": "None",
+        "building": "Village",
         "Biome": "Hills",
         "Resource": {
             "Wood": 1,
@@ -1019,7 +1019,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1289617764230889575,
         "neighbours": [
             32,
             36,
@@ -1044,7 +1044,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1275043988860305451,
         "neighbours": [
             34,
             36,
@@ -1114,7 +1114,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1272283180795298004,
         "neighbours": [
             35,
             38,
@@ -1122,7 +1122,7 @@
             56,
             26
         ],
-        "building": "None",
+        "building": "Fort",
         "Biome": "Large Hills",
         "Resource": {
             "Gold": 1,
@@ -1162,7 +1162,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1275043988860305451,
         "neighbours": [
             36,
             42,
@@ -1187,7 +1187,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1269140771508846714,
         "neighbours": [
             45,
             51,
@@ -1210,14 +1210,14 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1269140771508846714,
         "neighbours": [
             57,
             28,
             69,
             39
         ],
-        "building": "None",
+        "building": "Port",
         "Biome": "Dark Forest",
         "Resource": {
             "Wood": 4
@@ -1275,7 +1275,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1269140771508846714,
         "neighbours": [
             69,
             40,
@@ -1283,7 +1283,7 @@
             54,
             63
         ],
-        "building": "None",
+        "building": "Village",
         "Biome": "Large Hills",
         "Resource": {
             "Gold": 1,
@@ -1299,7 +1299,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1289617764230889575,
         "neighbours": [
             73,
             75,
@@ -1324,7 +1324,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1269140771508846714,
         "neighbours": [
             56,
             49,
@@ -1346,7 +1346,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1269140771508846714,
         "neighbours": [
             70,
             51,
@@ -1370,7 +1370,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1295054227571216426,
         "neighbours": [
             33,
             73,
@@ -1394,7 +1394,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1270357897066446868,
         "neighbours": [
             65,
             67,
@@ -1402,7 +1402,7 @@
             55,
             25
         ],
-        "building": "None",
+        "building": "Village",
         "Biome": "Meadowlands",
         "Resource": {
             "Wood": 2,
@@ -1417,7 +1417,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1269140771508846714,
         "neighbours": [
             69,
             70,
@@ -1426,7 +1426,7 @@
             57,
             60
         ],
-        "building": "None",
+        "building": "Village",
         "Biome": "Meadowlands",
         "Resource": {
             "Wood": 2,
@@ -1441,7 +1441,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1275043988860305451,
         "neighbours": [
             25,
             42,
@@ -1463,7 +1463,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1270357897066446868,
         "neighbours": [
             72,
             79,
@@ -1473,7 +1473,7 @@
             28,
             62
         ],
-        "building": "None",
+        "building": "Capital",
         "Biome": "Meadowlands",
         "Resource": {
             "Wood": 2,
@@ -1488,7 +1488,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1295383144555348048,
         "neighbours": [
             64,
             67,
@@ -1496,7 +1496,7 @@
             84,
             25
         ],
-        "building": "None",
+        "building": "Village",
         "Biome": "Meadowlands",
         "Resource": {
             "Wood": 2,
@@ -1534,7 +1534,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1193437860469157978,
         "neighbours": [
             74,
             20,
@@ -1555,7 +1555,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1269140771508846714,
         "neighbours": [
             72,
             78,
@@ -1564,7 +1564,7 @@
             28,
             63
         ],
-        "building": "None",
+        "building": "Capital",
         "Biome": "Dark Forest",
         "Resource": {
             "Wood": 4
@@ -1667,7 +1667,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1193437860469157978,
         "neighbours": [
             96,
             68,
@@ -1717,7 +1717,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1275043988860305451,
         "neighbours": [
             64,
             66,
@@ -1763,14 +1763,14 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1269140771508846714,
         "neighbours": [
             72,
             69,
             70,
             63
         ],
-        "building": "None",
+        "building": "Village",
         "Biome": "Dark Forest",
         "Resource": {
             "Wood": 4
@@ -1784,7 +1784,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1270357897066446868,
         "neighbours": [
             65,
             72,
@@ -1806,7 +1806,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1270357897066446868,
         "neighbours": [
             65,
             81,
@@ -1814,7 +1814,7 @@
             88,
             62
         ],
-        "building": "None",
+        "building": "Village",
         "Biome": "Light Forest",
         "Resource": {
             "Wood": 2
@@ -1828,7 +1828,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1295383144555348048,
         "neighbours": [
             67,
             80,
@@ -1850,7 +1850,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1275043988860305451,
         "neighbours": [
             75,
             76,
@@ -1872,7 +1872,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1270357897066446868,
         "neighbours": [
             65,
             79,
@@ -1895,7 +1895,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1295383144555348048,
         "neighbours": [
             66,
             67,
@@ -1905,7 +1905,7 @@
             82,
             89
         ],
-        "building": "None",
+        "building": "Fort",
         "Biome": "Meadowlands",
         "Resource": {
             "Wood": 2,
@@ -1920,7 +1920,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1295054227571216426,
         "neighbours": [
             96,
             73,
@@ -1985,7 +1985,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1270357897066446868,
         "neighbours": [
             97,
             80,
@@ -2008,7 +2008,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1295383144555348048,
         "neighbours": [
             97,
             75,
@@ -2016,7 +2016,7 @@
             84,
             88
         ],
-        "building": "None",
+        "building": "Capital",
         "Biome": "Hills",
         "Resource": {
             "Wood": 1,
@@ -2055,7 +2055,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1270357897066446868,
         "neighbours": [
             107,
             79,
@@ -2078,7 +2078,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1193437860469157978,
         "neighbours": [
             96,
             68,
@@ -2099,7 +2099,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1270357897066446868,
         "neighbours": [
             97,
             108,
@@ -2168,7 +2168,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1074062206297178242,
         "neighbours": [
             131,
             134,
@@ -2179,7 +2179,7 @@
             126,
             127
         ],
-        "building": "None",
+        "building": "Capital",
         "Biome": "Desert",
         "Resource": {
             "Gold": 3,
@@ -2194,7 +2194,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1295383144555348048,
         "neighbours": [
             75,
             108,
@@ -2217,7 +2217,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1221806984324714506,
         "neighbours": [
             112,
             99,
@@ -2239,7 +2239,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1221806984324714506,
         "neighbours": [
             98,
             100,
@@ -2410,7 +2410,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1295054227571216426,
         "neighbours": [
             96,
             105,
@@ -2432,7 +2432,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1242789353269235743,
         "neighbours": [
             102,
             103,
@@ -2454,7 +2454,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1242789353269235743,
         "neighbours": [
             97,
             133,
@@ -2479,13 +2479,13 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1296077760187334728,
         "neighbours": [
             115,
             125,
             102
         ],
-        "building": "None",
+        "building": "Village",
         "Biome": "Meadowlands",
         "Resource": {
             "Wood": 2,
@@ -2500,7 +2500,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1291288402666455040,
         "neighbours": [
             97,
             75,
@@ -2524,7 +2524,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1221806984324714506,
         "neighbours": [
             129,
             98,
@@ -2550,7 +2550,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1221806984324714506,
         "neighbours": [
             129,
             98,
@@ -2591,7 +2591,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1242789353269235743,
         "neighbours": [
             107,
             108,
@@ -2612,7 +2612,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1296077760187334728,
         "neighbours": [
             102,
             135,
@@ -2621,7 +2621,7 @@
             118,
             125
         ],
-        "building": "None",
+        "building": "Village",
         "Biome": "Forest",
         "Resource": {
             "Wood": 3
@@ -2658,7 +2658,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1291288402666455040,
         "neighbours": [
             133,
             140,
@@ -2683,7 +2683,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1296077760187334728,
         "neighbours": [
             130,
             115,
@@ -2704,7 +2704,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1296077760187334728,
         "neighbours": [
             136,
             121,
@@ -2726,12 +2726,12 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1295054227571216426,
         "neighbours": [
             104,
             124
         ],
-        "building": "None",
+        "building": "Fort",
         "Biome": "Meadowlands",
         "Resource": {
             "Wood": 2,
@@ -2746,7 +2746,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1296077760187334728,
         "neighbours": [
             136,
             101,
@@ -2767,14 +2767,14 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1296077760187334728,
         "neighbours": [
             136,
             125,
             102,
             119
         ],
-        "building": "None",
+        "building": "Village",
         "Biome": "Meadowlands",
         "Resource": {
             "Wood": 2,
@@ -2789,7 +2789,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1291288402666455040,
         "neighbours": [
             139,
             140,
@@ -2813,12 +2813,12 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1295054227571216426,
         "neighbours": [
             104,
             120
         ],
-        "building": "None",
+        "building": "Port",
         "Biome": "Meadowlands",
         "Resource": {
             "Wood": 2,
@@ -2833,7 +2833,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1296077760187334728,
         "neighbours": [
             102,
             136,
@@ -2843,7 +2843,7 @@
             115,
             122
         ],
-        "building": "None",
+        "building": "Capital",
         "Biome": "Meadowlands",
         "Resource": {
             "Wood": 2,
@@ -2858,14 +2858,14 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1295054227571216426,
         "neighbours": [
             96,
             105,
             106,
             131
         ],
-        "building": "None",
+        "building": "Capital",
         "Biome": "Meadowlands",
         "Resource": {
             "Wood": 2,
@@ -2880,7 +2880,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1193437860469157978,
         "neighbours": [
             96,
             146,
@@ -2902,7 +2902,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1206024940453892096,
         "neighbours": [
             104
         ],
@@ -2921,7 +2921,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1221806984324714506,
         "neighbours": [
             112,
             132,
@@ -2944,7 +2944,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1242789353269235743,
         "neighbours": [
             118,
             133,
@@ -2965,7 +2965,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1295054227571216426,
         "neighbours": [
             96,
             105,
@@ -3012,7 +3012,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1242789353269235743,
         "neighbours": [
             130,
             102,
@@ -3021,7 +3021,7 @@
             117,
             149
         ],
-        "building": "None",
+        "building": "Fort",
         "Biome": "Forest",
         "Resource": {
             "Wood": 3
@@ -3035,7 +3035,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1295054227571216426,
         "neighbours": [
             96,
             131,
@@ -3059,7 +3059,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1296077760187334728,
         "neighbours": [
             137,
             138,
@@ -3107,7 +3107,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1296077760187334728,
         "neighbours": [
             161,
             135,
@@ -3130,7 +3130,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1242789353269235743,
         "neighbours": [
             130,
             133,
@@ -3138,7 +3138,7 @@
             147,
             149
         ],
-        "building": "None",
+        "building": "Village",
         "Biome": "Meadowlands",
         "Resource": {
             "Wood": 2,
@@ -3153,7 +3153,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1206024940453892096,
         "neighbours": [
             140,
             141,
@@ -3176,7 +3176,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1291288402666455040,
         "neighbours": [
             139,
             117,
@@ -3184,7 +3184,7 @@
             123,
             159
         ],
-        "building": "None",
+        "building": "Fort",
         "Biome": "Meadowlands",
         "Resource": {
             "Wood": 2,
@@ -3199,7 +3199,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1206024940453892096,
         "neighbours": [
             104,
             139,
@@ -3221,14 +3221,14 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1221806984324714506,
         "neighbours": [
             129,
             132,
             156,
             143
         ],
-        "building": "None",
+        "building": "Village",
         "Biome": "Tundra",
         "Resource": {
             "Wood": 1,
@@ -3267,7 +3267,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1296077760187334728,
         "neighbours": [
             161,
             136,
@@ -3276,7 +3276,7 @@
             154,
             125
         ],
-        "building": "None",
+        "building": "Village",
         "Biome": "Dark Forest",
         "Resource": {
             "Wood": 4
@@ -3332,7 +3332,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1242789353269235743,
         "neighbours": [
             161,
             164,
@@ -3379,7 +3379,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1242789353269235743,
         "neighbours": [
             164,
             133,
@@ -3389,7 +3389,7 @@
             117,
             150
         ],
-        "building": "None",
+        "building": "Capital",
         "Biome": "Forest",
         "Resource": {
             "Wood": 3
@@ -3403,7 +3403,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1291288402666455040,
         "neighbours": [
             165,
             167,
@@ -3427,7 +3427,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1295054227571216426,
         "neighbours": [
             104,
             169,
@@ -3547,14 +3547,14 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1221806984324714506,
         "neighbours": [
             160,
             168,
             142,
             143
         ],
-        "building": "None",
+        "building": "Village",
         "Biome": "Tundra",
         "Resource": {
             "Wood": 1,
@@ -3570,7 +3570,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1206024940453892096,
         "neighbours": [
             169,
             139,
@@ -3579,7 +3579,7 @@
             151,
             159
         ],
-        "building": "None",
+        "building": "Village",
         "Biome": "Light Forest",
         "Resource": {
             "Wood": 2
@@ -3593,7 +3593,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1295054227571216426,
         "neighbours": [
             134,
             177,
@@ -3661,7 +3661,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1296077760187334728,
         "neighbours": [
             137,
             172,
@@ -3727,7 +3727,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1291288402666455040,
         "neighbours": [
             165,
             173,
@@ -3752,7 +3752,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1291288402666455040,
         "neighbours": [
             164,
             196,
@@ -3800,7 +3800,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1291288402666455040,
         "neighbours": [
             196,
             165,
@@ -3824,14 +3824,14 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1221806984324714506,
         "neighbours": [
             160,
             185,
             178,
             156
         ],
-        "building": "None",
+        "building": "Village",
         "Biome": "Tundra",
         "Resource": {
             "Wood": 1,
@@ -3847,7 +3847,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1206024940453892096,
         "neighbours": [
             175,
             181,
@@ -3892,7 +3892,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1296077760187334728,
         "neighbours": [
             192,
             172,
@@ -3914,7 +3914,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1296077760187334728,
         "neighbours": [
             161,
             171,
@@ -3935,7 +3935,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1242789353269235743,
         "neighbours": [
             161,
             147,
@@ -4064,7 +4064,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1296077760187334728,
         "neighbours": [
             161,
             164,
@@ -4089,7 +4089,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1291288402666455040,
         "neighbours": [
             196,
             167,
@@ -4098,7 +4098,7 @@
             210,
             159
         ],
-        "building": "None",
+        "building": "Village",
         "Biome": "Large Hills",
         "Resource": {
             "Gold": 1,
@@ -4114,7 +4114,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1236679921636741120,
         "neighbours": [
             193,
             194,
@@ -4123,7 +4123,7 @@
             155,
             190
         ],
-        "building": "None",
+        "building": "Village",
         "Biome": "Hills",
         "Resource": {
             "Wood": 1,
@@ -4139,7 +4139,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1295054227571216426,
         "neighbours": [
             203,
             174,
@@ -4162,14 +4162,14 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1236679921636741120,
         "neighbours": [
             169,
             193,
             181,
             175
         ],
-        "building": "None",
+        "building": "Village",
         "Biome": "Light Forest",
         "Resource": {
             "Wood": 2
@@ -4204,13 +4204,13 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1221806984324714506,
         "neighbours": [
             168,
             195,
             198
         ],
-        "building": "None",
+        "building": "Village",
         "Biome": "Tundra",
         "Resource": {
             "Wood": 1,
@@ -4301,7 +4301,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1291288402666455040,
         "neighbours": [
             164,
             199,
@@ -4324,14 +4324,14 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1236679921636741120,
         "neighbours": [
             153,
             194,
             155,
             181
         ],
-        "building": "None",
+        "building": "Capital",
         "Biome": "Hills",
         "Resource": {
             "Wood": 1,
@@ -4347,7 +4347,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1296077760187334728,
         "neighbours": [
             192,
             199,
@@ -4372,7 +4372,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1296077760187334728,
         "neighbours": [
             201,
             154,
@@ -4393,7 +4393,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1236679921636741120,
         "neighbours": [
             194,
             206,
@@ -4401,7 +4401,7 @@
             181,
             183
         ],
-        "building": "None",
+        "building": "Port",
         "Biome": "Meadowlands",
         "Resource": {
             "Wood": 2,
@@ -4436,7 +4436,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1221806984324714506,
         "neighbours": [
             197,
             198,
@@ -4458,7 +4458,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1291288402666455040,
         "neighbours": [
             165,
             167,
@@ -4554,7 +4554,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1295054227571216426,
         "neighbours": [
             203,
             221,
@@ -4597,7 +4597,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1291288402666455040,
         "neighbours": [
             210,
             187,
@@ -4618,7 +4618,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1295054227571216426,
         "neighbours": [
             200,
             177,
@@ -4642,7 +4642,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1291288402666455040,
         "neighbours": [
             229,
             206,
@@ -4779,7 +4779,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1291288402666455040,
         "neighbours": [
             196,
             202,
@@ -4802,7 +4802,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1291288402666455040,
         "neighbours": [
             224,
             230,
@@ -4828,7 +4828,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1149119516933103617,
         "neighbours": [
             191,
             201,
@@ -4838,7 +4838,7 @@
             213,
             223
         ],
-        "building": "None",
+        "building": "Port",
         "Biome": "Forest",
         "Resource": {
             "Wood": 3
@@ -4852,7 +4852,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1221806984324714506,
         "neighbours": [
             199,
             242,
@@ -4874,7 +4874,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1295104658611896320,
         "neighbours": [
             220,
             219,
@@ -4897,7 +4897,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1284146865201221692,
         "neighbours": [
             209,
             218,
@@ -4919,7 +4919,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1291288402666455040,
         "neighbours": [
             229,
             233,
@@ -4966,7 +4966,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1284146865201221692,
         "neighbours": [
             235,
             237,
@@ -4990,7 +4990,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1295104658611896320,
         "neighbours": [
             225,
             206,
@@ -5014,7 +5014,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1295104658611896320,
         "neighbours": [
             225,
             229,
@@ -5022,7 +5022,7 @@
             214,
             219
         ],
-        "building": "None",
+        "building": "Capital",
         "Biome": "Forest",
         "Resource": {
             "Wood": 3
@@ -5036,7 +5036,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1284146865201221692,
         "neighbours": [
             200,
             203,
@@ -5044,7 +5044,7 @@
             215,
             218
         ],
-        "building": "None",
+        "building": "Village",
         "Biome": "Desert",
         "Resource": {
             "Gold": 3,
@@ -5059,7 +5059,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1295104658611896320,
         "neighbours": [
             225,
             227,
@@ -5067,7 +5067,7 @@
             206,
             219
         ],
-        "building": "None",
+        "building": "Fort",
         "Biome": "Forest",
         "Resource": {
             "Wood": 3
@@ -5081,7 +5081,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1149119516933103617,
         "neighbours": [
             198,
             207,
@@ -5089,7 +5089,7 @@
             212,
             245
         ],
-        "building": "None",
+        "building": "Fort",
         "Biome": "Dark Forest",
         "Resource": {
             "Wood": 4
@@ -5103,7 +5103,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1291288402666455040,
         "neighbours": [
             228,
             230,
@@ -5127,7 +5127,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1295104658611896320,
         "neighbours": [
             229,
             234,
@@ -5137,7 +5137,7 @@
             220,
             222
         ],
-        "building": "None",
+        "building": "Village",
         "Biome": "Forest",
         "Resource": {
             "Wood": 3
@@ -5151,12 +5151,12 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1221806984324714506,
         "neighbours": [
             249,
             198
         ],
-        "building": "None",
+        "building": "Capital",
         "Biome": "Marsh",
         "Resource": {
             "Wood": 2
@@ -5170,7 +5170,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": 1193437860469157978,
+        "regionOwner": 1287465820024344652,
         "neighbours": [
             208,
             234,
@@ -5193,7 +5193,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1291288402666455040,
         "neighbours": [
             224,
             187,
@@ -5215,7 +5215,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1275043988860305451,
         "neighbours": [
             225,
             204,
@@ -5224,7 +5224,7 @@
             216,
             220
         ],
-        "building": "None",
+        "building": "Village",
         "Biome": "Forest",
         "Resource": {
             "Wood": 3
@@ -5238,7 +5238,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1291288402666455040,
         "neighbours": [
             224,
             257,
@@ -5247,7 +5247,7 @@
             238,
             211
         ],
-        "building": "None",
+        "building": "Village",
         "Biome": "SnowyPeaks",
         "Resource": {
             "Stone": 2,
@@ -5303,7 +5303,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1291288402666455040,
         "neighbours": [
             258,
             239,
@@ -5311,7 +5311,7 @@
             187,
             253
         ],
-        "building": "None",
+        "building": "Port",
         "Biome": "Meadowlands",
         "Resource": {
             "Wood": 2,
@@ -5326,7 +5326,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1295104658611896320,
         "neighbours": [
             225,
             227,
@@ -5348,7 +5348,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1284146865201221692,
         "neighbours": [
             256,
             261,
@@ -5371,14 +5371,14 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1284146865201221692,
         "neighbours": [
             261,
             235,
             221,
             262
         ],
-        "building": "None",
+        "building": "Village",
         "Biome": "Desert",
         "Resource": {
             "Gold": 3,
@@ -5412,7 +5412,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1291288402666455040,
         "neighbours": [
             224,
             257,
@@ -5435,7 +5435,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1291288402666455040,
         "neighbours": [
             258,
             229,
@@ -5445,7 +5445,7 @@
             216,
             254
         ],
-        "building": "None",
+        "building": "Fort",
         "Biome": "Meadowlands",
         "Resource": {
             "Wood": 2,
@@ -5481,7 +5481,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1275043988860305451,
         "neighbours": [
             240,
             225,
@@ -5504,7 +5504,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1149119516933103617,
         "neighbours": [
             264,
             268,
@@ -5549,7 +5549,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1149119516933103617,
         "neighbours": [
             271,
             242,
@@ -5592,7 +5592,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1291288402666455040,
         "neighbours": [
             257,
             228,
@@ -5616,7 +5616,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1221806984324714506,
         "neighbours": [
             267,
             251,
@@ -5637,13 +5637,13 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1097041672979882025,
         "neighbours": [
             208,
             259,
             255
         ],
-        "building": "None",
+        "building": "Fort",
         "Biome": "Meadowlands",
         "Resource": {
             "Wood": 2,
@@ -5658,14 +5658,14 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1221806984324714506,
         "neighbours": [
             226,
             252,
             198,
             270
         ],
-        "building": "None",
+        "building": "Village",
         "Biome": "Dark Forest",
         "Resource": {
             "Wood": 4
@@ -5703,7 +5703,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1221806984324714506,
         "neighbours": [
             260,
             198,
@@ -5747,7 +5747,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1275043988860305451,
         "neighbours": [
             258,
             233,
@@ -5844,7 +5844,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1291288402666455040,
         "neighbours": [
             230,
             263,
@@ -5852,7 +5852,7 @@
             275,
             246
         ],
-        "building": "None",
+        "building": "Village",
         "Biome": "Plateau",
         "Resource": {
             "Iron": 2,
@@ -5867,7 +5867,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1291288402666455040,
         "neighbours": [
             233,
             265,
@@ -5875,7 +5875,7 @@
             253,
             254
         ],
-        "building": "None",
+        "building": "Village",
         "Biome": "Tundra",
         "Resource": {
             "Wood": 1,
@@ -5891,12 +5891,12 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1097041672979882025,
         "neighbours": [
             248,
             255
         ],
-        "building": "None",
+        "building": "Port",
         "Biome": "Meadowlands",
         "Resource": {
             "Wood": 2,
@@ -5911,7 +5911,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1221806984324714506,
         "neighbours": [
             267,
             271,
@@ -5933,7 +5933,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1284146865201221692,
         "neighbours": [
             256,
             262,
@@ -5941,7 +5941,7 @@
             236,
             276
         ],
-        "building": "None",
+        "building": "Village",
         "Biome": "Desert",
         "Resource": {
             "Gold": 3,
@@ -5956,13 +5956,13 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1284146865201221692,
         "neighbours": [
             277,
             236,
             261
         ],
-        "building": "None",
+        "building": "Village",
         "Biome": "Desert",
         "Resource": {
             "Gold": 3,
@@ -5977,7 +5977,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1291288402666455040,
         "neighbours": [
             257,
             293,
@@ -5989,7 +5989,7 @@
             187,
             286
         ],
-        "building": "None",
+        "building": "Fort",
         "Biome": "Forest",
         "Resource": {
             "Wood": 3
@@ -6003,7 +6003,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1221806984324714506,
         "neighbours": [
             268,
             273,
@@ -6027,13 +6027,13 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1289617764230889575,
         "neighbours": [
             258,
             253,
             254
         ],
-        "building": "None",
+        "building": "Capital",
         "Biome": "Forest",
         "Resource": {
             "Wood": 3
@@ -6047,7 +6047,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1275043988860305451,
         "neighbours": [
             269,
             274,
@@ -6055,7 +6055,7 @@
             254,
             255
         ],
-        "building": "None",
+        "building": "Village",
         "Biome": "Light Forest",
         "Resource": {
             "Wood": 2
@@ -6069,7 +6069,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1221806984324714506,
         "neighbours": [
             260,
             252,
@@ -6112,14 +6112,14 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1275043988860305451,
         "neighbours": [
             280,
             266,
             282,
             254
         ],
-        "building": "None",
+        "building": "Capital",
         "Biome": "Light Forest",
         "Resource": {
             "Wood": 2
@@ -6133,7 +6133,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1221806984324714506,
         "neighbours": [
             249,
             252,
@@ -6153,7 +6153,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1077494070747861042,
         "neighbours": [
             260,
             268,
@@ -6162,7 +6162,7 @@
             279,
             283
         ],
-        "building": "None",
+        "building": "Village",
         "Biome": "Dark Forest",
         "Resource": {
             "Wood": 4
@@ -6176,13 +6176,13 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1275043988860305451,
         "neighbours": [
             187,
             253,
             254
         ],
-        "building": "None",
+        "building": "Port",
         "Biome": "Light Forest",
         "Resource": {
             "Wood": 2
@@ -6218,14 +6218,14 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1275043988860305451,
         "neighbours": [
             280,
             281,
             266,
             255
         ],
-        "building": "None",
+        "building": "Village",
         "Biome": "Light Forest",
         "Resource": {
             "Wood": 2
@@ -6239,14 +6239,14 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1291288402666455040,
         "neighbours": [
             257,
             187,
             246,
             263
         ],
-        "building": "None",
+        "building": "Port",
         "Biome": "Marsh",
         "Resource": {
             "Wood": 2
@@ -6260,14 +6260,14 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1284146865201221692,
         "neighbours": [
             256,
             277,
             285,
             261
         ],
-        "building": "None",
+        "building": "Village",
         "Biome": "Hills",
         "Resource": {
             "Wood": 1,
@@ -6283,7 +6283,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1284146865201221692,
         "neighbours": [
             288,
             290,
@@ -6326,7 +6326,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 842352055463968778,
         "neighbours": [
             264,
             268,
@@ -6336,7 +6336,7 @@
             283,
             287
         ],
-        "building": "None",
+        "building": "Fort",
         "Biome": "Light Forest",
         "Resource": {
             "Wood": 2
@@ -6350,7 +6350,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1275043988860305451,
         "neighbours": [
             291,
             292,
@@ -6360,7 +6360,7 @@
             281,
             282
         ],
-        "building": "None",
+        "building": "Village",
         "Biome": "Light Forest",
         "Resource": {
             "Wood": 2
@@ -6374,7 +6374,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1275043988860305451,
         "neighbours": [
             280,
             274,
@@ -6397,7 +6397,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1275043988860305451,
         "neighbours": [
             292,
             294,
@@ -6406,7 +6406,7 @@
             280,
             254
         ],
-        "building": "None",
+        "building": "Village",
         "Biome": "Light Forest",
         "Resource": {
             "Wood": 2
@@ -6420,7 +6420,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1077494070747861042,
         "neighbours": [
             307,
             284,
@@ -6467,14 +6467,14 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1284146865201221692,
         "neighbours": [
             256,
             288,
             296,
             276
         ],
-        "building": "None",
+        "building": "Port",
         "Biome": "Desert",
         "Resource": {
             "Gold": 3,
@@ -6489,7 +6489,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1077494070747861042,
         "neighbours": [
             293,
             263,
@@ -6511,7 +6511,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1077494070747861042,
         "neighbours": [
             293,
             264,
@@ -6522,7 +6522,7 @@
             286,
             319
         ],
-        "building": "None",
+        "building": "Capital",
         "Biome": "Dark Forest",
         "Resource": {
             "Wood": 4
@@ -6536,14 +6536,14 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1284146865201221692,
         "neighbours": [
             296,
             285,
             290,
             277
         ],
-        "building": "None",
+        "building": "Capital",
         "Biome": "Desert",
         "Resource": {
             "Gold": 3,
@@ -6581,13 +6581,13 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1284146865201221692,
         "neighbours": [
             288,
             296,
             277
         ],
-        "building": "None",
+        "building": "Village",
         "Biome": "Desert",
         "Resource": {
             "Gold": 3,
@@ -6602,7 +6602,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1275043988860305451,
         "neighbours": [
             292,
             295,
@@ -6626,7 +6626,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1275043988860305451,
         "neighbours": [
             291,
             301,
@@ -6634,7 +6634,7 @@
             280,
             282
         ],
-        "building": "None",
+        "building": "Village",
         "Biome": "Hills",
         "Resource": {
             "Wood": 1,
@@ -6749,7 +6749,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1275043988860305451,
         "neighbours": [
             312,
             282,
@@ -6770,7 +6770,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1284146865201221692,
         "neighbours": [
             296,
             306,
@@ -6791,7 +6791,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1284146865201221692,
         "neighbours": [
             296,
             304,
@@ -6813,7 +6813,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1284146865201221692,
         "neighbours": [
             296,
             298,
@@ -6836,7 +6836,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1275043988860305451,
         "neighbours": [
             322,
             292,
@@ -6861,11 +6861,11 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1097041672979882025,
         "neighbours": [
             295
         ],
-        "building": "None",
+        "building": "Port",
         "Biome": "Meadowlands",
         "Resource": {
             "Wood": 2,
@@ -6880,7 +6880,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1275043988860305451,
         "neighbours": [
             291,
             292,
@@ -6903,7 +6903,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1284146865201221692,
         "neighbours": [
             296,
             299,
@@ -6924,12 +6924,12 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1289617764230889575,
         "neighbours": [
             309,
             293
         ],
-        "building": "None",
+        "building": "Fort",
         "Biome": "Marsh",
         "Resource": {
             "Wood": 2
@@ -6943,7 +6943,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1284146865201221692,
         "neighbours": [
             296,
             298,
@@ -6952,7 +6952,7 @@
             311,
             314
         ],
-        "building": "None",
+        "building": "Village",
         "Biome": "Desert",
         "Resource": {
             "Gold": 3,
@@ -6967,7 +6967,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1077494070747861042,
         "neighbours": [
             331,
             315,
@@ -6989,14 +6989,14 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1077494070747861042,
         "neighbours": [
             320,
             289,
             284,
             317
         ],
-        "building": "None",
+        "building": "Village",
         "Biome": "Tundra",
         "Resource": {
             "Wood": 1,
@@ -7012,7 +7012,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1289617764230889575,
         "neighbours": [
             287,
             293,
@@ -7055,14 +7055,14 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1284146865201221692,
         "neighbours": [
             321,
             306,
             314,
             310
         ],
-        "building": "None",
+        "building": "Village",
         "Biome": "Desert",
         "Resource": {
             "Gold": 3,
@@ -7077,7 +7077,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1275043988860305451,
         "neighbours": [
             297,
             322,
@@ -7099,7 +7099,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1077494070747861042,
         "neighbours": [
             331,
             333,
@@ -7108,7 +7108,7 @@
             284,
             317
         ],
-        "building": "None",
+        "building": "Village",
         "Biome": "Dark Forest",
         "Resource": {
             "Wood": 4
@@ -7122,7 +7122,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1284146865201221692,
         "neighbours": [
             321,
             323,
@@ -7132,7 +7132,7 @@
             311,
             318
         ],
-        "building": "None",
+        "building": "Fort",
         "Biome": "Desert",
         "Resource": {
             "Gold": 3,
@@ -7147,7 +7147,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1149119516933103617,
         "neighbours": [
             293,
             326,
@@ -7171,7 +7171,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1275043988860305451,
         "neighbours": [
             325,
             295,
@@ -7195,7 +7195,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1077494070747861042,
         "neighbours": [
             320,
             334,
@@ -7203,7 +7203,7 @@
             313,
             284
         ],
-        "building": "None",
+        "building": "Village",
         "Biome": "Dark Forest",
         "Resource": {
             "Wood": 4
@@ -7217,7 +7217,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1097041672979882025,
         "neighbours": [
             323,
             327,
@@ -7225,7 +7225,7 @@
             314,
             316
         ],
-        "building": "None",
+        "building": "Capital",
         "Biome": "Meadowlands",
         "Resource": {
             "Wood": 2,
@@ -7240,7 +7240,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1077494070747861042,
         "neighbours": [
             293,
             309,
@@ -7260,14 +7260,14 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1077494070747861042,
         "neighbours": [
             289,
             308,
             317,
             334
         ],
-        "building": "None",
+        "building": "Fort",
         "Biome": "SnowyPeaks",
         "Resource": {
             "Stone": 2,
@@ -7282,7 +7282,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1288161388086165536,
         "neighbours": [
             323,
             337,
@@ -7290,7 +7290,7 @@
             311,
             314
         ],
-        "building": "None",
+        "building": "Fort",
         "Biome": "Desert",
         "Resource": {
             "Gold": 3,
@@ -7305,7 +7305,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1275043988860305451,
         "neighbours": [
             325,
             294,
@@ -7329,7 +7329,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1097041672979882025,
         "neighbours": [
             321,
             327,
@@ -7337,7 +7337,7 @@
             314,
             318
         ],
-        "building": "None",
+        "building": "Village",
         "Biome": "Desert",
         "Resource": {
             "Gold": 3,
@@ -7352,7 +7352,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1275043988860305451,
         "neighbours": [
             293,
             328,
@@ -7374,7 +7374,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1229003920622485545,
         "neighbours": [
             322,
             327,
@@ -7382,7 +7382,7 @@
             338,
             316
         ],
-        "building": "None",
+        "building": "Capital",
         "Biome": "Hills",
         "Resource": {
             "Wood": 1,
@@ -7398,7 +7398,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1275043988860305451,
         "neighbours": [
             339,
             330,
@@ -7419,7 +7419,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1275043988860305451,
         "neighbours": [
             323,
             325,
@@ -7482,7 +7482,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1275043988860305451,
         "neighbours": [
             344,
             324,
@@ -7525,7 +7525,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1275043988860305451,
         "neighbours": [
             324,
             328,
@@ -7549,7 +7549,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1149119516933103617,
         "neighbours": [
             313,
             331,
@@ -7569,14 +7569,14 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1149119516933103617,
         "neighbours": [
             320,
             313,
             333,
             317
         ],
-        "building": "None",
+        "building": "Village",
         "Biome": "Tundra",
         "Resource": {
             "Wood": 1,
@@ -7592,7 +7592,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1275043988860305451,
         "neighbours": [
             339,
             331,
@@ -7612,7 +7612,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1275043988860305451,
         "neighbours": [
             329,
             322,
@@ -7633,12 +7633,12 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1288161388086165536,
         "neighbours": [
             321,
             341
         ],
-        "building": "None",
+        "building": "Capital",
         "Biome": "Desert",
         "Resource": {
             "Gold": 3,
@@ -7653,14 +7653,14 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1275043988860305451,
         "neighbours": [
             336,
             322,
             340,
             325
         ],
-        "building": "None",
+        "building": "Village",
         "Biome": "Plateau",
         "Resource": {
             "Iron": 2,
@@ -7675,7 +7675,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1275043988860305451,
         "neighbours": [
             344,
             326,
@@ -7695,7 +7695,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1275043988860305451,
         "neighbours": [
             338,
             341,
@@ -7716,7 +7716,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1288161388086165536,
         "neighbours": [
             337,
             323,
@@ -7737,7 +7737,7 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1275043988860305451,
         "neighbours": [
             336,
             329,
@@ -7760,14 +7760,14 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1275043988860305451,
         "neighbours": [
             344,
             324,
             342,
             332
         ],
-        "building": "None",
+        "building": "Village",
         "Biome": "Light Forest",
         "Resource": {
             "Wood": 2
@@ -7781,13 +7781,13 @@
         ],
         "isWaterRegion": false,
         "isLandRegion": true,
-        "regionOwner": "None",
+        "regionOwner": 1275043988860305451,
         "neighbours": [
             330,
             339,
             343
         ],
-        "building": "None",
+        "building": "Village",
         "Biome": "Light Forest",
         "Resource": {
             "Wood": 2

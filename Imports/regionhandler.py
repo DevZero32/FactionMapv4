@@ -1,8 +1,11 @@
-from Imports import jsonhandler,classhandler,factionshandler,turnshandler, imagehandler, armyhandler
+from Imports import jsonhandler,classhandler,factionshandler,turnshandler, imagehandler, armyhandler,embedhandler
 import time
+import asyncio
 
-def regionlookup(interaction, region,regions):
-  if not (1 <= region <= len(regions)): return (f"Region must between 1 and {len(regions)}")
+async def regionlookup(interaction, region,regions):
+  if not (1 <= region <= len(regions)): 
+    embed = embedhandler.dangerEmbed(f"Region must between 1 and {len(regions)}","","Command denied")
+    return interaction.followup.send(embed=embed)
   region = classhandler.regionClass(jsonhandler.getregionjson(),region)
   
   if region.water == True: 
@@ -14,9 +17,6 @@ def regionlookup(interaction, region,regions):
      regionOwner = classhandler.factionClass(region.owner,jsonhandler.getfactionsjson()).name
 
   msg =(f""" 
-  
-# Region {region.id}
-
 Faction: {regionOwner}
 
 Building: {region.building}
@@ -28,22 +28,27 @@ Biome: {region.biome}
 
 Interacted: {turnshandler.checkRegionInteraction(region.id)}
    """)
+  embed = embedhandler.positiveEmbed(msg,"All relevant information",f"Region {region.id}")
+  return await interaction.followup.send(embed=embed)
 
-  return msg
-
-def build(interaction,regionId,building):
-  
+async def build(interaction,regionId,building):
   #Check Permissions
   permissions = factionshandler.checkPermissions(interaction,interaction.user)
-  if permissions["region"] == False: return "You lack permissions to build."
+  if permissions["region"] == False: 
+    embed = embedhandler.dangerEmbed("You lack permissions to access `/build`","Ensure that you have permissions set","Command denied")
+    return await interaction.followup.send(embed=embed)
+  
   region = classhandler.regionClass(jsonhandler.getregionjson(),regionId)
-  if interaction.guild.id != region.owner: return "You must own this region to build on it"
+  if interaction.guild.id != region.owner: 
+    embed = embedhandler.dangerEmbed("You must own this region to build on it","Use occupy to take this region.","Command denied")
+    return await interaction.followup.send(embed=embed)
   #Vers
   faction = classhandler.factionClass(region.owner,jsonhandler.getfactionsjson())
   
   #Turn handling
   if turnshandler.checkLogs(faction.guild,"regions",region.id):
-    return f"`Region {region.id}` has already been interacted with."
+    embed = embedhandler.dangerEmbed(f"`Region {region.id}` has already been interacted with.","Use `/turn` to find when it will be next avaiable","Command denied")
+    return await interaction.followup.send(embed=embed)
   
   resources = faction.resources
   building = building.name
@@ -55,14 +60,24 @@ def build(interaction,regionId,building):
   costs = costs[building]
   #resource requirements
   if not (resources.wood >= costs["wood"] and resources.stone >= costs["stone"] and resources.gold >= costs["gold"] and resources.iron >= costs["iron"]): 
-    return (f"You lack the necessary resources to build {building}.\nGold: {resources.gold}\nIron:{resources.iron}\nStone: {resources.stone}\nWood: {resources.wood}")
+    embed = embedhandler.dangerEmbed(f"You lack the necessary resources to build {building}.\nGold: {resources.gold}\nIron:{resources.iron}\nStone: {resources.stone}\nWood: {resources.wood}","","Command denied")
+    return await interaction.followup.send(embed=embed)
   #Land checks
-  if building == "Port" and not any(classhandler.regionClass(jsonhandler.getregionjson(), neighbour).water for neighbour in region.neighbours): 
-    return "Port must be built on land and near water."
-  if region.building == "Capital": return f"{interaction.user.mention} THATS YOUR CAPITAL YOU NUMPTY!"
-  if region.land == False: return (f"{building} must be built on land.")
+  if building == "Port" and not any(classhandler.regionClass(jsonhandler.getregionjson(), neighbour).water for neighbour in region.neighbours):
+    embed = embedhandler.dangerEmbed("Port must be built on land and next to water","","Command denied")
+    return await interaction.followup.send(embed=embed)
+  if region.building == "Capital":
+    embed = embedhandler.dangerEmbed(f"Attempted to replace Capital with {building}","If you wish to move your capital, use `/capital`","Command denied")
+    return await interaction.followup.send(embed=embed)
 
-  if region.building == building: return (f"{building} is already built at {region.id}")
+  if region.land == False:
+    embed = embedhandler.dangerEmbed(f"{building} must be built on land.","","Command denied")
+    return await interaction.followup.send(embed=embed)
+
+  if region.building == building:
+    embed = embedhandler.dangerEmbed(f"{building} is already built at {region.id}","","Command denied")
+    return await interaction.followup.send(embed=embed)
+
   #Saving
   region.building = building
   resources.gold -= costs["gold"]
@@ -75,7 +90,8 @@ def build(interaction,regionId,building):
   jsonhandler.save_factions(interaction.guild,jsonhandler.getfactionsjson(),interaction.guild.id,resourcesDict,faction.deployments.raw,faction.capital,faction.permissions.raw)
   turnshandler.logTurn(faction.guild,"regions",region.id,turnshandler.getTurns()["nextTurn"] - time.time())
   imagehandler.assembleMap.cache_clear()
-  return (f"{building} built at {region.id}")
+  embed = embedhandler.positiveEmbed(f"{building} has been built at {region.id}","Map will be updating to display your new building",f"{building} built")
+  return await interaction.followup.send(embed=embed)
 
 def regionOwnership(faction,region):
   """
@@ -97,36 +113,49 @@ def regionOwnership(faction,region):
   if faction.guild != region.owner: return False
   return True
 
-def capital(interaction,regionId):
+async def capital(interaction,regionId):
   # === Region Existance Check ====
   if not 0 < regionId <= len(jsonhandler.getregionjson()): return f"`Region {regionId}` is not a valid region."
   region = classhandler.regionClass(jsonhandler.getregionjson(),regionId)
-  if region.water == True: return f"`Region {region.id}` You cannot occupy the ocean."
+  if region.water == True: 
+    embed = embedhandler.dangerEmbed(f"`Region {region.id}` You cannot occupy the ocean.","Find land to occupy","Command denied")
+    return await interaction.followup.send(embed)
   # === Faction Existance Check ====
   factions = jsonhandler.getfactionsjson()
   if interaction.guild.id not in [faction["guild"] for faction in factions]:
-    return f"{interaction.guild.name} is not a faction. please run `/setup` before setting up a capital."
+    embed = embedhandler.dangerEmbed(f"{interaction.guild.name} is not a faction. please run `/setup` before setting up a capital.","","Command denied")
+    return await interaction.followup.send(embed=embed)
   faction = classhandler.factionClass(interaction.guild.id,factions)
   
   #Check Permissions
   permissions = factionshandler.checkPermissions(interaction,interaction.user)
-  if permissions["region"] == False : return "You lack permissions to build a capital."
+  if permissions["region"] == False:
+    embed = embedhandler.dangerEmbed("You lack permissions to build a capital.","Ensure that you have permissions set","Command denied")
+    return await interaction.followup.send(embed=embed)
+
   region = classhandler.regionClass(jsonhandler.getregionjson(),regionId)
-  if region.owner != "None" and region.owner != faction.guild: return f"`Region {region.id}` is occupied, please find another region."
+  if region.owner != "None" and region.owner != faction.guild: 
+    embed = embedhandler.dangerEmbed(f"`Region {region.id}` is occupied, please find another region.","","Command denied")
+    return await interaction.followup.send(embed=embed)
   #Turn handling
   if turnshandler.checkLogs(faction.guild,"regions",region.id):
-    return f"`Region {region.id}` has already been interacted with."
+    embed = embedhandler.dangerEmbed(f"`Region {region.id}` has already been interacted with.","Use `/turn` to find when it will be next avaiable","Command denied")
+    return await interaction.followup.send(embed=embed)
 
   if faction.capital == 0 and len(faction.regions) == 0:
     capital = regionId
     regions = jsonhandler.getregionjson()
     jsonhandler.save_regions(regions,region.id,faction.guild,"Capital")
     jsonhandler.save_factions(interaction.guild,factions,faction.guild,faction.resources.raw,faction.deployments.raw,capital,faction.permissions.raw)
-    imagehandler.updateFactionBorders(faction.guild)
-    imagehandler.addBuilding(regionId)
-    return f"`Faction {faction.name}` initated! Welcome to Faction Map!"
+    await asyncio.to_thread(imagehandler.updateFactionBorders,faction.guild)
+    await asyncio.to_thread(imagehandler.addBuilding,regionId)
+    file,embed = embedhandler.positiveEmbedFactionLogo("Welcome to Faction Map!\n\nYou can now interact with the map.","Refer to the guides if you get stuck",f"{faction.name}` initated!",faction.guild)
+    return await interaction.followup.send(embed=embed,file=file)
   else:
-    if region.owner != faction.guild: return "You must own this region to build here."
+    if region.owner != faction.guild: 
+      embed = embedhandler.dangerEmbed("You must own this region to build here.","","Command denied")
+      return await interaction.followup.send(embed=embed)
+
     resources = faction.resources
     building = "Capital"
 
@@ -135,9 +164,12 @@ def capital(interaction,regionId):
     costs = costs[building]
     #resource requirements
     if not (resources.wood >= costs["wood"] and resources.stone >= costs["stone"] and resources.gold >= costs["gold"] and resources.iron >= costs["iron"]): 
-      return (f"You lack the necessary resources to build {building}.\nGold: {resources.gold}\nIron:{resources.iron}\nStone: {resources.stone}\nWood: {resources.wood}")
+      embed = embedhandler.dangerEmbed(f"You lack the necessary resources to build {building}.\nGold: {resources.gold}\nIron:{resources.iron}\nStone: {resources.stone}\nWood: {resources.wood}","","Command denied")
+      return await interaction.followup.send(embed=embed)
     #Land checks
-    if region.building == building: return (f"{building} is already built at {region.id}")
+    if region.building == building: 
+      embed = embedhandler.dangerEmbed(f"{building} is already built at {region.id}","","Command denied")
+      return await interaction.followup.send(embed=embed)
     #Saving
     region.building = building
     resources.gold -= costs["gold"]
@@ -151,4 +183,5 @@ def capital(interaction,regionId):
     jsonhandler.save_factions(interaction.guild,jsonhandler.getfactionsjson(),interaction.guild.id,resourcesDict,faction.deployments.raw,faction.capital,faction.permissions.raw)
     turnshandler.logTurn(faction.guild,"regions",region.id,turnshandler.getTurns()["nextTurn"] - time.time())
     imagehandler.assembleMap.cache_clear()
-    return (f"`{building}` built at `Region {region.id}`")
+    embed = embedhandler.positiveEmbed(f"{building} has been built at {region.id}","Map will be updating to display your new building",f"{building} built")
+    return await interaction.followup.send(embed=embed)

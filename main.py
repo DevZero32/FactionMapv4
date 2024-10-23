@@ -1,7 +1,7 @@
 import discord
 from discord import app_commands
 from discord.ext import commands
-from Imports import jsonhandler, adminhandler, imagehandler,factionshandler,regionhandler,armyhandler,turnshandler,mediatorhandler,classhandler,economyHandler
+from Imports import jsonhandler, adminhandler, imagehandler,factionshandler,regionhandler,armyhandler,turnshandler,mediatorhandler,classhandler,economyHandler,embedhandler
 import os
 import asyncio
 
@@ -22,29 +22,30 @@ async def on_ready():
 @client.tree.command(name="test",description = "This command is used for testing.")
 async def Test(interaction:discord.Interaction):
   adminhandler.logInteraction(Test,interaction.user)
-  latency = client.latency
-  await interaction.response.send_message(f"Test Sucessful Ping:{latency}ms")
+
+  file,embed = embedhandler.positiveEmbedFactionLogo(f"latency: {client.latency}","Footer test","Author test",1074062206297178242)
+  await interaction.response.send_message(embed=embed,file=file)
   
 # === ARMY COMMANDS ===
 @client.tree.command(name="armies",description = "Infomation on armies in your faction")
 async def armies(interaction:discord.Interaction):
   adminhandler.logInteraction(armies,interaction.user)
-  msg = await asyncio.to_thread(armyhandler.displaydeployments,interaction)
-  
-  await interaction.response.send_message(msg,ephemeral=True)
+  await interaction.response.defer()
+  await armyhandler.displaydeployments(interaction)
 
 @client.tree.command(name="form",description = "Form an army to rally to")
 async def form(interaction:discord.Interaction, region: int, name: str):
   adminhandler.logInteraction(form,interaction.user)
 
-  msg = await asyncio.to_thread(armyhandler.formDeployment,interaction,region,name)
-  await interaction.response.send_message(msg,ephemeral=True)
+  await interaction.response.defer()
+  await armyhandler.formDeployment(interaction,region,name)
+
 @client.tree.command(name="disband",description = "Disband an army.")
 async def disband(interaction:discord.Interaction,name: str):
   adminhandler.logInteraction(disband,interaction.user)
-  
-  msg = await asyncio.to_thread(armyhandler.disbandDeployment,interaction,name)
-  await interaction.response.send_message(msg,ephemeral=True)
+  await interaction.response.defer()
+  armyhandler.disbandDeployment(interaction,name)
+
 
 @app_commands.describe(inf_type="Decide the type to rally. T1 cost: 50 Gold, 1 Manpower T2 cost: 150 gold, 3 manpower")
 @app_commands.choices(inf_type=[
@@ -53,38 +54,38 @@ async def disband(interaction:discord.Interaction,name: str):
 @client.tree.command(name="rally",description = "Rally to an army at a fort or the capital.")
 async def rally(interaction:discord.Interaction, inf_type: discord.app_commands.Choice[int], quantity:int, deployment: str):
   adminhandler.logInteraction(rally,interaction.user)
-  msg = await asyncio.to_thread(armyhandler.rallyDeployment,interaction,inf_type,quantity,deployment)
-  
-  await interaction.response.send_message(msg,ephemeral=True)
+
+  await interaction.response.defer()
+  await armyhandler.rallyDeployment(interaction,inf_type,quantity,deployment)
 
 @client.tree.command(name="march",description = "March an army to a neighbouring reigion.")
 @app_commands.describe(region="March a deployment to a nieghbouring region.")
 @app_commands.describe(deployment="Enter the deploments name.")
 async def march(interaction:discord.Interaction,deployment:str , region:int):
   adminhandler.logInteraction(march,interaction.user)
-  msg = await asyncio.to_thread(armyhandler.marchDeployment,interaction,deployment,region)
-  await interaction.response.send_message(msg,ephemeral=True)
+
+  await interaction.response.defer()
+  await armyhandler.marchDeployment(client,interaction,deployment,region)
 
 @client.tree.command(name="attack",description = "Attack a deployment.")
 async def attack(interaction:discord.Interaction, deployment:str , target:str): 
   adminhandler.logInteraction(attack,interaction.user)
+
   await interaction.response.defer()
   await armyhandler.attackDeployment(interaction,client,deployment,target)
 
 @client.tree.command(name="occupy",description = "Occupy a region.")
 async def occupy(interaction:discord.Interaction, region:int): 
   adminhandler.logInteraction(occupy,interaction.user)
-  msg = await asyncio.to_thread(armyhandler.occupyRegion,interaction,client,region)
-  try:
-    await interaction.response.send_message(msg,ephemeral=True)
-  except: await interaction.channel.send(msg)
+  await interaction.response.defer()
+  await armyhandler.occupyRegion(interaction,client,region)
   
 @client.tree.command(name="scout",description = "Scout a region for deployments.")
 async def scout(interaction:discord.Interaction, region:int): 
   adminhandler.logInteraction(scout,interaction.user)
 
-  msg = await asyncio.to_thread(armyhandler.scoutRegion,interaction,region)
-  await interaction.response.send_message(msg,ephemeral=True)
+  await interaction.response.defer()
+  await armyhandler.scoutRegion(interaction,region)
 
 # === ECONOMY ===
 
@@ -110,8 +111,9 @@ async def cancel_trades(interaction:discord.Interaction):
 async def regionlookup(interaction: discord.Interaction, region: int):
   adminhandler.logInteraction(regionlookup,interaction.user)
   
-  msg = await asyncio.to_thread(regionhandler.regionlookup,interaction, region,jsonhandler.getregionjson())
-  await interaction.response.send_message(msg)
+  await interaction.response.defer()
+  await regionhandler.regionlookup(interaction, region,jsonhandler.getregionjson())
+ 
 
 @client.tree.command(name="build", description=("Build in a region"))
 @app_commands.describe(region=(f"Region Selector. between 1 and {len(jsonhandler.getregionjson())}"))
@@ -124,8 +126,8 @@ async def regionlookup(interaction: discord.Interaction, region: int):
 async def build(interaction: discord.Interaction, building: discord.app_commands.Choice[int], region: int):
   adminhandler.logInteraction(build,interaction.user)
   
-  msg = await asyncio.to_thread(regionhandler.build,interaction,region,building)
-  await interaction.response.send_message(msg)
+  await interaction.response.defer()
+  await regionhandler.build(interaction,region,building)
 
 # === FACTION ===
 @client.tree.command(name="overview",description="Get an overview of your faction.")
@@ -143,19 +145,16 @@ async def Setup(interaction:discord.Interaction,alert_channel: discord.TextChann
 @client.tree.command(name="capital",description = "Set/Update your capital | Update Costs: 750 Gold, 20 Iron, 50 Stone, 50 Wood")
 async def capital(interaction:discord.Interaction, region: int):
   adminhandler.logInteraction(capital,interaction.user)
-  
-  msg = await asyncio.to_thread(regionhandler.capital,interaction,region)
-  await interaction.response.send_message(msg)
-
+  await interaction.response.defer()
+  await regionhandler.capital(interaction,region)
 
 @client.tree.command(name="permissions",description = "Views all the roles with permissions.")
 async def permissions (interaction:discord.Interaction):
   adminhandler.logInteraction(permissions,interaction.user)
-  guild = interaction.guild
-  name = guild.name
-  
+  await interaction.response.defer()
+
   msg = await asyncio.to_thread(factionshandler.displayPermissions,interaction,interaction.guild.id,client)
-  await interaction.response.send_message(msg)
+  await interaction.followup.send(msg)
 
 
 @client.tree.command(name="set_permissions",description = "Edit a roles permissions within Faction Map")
@@ -267,13 +266,19 @@ async def factionlookup(interaction:discord.Interaction, faction: discord.app_co
 discord.app_commands.Choice(name="Political",value=2),
 discord.app_commands.Choice(name="Topography",value=3)])
 async def map(interaction:discord.Interaction,mode: discord.app_commands.Choice[int]):
+  await interaction.response.defer()
   adminhandler.logInteraction(map,interaction.user)
   await asyncio.to_thread(imagehandler.assembleMap)
-  await interaction.response.defer()
   if mode.name == "Default":
-    return await interaction.followup.send(file=discord.File(f"Data/Map/Temp/mapOverview.png"))
+    try:
+      return await interaction.followup.send(file=discord.File(f"Data/Map/Temp/mapOverview.png"))
+    except Exception:
+      return await interaction.followup.send("The map is currently redrawing")
   mapFile = f"Data/Map/Temp/{(mode.name).lower()}Overview.png"
-  await interaction.followup.send(file=discord.File(mapFile))
+  try:
+    await interaction.followup.send(file=discord.File(mapFile))
+  except Exception:
+    await interaction.followup.send("The map is currently redrawing")
   
 @client.tree.command(name="turn",description = "How long is left of the current turn")
 async def turn(interaction:discord.Interaction):

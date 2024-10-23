@@ -1,1 +1,104 @@
-[]
+[
+    {
+        "id": 1297303155796738058,
+        "attackingFaction": 1221806984324714506,
+        "attackingDeployments": [
+            {
+                "faction": 1221806984324714506,
+                "id": 1
+            }
+        ],
+        "defendingFaction": 842352055463968778,
+        "defendingDeployments": [
+            {
+                "faction": 842352055463968778,
+                "id": 1
+            }
+        ],
+        "region": 284
+    },
+    {
+        "id": 1297531143612006411,
+        "attackingFaction": 1295104658611896320,
+        "attackingDeployments": [
+            {
+                "faction": 1295104658611896320,
+                "id": 1
+            },
+            {
+                "faction": 1295104658611896320,
+                "id": 2
+            },
+            {
+                "faction": 1295104658611896320,
+                "id": 3
+            }
+        ],
+        "defendingFaction": 1287465820024344652,
+        "defendingDeployments": [
+            {
+                "faction": 1287465820024344652,
+                "id": 1
+            }
+        ],
+        "region": 227
+    },
+    {
+        "id": 1297618462063071305,
+        "attackingFaction": 1077494070747861042,
+        "attackingDeployments": [
+            {
+                "faction": 1077494070747861042,
+                "id": 4
+            }
+        ],
+        "defendingFaction": 1149119516933103617,
+        "defendingDeployments": [
+            {
+                "faction": 1149119516933103617,
+                "id": 1
+            },
+            {
+                "faction": 1221806984324714506,
+                "id": 4
+            }
+        ],
+        "region": 315
+    },
+    {
+        "id": 1297624930694860840,
+        "attackingFaction": 1149119516933103617,
+        "attackingDeployments": [
+            {
+                "faction": 1149119516933103617,
+                "id": 4
+            }
+        ],
+        "defendingFaction": 842352055463968778,
+        "defendingDeployments": [
+            {
+                "faction": 842352055463968778,
+                "id": 2
+            }
+        ],
+        "region": 242
+    },
+    {
+        "id": 1297648372177440778,
+        "attackingFaction": 1077494070747861042,
+        "attackingDeployments": [
+            {
+                "faction": 1077494070747861042,
+                "id": 5
+            }
+        ],
+        "defendingFaction": 1289617764230889575,
+        "defendingDeployments": [
+            {
+                "faction": 1289617764230889575,
+                "id": 1
+            }
+        ],
+        "region": 309
+    }
+]

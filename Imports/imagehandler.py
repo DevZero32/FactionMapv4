@@ -7,58 +7,9 @@ import imghdr
 from functools import lru_cache
 import numpy as np
 
-async def save_image(imageUrl, guildId):
-  response = requests.get(imageUrl)
-  imgData = response.content
+# === ALGROS ===
 
-  imageFormat = str(imghdr.what(None, h=imgData))
-  supportedFormats = ["png", "jpg", "jpeg", "bmp"]
-
-  if imageFormat in supportedFormats:
-    image = Image.open(BytesIO(imgData))
-    image = image.convert("RGBA")
-    image.save(f'Data/Logos/{guildId}.png')
-  else:
-    raise Warning(f"{imageFormat} is not supported as a format type.")
-
-
-# Map assembly
-def redraw():
-  # === Temp file removal ===
-  try:
-      os.remove("Data/Map/Temp/borderLayer.png")
-  except: pass
-  try:
-      os.remove("Data/Map/Temp/MapBuildings.png")
-  except: pass
-  try:
-      os.remove("Data/Map/Temp/mapOverview.png")
-  except: pass
-  mapBorders = Image.open("Data/Map/MapBorders.png").convert("RGBA")
-
-  for faction in jsonhandler.getfactionsjson():
-    compositePaste(mapBorders,faction["guild"])
-  
-  addBuildings()
-  assembleMap.cache_clear()
-
-
-def updateFactionBorders(factionId):
-  try:
-    mapImage = Image.open("Data/Map/Temp/borderLayer.png").convert("RGBA")
-  except: mapImage = Image.open("Data/Map/MapBorders.png").convert("RGBA")
-  
-  factions = jsonhandler.getfactionsjson()
-  for faction in factions:
-    if faction["guild"] != factionId:
-      continue
-    compositePaste(mapImage,factionId)
-
-  assembleMap.cache_clear()
-  assembleMap()
-
-def compositePaste(baseImage,factionId):
-  def calculateOffset(image, center):
+def calculateOffset(image, center):
     # Get the size of the image
     img_width, img_height = image.size
 
@@ -66,8 +17,8 @@ def compositePaste(baseImage,factionId):
     offset = (center[0] - img_width // 2, center[1] - img_height // 2)
 
     return offset
-  
-  def getCenterAndBoundingBoxSize(image):
+
+def getCenterAndBoundingBoxSize(image):
     # Convert the image to a NumPy array
     imgArray = np.array(image)
 
@@ -89,39 +40,168 @@ def compositePaste(baseImage,factionId):
     else:
         return None, None
 
+def calContinousLand(regionId: int) -> list:
+    """
+    Returns all connected regions with the same owner starting from the given regionId.
+    """
+
+    # Get the region data
+    regions = jsonhandler.getregionjson()
+    
+    # Initialize stack for DFS and a list to store connected lands
+    connectedLands = []
+    stack = [regionId]
+    
+    # To avoid visiting the same region multiple times
+    visited = set()
+    
+    # Get the region class for the starting region
+    start_region = classhandler.regionClass(regions=regions, regionId=regionId)
+    owner = start_region.owner
+
+    # DFS Loop
+    while stack:
+        current_region_id = stack.pop()
+        
+        # Skip if already visited
+        if current_region_id in visited:
+            continue
+        
+        # Mark as visited
+        visited.add(current_region_id)
+        # Add to connected lands (only once since we're checking 'visited')
+        connectedLands.append(current_region_id)
+        # Get the current region class
+        current_region = classhandler.regionClass(regions=regions, regionId=current_region_id)
+        
+        # Explore neighbors
+        for neighbor_id in current_region.neighbours:
+            neighbor = classhandler.regionClass(regions=regions, regionId=neighbor_id)
+            # If the neighbor has the same owner and hasn't been visited, add to the stack
+            if neighbor.owner == owner and neighbor_id not in visited:
+                stack.append(neighbor_id)
+    return connectedLands
+
+# === IMAGE ===
+
+async def save_image(imageUrl, guildId):
+  response = requests.get(imageUrl)
+  imgData = response.content
+
+  imageFormat = str(imghdr.what(None, h=imgData))
+  supportedFormats = ["png", "jpg", "jpeg", "bmp"]
+
+  if imageFormat in supportedFormats:
+    image = Image.open(BytesIO(imgData))
+    image = image.convert("RGBA")
+    image.save(f'Data/Logos/{guildId}.png')
+  else:
+    raise Warning(f"{imageFormat} is not supported as a format type.")
+
+
+# Map assembly
+def redraw() -> None:
+  # === Temp file removal ===
+  try:
+      os.remove("Data/Map/Temp/borderLayer.png")
+  except: pass
+  try:
+      os.remove("Data/Map/Temp/MapBuildings.png")
+  except: pass
+  try:
+      os.remove("Data/Map/Temp/mapOverview.png")
+  except: pass
+  mapBorders = Image.open("Data/Map/MapBorders.png").convert("RGBA")
+
+  for faction in jsonhandler.getfactionsjson():
+    compositePaste(mapBorders,faction["guild"]).save("Data/Map/Temp/borderLayer.png")
+
+  addBuildings()
+  assembleMap.cache_clear()
+
+
+def updateFactionBorders(factionId):
+  try:
+    # Load the existing map with borders or create a new one if not found
+    mapImage = Image.open("Data/Map/Temp/borderLayer.png").convert("RGBA")
+  except:
+    mapImage = Image.open("Data/Map/MapBorders.png").convert("RGBA")
   
+  # Get faction data
+  faction = classhandler.factionClass(factionId=factionId, factions=jsonhandler.getfactionsjson())
+  factionRegions = faction.regions
+
+  # Collect lands (connected regions) of the faction
+  lands = []
+  for region in factionRegions:
+    if region not in [r for area in lands for r in area["area"]]:
+      # Calculate the continuous area
+      area = calContinousLand(regionId=region)
+      lands.append({"area": area})
+
+  # Load base image to apply changes onto
+  baseImage = Image.open("Data/Map/MapBorders.png").convert("RGBA")
+  
+  # Now, only update the affected areas
+  for land in lands:
+    area = land["area"]
+
+    # Create a mask for the area and clear the old one
+    areaMask = Image.new("RGBA", mapImage.size, (255, 255, 255, 0))  # Transparent mask
+    for regionId in area:
+      # Open the mask image corresponding to the region and paste it into the area mask
+      regionMask = Image.open(f"Data/Map/Temp/Masks/{regionId}.png").convert("RGBA")
+      areaMask.paste(regionMask, (0, 0), regionMask)
+    
+    # Clear the old area from the map by setting its alpha to 0
+    clearMask = Image.new("RGBA", areaMask.size, (255, 255, 255, 0))  # Fully transparent
+    mapImage.paste(clearMask, (0, 0), areaMask)
+
+    compositePaste(mapImage,faction.guild).save("Data/Map/Temp/borderLayer.png")
+
+  # Save the updated border layer
+  mapImage.save("Data/Map/Temp/borderLayer.png")
+
+  assembleMap.cache_clear()
+  assembleMap()
+
+def compositePaste(baseImage,factionId):
   try: 
     baseImage = Image.open(baseImage).convert("RGBA")
   except: pass
-  # === Faction Id ===
-  for factionIndex in jsonhandler.getfactionsjson():
-    if factionIndex["guild"] == factionId:
-      factionId = factionIndex["guild"]
-      break
-  # === Mask creation ===
-  factionMask = Image.new("RGBA",baseImage.size,(255,255,255,0))
-
-  for region in  jsonhandler.getregionjson():
-    if region["regionOwner"] != factionIndex["guild"]: continue
-    regionId = region["regionId"]
-
-    mask = Image.open(f"Data/Map/Temp/Masks/{regionId}.png").convert("RGBA")
-    factionMask.paste(mask,(0,0),mask)
-  #  === Finalise faction logo ===
-  centre,boundingBox = getCenterAndBoundingBoxSize(factionMask)
-  if boundingBox == None or centre == None:
-    return
+  # === Faction class ===
   
-  logoImage = Image.new("RGBA",baseImage.size,(0,0,0,0))
-  logo = Image.open(f"Data/Logos/{factionId}.png").convert("RGBA").resize(boundingBox)
-  logo.putalpha(230)
-  centre = calculateOffset(logo,centre)
-  logoImage.paste(logo,centre,logo)
+  lands = []
+  faction = classhandler.factionClass(factionId=factionId,factions=jsonhandler.getfactionsjson())
+  factionRegions = faction.regions
 
-  factionMask = Image.composite(logoImage,factionMask,factionMask)
+  for region in factionRegions:
+    if region not in [r for area in lands for r in area["area"]]:
 
-  baseImage.paste(factionMask,(0,0),factionMask)
-  baseImage.save("Data/Map/Temp/borderLayer.png")
+      area = calContinousLand(regionId=region)
+      lands.append({"area":area})
+
+      if area not in [a["area"] for a in lands]:
+        lands.append({"area": area})
+      
+      #applying
+      areaMask = Image.new("RGBA",baseImage.size,(255,255,255,0))
+      for i in area:
+        i = Image.open(f"Data/Map/Temp/Masks/{i}.png").convert("RGBA")
+        areaMask.paste(i,(0,0),i)
+      
+      centre,boundingBox = getCenterAndBoundingBoxSize(areaMask)
+      if boundingBox == None or centre == None:
+        return
+
+      logoImage = Image.new("RGBA",baseImage.size,(0,0,0,0))
+      logo = Image.open(f"Data/Logos/{factionId}.png").convert("RGBA").resize(boundingBox)
+      logo.putalpha(230)
+
+      logoImage.paste(logo,calculateOffset(logo,centre),logo)
+      areaMask = Image.composite(logoImage,areaMask,areaMask)
+
+      baseImage.paste(areaMask,(0,0),areaMask)
   return baseImage
 
 def addBuilding(regionId):
@@ -151,16 +231,7 @@ def addBuildings():
   regions = jsonhandler.getregionjson()
   for region in regions:
     region = classhandler.regionClass(regions,region["regionId"])
-    deploymentPresence = False
-    for faction in factions:
-      faction = classhandler.factionClass(faction["guild"],factions)
-      for deployment in faction.deployments.raw:
-        deployment = armyhandler.getDeploymentClass(faction,deployment["id"])
-        if deployment.region == region.id:
-          deploymentPresence = True
-          break
-      if deploymentPresence == True: break
-    
+
     if region.building != "None":
       regionBuilding = Image.open(f"Data/Map/Buildings/{(region.building).lower()}.png").convert("RGBA")
       width,height = region.centre
@@ -177,8 +248,7 @@ def addDeployments():
   # === Get all regions with a deployment
   deploymentRegions = []
   for faction in factions:
-    faction = classhandler.factionClass(faction["guild"],factions)
-    for deployment in faction.deployments.raw:
+    for deployment in faction["deployments"]:
       if deployment["region"] != deploymentRegions:
         deploymentRegions.append(deployment["region"])
   # === Get Image ===
@@ -190,10 +260,11 @@ def addDeployments():
     
   # === Pasting images if no building ===
 
+  manpowerIcon = Image.open("Data/Map/Buildings/manpower.png").convert("RGBA")
+
   for region in deploymentRegions:
     region = classhandler.regionClass(regions,region)
     if region.building == "None":
-      manpowerIcon = Image.open("Data/Map/Buildings/manpower.png").convert("RGBA")
       width,height = region.centre
       width -= 12
       height -= 12

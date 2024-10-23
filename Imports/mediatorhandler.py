@@ -2,7 +2,7 @@ import json
 import time
 import math
 from random import choice
-from Imports import classhandler,jsonhandler,adminhandler,armyhandler
+from Imports import classhandler,jsonhandler,adminhandler,armyhandler,embedhandler
 
 class mediatorClass():
   def __init__(self,id):
@@ -70,107 +70,12 @@ Nearby factions that could assist:
 {nearbyFactions}
 
 Region building: `{region.building}`
-*This affects the map chosen, your mediator will reveal the map to you.*
 
-Terms will be selected by the mediator to ensure that the battle is fair and is controlled by the rules of faction map.
-
-# Battle Rules
-
-- Only commanders & Mediators may use global chat, only exception being at the end of the round. (soliders use `/team` whilst chatting)
-- Only may the Mediator present the score, this is to prevent confusion.
-- Mediators have the ability to decide when a round starts.
-- Mediators have the ability to cancel a round due to cheating.
-- Mediators must have access to admin commands on the private server where the battle is hosted.
-- Battles are first to 5, unless a mediator adjusts this before in terms.
-- Failing to comply with a mediator is an instant defeat.
-
-# Preset Terms
-
-Map: Given by Mediator
-Rally size: determined by `/team` *total sizes*
-Mercs: :x:
-Pause time: :white_check_mark:
-
-Time: Discussed and chosen by mediator to best accommodate everyone
-Server: Discussed and chosen by mediator to best accommodate everyone
-
-# Troops
-
-Each team has its own rally size, with their own tiers of troops with their own counts. This limits the amount of troops per class you have:
-
-** Tier One**
-- Sappers
-- Archers
-- Light Infantry
-- General Infantry
-
-**Tier Two**
-- Heavy Infantry
-- Cavalry
+Battle rules and preset terms listed in: https://discord.com/channels/1074062206297178242/1296539718380687462
 
 The chosen mediator for this battle is {mediator.mention}
 """
-  # Text too big
-  if len(msg) >= 2000:
-    await channel.send(msg)
-  else:
-    msgOne = f"""
-# Battle information:
-
-{battleInfo.attackingFaction.name} Vs {battleInfo.defendingFaction.name}
-
-{battleInfo.attackingFaction.name} has brought the following troops:
-Deployment: {battleInfo.attackingDeployment.name}
-Tier One: `{battleInfo.attackingDeployment.tierOne}`
-Tier Two: `{battleInfo.attackingDeployment.tierTwo}`
-
-{battleInfo.defendingFaction.name} has brought the following troops:
-Deployment: {battleInfo.defendingDeployment.name}
-Tier One: `{battleInfo.defendingDeployment.tierOne}`
-Tier Two: `{battleInfo.defendingDeployment.tierTwo}`
-
-Nearby factions that could assist:
-{nearbyFactions}
-    """
-    msgTwo = f"""
-  # Battle Rules
-
-- Only commanders & Mediators may use global chat, only exception being at the end of the round. (soliders use `/team` whilst chatting)
-- Only may the Mediator present the score, this is to prevent confusion.
-- Mediators have the ability to decide when a round starts.
-- Mediators have the ability to cancel a round due to cheating.
-- Mediators must have access to admin commands on the private server where the battle is hosted.
-- Battles are first to 5, unless a mediator adjusts this before in terms.
-- Failing to comply with a mediator is an instant defeat.
-
-# Preset Terms
-
-Map: Given by Mediator
-Rally size: determined by `/team` *total sizes*
-Mercs: :x:
-Pause time: :white_check_mark:
-
-Time: Discussed and chosen by mediator to best accommodate everyone
-Server: Discussed and chosen by mediator to best accommodate everyone
-
-# Troops
-
-Each team has its own rally size, with their own tiers of troops with their own counts. This limits the amount of troops per class you have:
-
-** Tier One**
-- Sappers
-- Archers
-- Light Infantry
-- General Infantry
-
-**Tier Two**
-- Heavy Infantry
-- Cavalry
-
-The chosen mediator for this battle is {mediator.mention}
-  """
-    await channel.send(msgOne)
-    await channel.send(msgTwo)
+  await channel.send(msg)
   try:
     await channel.set_permissions(target=attackingGuild.owner,view_channel=True,read_messages=True,read_message_history=True)
     await channel.send(f"{attackingGuild.owner.mention}")
@@ -297,7 +202,7 @@ async def reinforce(interaction,client,factionName,deploymentName,side):
   channelData = mediatorClass(channelId)
   # === Faction & Deployment Get ===
   for faction in jsonhandler.getfactionsjson():
-    if factionName == faction["name"]:
+    if factionName.name == faction["name"]:
       factionId = faction["guild"]
       break
 
@@ -316,14 +221,32 @@ async def reinforce(interaction,client,factionName,deploymentName,side):
   region = classhandler.regionClass(jsonhandler.getregionjson(),channelData.region)
   if deployment.region not in region.neighbours and deployment.region != region.id:
     return f"`Deployment {deployment.name}` is not nearby to reinforce"
+  # === Battle check ===
+
+  battleData = getMediatorJson()
+  allDeployments = []
+  for battle in battleData:
+    battleInfo = mediatorClass(battle["id"])
+    for attackingDeploymentIndex in battleInfo.attackingFactionDeployments:
+        allDeployments.append(attackingDeploymentIndex)
+    for defendingDeploymentIndex in battleInfo.defendingFactionDeployments:
+        allDeployments.append(defendingDeploymentIndex)
+
+  for deploymentIndex in allDeployments:
+    deploymentFaction = classhandler.factionClass(deploymentIndex["faction"],jsonhandler.getfactionsjson())
+    deploymentIndex = armyhandler.getDeploymentClass(deploymentFaction ,deploymentIndex["id"])
+    if deploymentFaction.name == deployment.faction and deploymentIndex.id == deployment.id:
+        #embed = embedhandler.dangerEmbed(f"`Deployment {deployment.name}` is already in a battle","","Command denied")
+        return f"`Deployment {deployment.name}` is already in a battle"
+
   # Add to json data
   if side.name == "Attackers":
     attackers = channelData.attackingFactionDeployments
-    attackers.append({"faction": faction.name,"id": deployment.id})
+    attackers.append({"faction": faction.guild,"id": deployment.id})
     saveMediatorJson(channelData.id,channelData.attackingFaction,attackers,channelData.defendingFaction,channelData.defendingFactionDeployments,channelData.region)
   elif side.name == "Defenders":
     defenders = channelData.defendingFactionDeployments
-    defenders.append({"faction": faction.name,"id": deployment.id})
+    defenders.append({"faction": faction.guild,"id": deployment.id})
     saveMediatorJson(channelData.id,channelData.attackingFaction,channelData.attackingFactionDeployments,channelData.defendingFaction,defenders,channelData.region)
   else: return "An error has occured."
   return f"`Deployment {deployment.name}` has reinforced the {side.name}"
@@ -343,7 +266,7 @@ async def remove_reinforcement(interaction,client,factionName,deploymentName):
   channelData = mediatorClass(channelId)
   # === Faction & Deployment Get ===
   for faction in jsonhandler.getfactionsjson():
-    if factionName == faction["name"]:
+    if factionName.name == faction["name"]:
       factionId = faction["guild"]
       break
 
@@ -395,7 +318,7 @@ def viewTeams(interaction):
     attackingTotalTierOne += attackingDeployment.tierOne
     attackingTotalTierTwo += attackingDeployment.tierTwo
     msg+=f"""
-Faction: {attackingFaction.name}
+Faction: {attackingFaction.name} - {attackingDeployment.name}
 
 Tier One: {attackingDeployment.tierOne}
 Tier Two: {attackingDeployment.tierTwo}
@@ -417,7 +340,7 @@ Tier Two: {attackingTotalTierTwo}
     msg+=f"""
 Faction: {defendingFaction.name}
 
-Tier One: {defendingDeployment.tierOne}
+Tier One: {defendingDeployment.tierOne} - {defendingDeployment.name}
 Tier Two: {defendingDeployment.tierTwo}
 
 """

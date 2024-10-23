@@ -1,6 +1,47 @@
 from Imports import jsonhandler,classhandler,imagehandler,adminhandler
 import discord
 from discord.utils import get
+"""
+async def dualPrevent(interaction,client) -> bool:
+    async def __mutualPermissions__(client: discord.client, userId: int, factionId: int):
+        async def __getPermissions__(permissions,roleId):
+            for role in permissions:
+                if role["roleId"] == roleId:
+                    print(role["rolePermissions"])
+                    return role["rolePermissions"]
+
+        guild = client.get_guild(factionId)
+        member = await guild.fetch_member(userId)
+        if member.guild_permissions.administrator and not await adminhandler.admincheck(member,client):
+            return True
+
+        roles = member.roles
+        for role in roles:
+            roleId = role.id
+            try:
+                faction = classhandler.factionClass(factionId,jsonhandler.getfactionsjson())
+            except Exception:
+                return False
+            rolePermissions = await __getPermissions__(faction.permissions.raw,roleId)
+            if any(rolePermissions.values()) and not await adminhandler.admincheck(member,client):
+                return True
+        return False
+
+    factions = jsonhandler.getfactionsjson()
+    guilds = [faction["guild"] for faction in factions]
+    if interaction.guild.id not in guilds:
+        return False
+    # if faction
+    user = interaction.user
+    # permissions check
+    if not any(checkPermissions(interaction,interaction.user).values()):
+        return False
+    mutuals = user.mutual_guilds
+    for mutual in mutuals:
+        if await __mutualPermissions__(client,user.id,mutual.id):
+            return True
+    return False
+"""
 
 async def associatefaction(interaction,link,client):
   member = interaction.user
@@ -187,7 +228,7 @@ Contact {wolf} for futher assistance.
     )
     embed.set_footer(text="Associate before attempting to setup your faction.")
     embed.set_author(name="Access denied",icon_url="https://cdn.discordapp.com/attachments/763309644261097492/1143966731421896704/image.png?ex=66ba4c8a&is=66b8fb0a&hm=3a8bab4488268865b8094ca7b2a60e7ee406a651729634ebe3d7185a4c9277bc&")
-    await interaction.response.send_message(embed=embed)
+    return await interaction.response.send_message(embed=embed)
   try:
     await imagehandler.save_image(logolink,guild_id)
   except Exception as e:

@@ -1,7 +1,7 @@
 import json
 import asyncio
 import time
-from Imports import classhandler,jsonhandler,mediatorhandler,economyHandler
+from Imports import classhandler,jsonhandler,mediatorhandler,economyHandler,imagehandler
 import discord
 from discord import ui
 from discord import app_commands
@@ -71,7 +71,7 @@ def resetTurns():
 async def initialiseTurnSequence(client):
   tickTime = time.time()
   hours = 3 * 3600
-  #hours = 5
+  #hours = 60
   async def turnSequence(currentTime, hours,client):
     currentTime = time.time()
     turns = getTurns()
@@ -83,7 +83,10 @@ async def initialiseTurnSequence(client):
       currentTime = time.time()
       nextTurn = getTurns()["nextTurn"]
       timeDif = nextTurn - currentTime
-      await asyncio.sleep(timeDif)
+      redrawDif = 180
+      await asyncio.sleep(timeDif-redrawDif)
+      #await asyncio.create_task(imagehandler.redraw)
+      await asyncio.sleep(timeDif-time.time())
       currentTime = time.time()
       resetTurns()
       distributeResources()
@@ -184,7 +187,7 @@ async def initialiseTurnSequence(client):
          if trade["id"] == tradeId:
             trades.remove(trade)
             break
-      with open("Data\trades.json","w") as file:
+      with open("Data/trades.json","w") as file:
          json.dump(trades,file,indent=4)
 
     for trade in economyHandler.getTrades():
@@ -201,22 +204,29 @@ async def initialiseTurnSequence(client):
       receivingQuanitiy = trade["receivingQuantity"]
 
       if offeringFaction.resources.raw[offeringResource] < offeringQuanitity or receivingFaction.resources.raw[receivingResource] < receivingQuanitiy:
-        await cancelNotify(offeringFaction.guild,receivingFaction.guild,client,trade["tradeName"])
+        try:
+          await cancelNotify(offeringFaction.guild,receivingFaction.guild,client,trade["tradeName"],trade["id"])
+          # delete trade
+        except Exception:
+           continue
         continue
       
       # do trade
       offeringFactionResources = offeringFaction.resources.raw
       receivingFactionResources = receivingFaction.resources.raw
 
-      offeringFactionResources[receivingResource] + receivingQuanitiy
-      offeringFactionResources[offeringResource] - offeringQuanitity
+      offeringFactionResources[receivingResource] += receivingQuanitiy
+      offeringFactionResources[offeringResource] -= offeringQuanitity
 
-      receivingFactionResources[offeringResource] + offeringQuanitity
-      receivingFactionResources[receivingResource] - receivingQuanitiy
+      receivingFactionResources[offeringResource] += offeringQuanitity
+      receivingFactionResources[receivingResource] -= receivingQuanitiy
 
       save_factions(jsonhandler.getfactionsjson(),offeringFaction.guild,offeringFactionResources,offeringFaction.deployments.raw,offeringFaction.capital,offeringFaction.permissions.raw)
       save_factions(jsonhandler.getfactionsjson(),receivingFaction.guild,receivingFactionResources,receivingFaction.deployments.raw,receivingFaction.capital,receivingFaction.permissions.raw)
-      await successNotify(offeringFaction.guild,receivingFaction.guild,client,trade["tradeName"])
+      try:
+        await successNotify(offeringFaction.guild,receivingFaction.guild,client,trade["tradeName"])
+      except Exception:
+         continue
 
   def distributeResources():
     factions = jsonhandler.getfactionsjson()
@@ -328,6 +338,17 @@ def checkRegionInteraction(regionId: int) -> bool:
   for i in faction.turns.regions:
       if i["id"] == regionId:
         if i["nextTurn"] > time.time(): return True
+  return False
+
+def checkBattles(factionId: int,deploymentId: int):
+  #check if in mediator
+  mediatorData = mediatorhandler.getMediatorJson()
+  for channelData in mediatorData:
+    channelData = mediatorhandler.mediatorClass(channelData["id"])
+    allDeployments = channelData.attackingFactionDeployments + channelData.defendingFactionDeployments
+    for data in allDeployments:
+      if deploymentId == data["id"] and factionId == data["faction"]:
+        return True
   return False
 
 

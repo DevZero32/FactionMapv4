@@ -207,8 +207,8 @@ class createTradeClass(discord.ui.Modal, title="Offer trade"):
      alertChannel = receivingGuild.get_channel(receivingFaction.alert)
 
      alertFile = discord.File(f"Data/Logos/{faction.guild}.png",filename=f"{faction.guild}.png")
-     alertEmbed = discord.Embed(color=discord.Color(int('5865f2',16)),description=f"{receivingResource} for {offeringResource}")
-     alertEmbed.set_footer(text=f"You will be receiving {receivingResource} for {offeringResource}.")
+     alertEmbed = discord.Embed(color=discord.Color(int('5865f2',16)),description=f"{offeringResource} for {receivingResource}")
+     alertEmbed.set_footer(text=f"You will be receiving {offeringResource} for {receivingResource}.")
      alertEmbed.set_author(name=f"Trade request from {interaction.guild.name}",icon_url=f"attachment://{interaction.guild.id}.png")
      await alertChannel.send(embed=alertEmbed,view=tradeRequestclass(tradeId,interaction.guild.id,receivingFaction.guild),file=alertFile)
 

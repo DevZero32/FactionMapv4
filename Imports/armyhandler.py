@@ -1,4 +1,5 @@
-from Imports import jsonhandler ,factionshandler,classhandler,regionhandler,turnshandler,mediatorhandler,imagehandler
+from Imports import jsonhandler ,factionshandler,classhandler,regionhandler,turnshandler,mediatorhandler,imagehandler,embedhandler
+import asyncio
 import time
 
 def getDeploymentClass(faction, id):
@@ -40,49 +41,53 @@ def getDeployment(faction,roleId): #Faction being class
   deployment = getattr(faction.deployments, AttrName, None) # Access attribute for role permissions using dynamic name
   return deployment
 
-def displaydeployments(interaction):
+async def displaydeployments(interaction):
   factions = jsonhandler.getfactionsjson() # Retrieve the list of factions from the JSON file
   factionNames =  [indexFaction["name"] for indexFaction in factions] # Extract the names of all factions into a list
 
   if interaction.guild.name not in factionNames:
-    return (f"{interaction.guild.name} is not a faction.") # Check if the provided factionName is valid
+    embed = embedhandler.dangerEmbed(f"{interaction.guild.name} is not a faction","ensure that your faction is setup","Command denied")
+    return await interaction.followup.send(embed=embed)
 
   faction = classhandler.factionClass(interaction.guild.id, jsonhandler.getfactionsjson())
   #Permission check
   member = interaction.user
   permissions = factionshandler.checkPermissions(interaction,member)
-  if permissions["army"] == False: return "You lack permission to access deployments."
-
+  if permissions["army"] == False: 
+    embed = embedhandler.dangerEmbed("You lack permissions to access `/armies`","Ensure that you have permissions set","Command denied")
+    return await interaction.followup.send(embed=embed)
   #Displaying deployments
   deployments = faction.deployments
-  msg = """ 
-  # Deployments
-  """
+  msg = ""
 
   if len(deployments.raw) == 0:
-    return msg +(f"""
-
-    {faction.name} currently has no deployments.""")
+    embed = embedhandler.positiveEmbed("You have no armies",f"All deployments for {faction.name}","Deployments")
+    return await interaction.followup.send(embed=embed)
 
   for deployment in deployments.raw:
-      deployment = getDeploymentClass(faction,deployment["id"])
-      turned = turnshandler.checkLogs(faction.guild,"deployments",deployment.id)
+    deployment = getDeploymentClass(faction,deployment["id"])
+    turned = turnshandler.checkLogs(faction.guild,"deployments",deployment.id)
+    battleBool = turnshandler.checkBattles(faction.guild,deployment.id)
+    if battleBool: cooldownCondition = "**(In battle)**"
+    elif not battleBool and turned: cooldownCondition = "**(Cooldown)**"
+    else: cooldownCondition = ""
       
-      msg += f"""
-**{deployment.name}**
+    msg += f"""
+    **{deployment.name}**
 
-Location: {deployment.region}
-Tier one: {deployment.tierOne}
-Tier two: {deployment.tierTwo}
+    Location: {deployment.region}
+    Tier one: {deployment.tierOne}
+    Tier two: {deployment.tierTwo}
 
-Interacted: {turned}
-Next interaction: <t:{deployment.nextTurn:.0f}:R>
-*Has the deployment been interacted or in battle.*
+    Interacted: {turned} {cooldownCondition}
+    Next interaction: <t:{deployment.nextTurn:.0f}:R>
+    *Has the deployment been interacted or in battle.*
 
-"""
-  return msg
+    """
+  embed = embedhandler.positiveEmbed(msg,f"All deployments for {faction.name}","Deployments")
+  return await interaction.followup.send(embed=embed)
 
-def formDeployment(interaction,region,name):
+async def formDeployment(interaction,region,name):
   factions = jsonhandler.getfactionsjson()
 
   if interaction.guild.name not in jsonhandler.get_faction_names():
@@ -92,18 +97,24 @@ def formDeployment(interaction,region,name):
   faction = classhandler.factionClass(interaction.guild.id,factions)
 
   permissions = factionshandler.checkPermissions(interaction,interaction.user)
-  if permissions["army"] == False: return "You lack permissions to do this."
+  if permissions["army"] == False:
+    embed = embedhandler.dangerEmbed("You lack permissions to access `/armies`","Ensure that you have permissions set","Command denied")
+    return await interaction.followup.send(embed=embed)
       
   #Region Check
-  if regionhandler.regionOwnership(faction,region) == False: return (f"`Region {region}` is not owned by `Faction {faction.name}` ")
+  if regionhandler.regionOwnership(faction,region) == False: 
+    file,embed = embedhandler.dangerEmbedFactionLogo(f"`Region {region}` is not owned by {faction.name}","Ensure that you have permissions set","Command denied",faction.guild)
+    return await interaction.followup.send(embed=embed)
 
   region = classhandler.regionClass(jsonhandler.getregionjson(),region)
 
   if region.building not in ["Capital","Fort"]:
-    return "Deployments can only be formed at Capitals and Forts."
+    file,embed = embedhandler.dangerEmbedFactionLogo("Deployments can only be formed at Capitals and Forts.","Find a region which is one of these","Command denied",faction.guild)
+    return await interaction.followup.send(embed=embed,file=file)
   #Resource check
   if faction.resources.gold <= 49:
-    return (f"{faction.name} lack enough gold for make a deployment")
+    file,embed = embedhandler.dangerEmbedFactionLogo(f"{faction.name} lacks enough gold to form a deployment","You need 50 gold to form","Command denied",faction.guild)
+    return await interaction.followup.send(embed=embed,file=file)
   deployments = faction.deployments.raw
   names = [
     deployment["name"]
@@ -112,7 +123,9 @@ def formDeployment(interaction,region,name):
     for deployment in faction["deployments"]
     if "name" in deployment
 ]
-  if name in names: return "That name is already taken."
+  if name in names: 
+    file,embed = embedhandler.dangerEmbedFactionLogo("That name is already in use.","Pick a unique name","Command denied",faction.guild)
+    return await interaction.followup.send(embed=embed,file=file)
   try:
     highestId = 0
     for deplomentIndex in deployments:
@@ -132,24 +145,30 @@ def formDeployment(interaction,region,name):
   resourcesDict = {'gold': resources.gold - 50, 'iron': resources.iron, 'stone': resources.stone, 'wood': resources.wood, 'manpower': resources.manpower}
   deployments.append(newDeployment)
   jsonhandler.save_factions(interaction.guild,factions,faction.guild,resourcesDict,deployments,faction.capital,faction.permissions.raw)
-  return (f"Deployment formed at {region.id}, Use the `/rally`command to rally to the deployment.")
+  file,embed = embedhandler.positiveEmbedFactionLogo(f"Deployment formed at {region.id}", "Use the `/rally`command to rally to the deployment.","Deployment formed",faction.guild)
+  return await interaction.followup.send(embed=embed,file=file)
 
-def disbandDeployment(interaction,name):
+async def disbandDeployment(interaction,name):
   factions = jsonhandler.getfactionsjson()
   # === Faction existance check ===
   if interaction.guild.name not in jsonhandler.get_faction_names():
-    return (f"{interaction.guild.name} is not a faction")
+    embed = embedhandler.dangerEmbed(f"{interaction.guild.name} is not a faction","")
+    return await interaction.followup.send(embed=embed)
 
   #Faction Permissions check
   faction = classhandler.factionClass(interaction.guild.id,factions)
 
   permissions = factionshandler.checkPermissions(interaction,interaction.user)
-  if permissions["army"] == False: return "You lack permissions to do this."
+  if permissions["army"] == False: 
+    embed = embedhandler.dangerEmbed("You lack permissions to access `/disband`","Ensure that you have permissions set","Command denied")
+    return await interaction.followup.send(embed=embed)
   # === Deployment existance check ===
   deployments = faction.deployments.raw
 
   if name not in [deployment["name"] for deployment in deployments]:
-    return (f"{name} is not a valid deployment")
+    embed = embedhandler.dangerEmbed(f"{name} is not a valid deployment","Ensure that you have the correct name","Command denied")
+    return await interaction.followup.send(embed=embed)
+ 
   # === Battle check ===
   def deploymentIdViaName(faction,deploymentName):
     deployments = faction.deployments.raw
@@ -163,8 +182,8 @@ def disbandDeployment(interaction,name):
     battleDeployments = battle.defendingFactionDeployments + battle.attackingFactionDeployments
     for battleDeployment in battleDeployments:
       if battleDeployment["faction"] == faction.name and battleDeployment["id"] == deploymentIdViaName(faction,name):
-        return f"`Deployment {deployment.name} cannot disband due to being in a battle."
-
+        embed = embedhandler.dangerEmbed(f"`Deployment {deployment.name} cannot disband due to being in a battle.","Wait until the battle is over","Command denied")
+        return await interaction.followup.send(embed=embed)
   # === removal ===
   for deployment in deployments:
     if deployment["name"] == name:
@@ -174,24 +193,30 @@ def disbandDeployment(interaction,name):
 
   jsonhandler.save_factions(interaction.guild,jsonhandler.getfactionsjson(),interaction.guild.id,faction.resources.raw,deployments,faction.capital,faction.permissions.raw)
   if region.building == "None": imagehandler.assembleMap.cache_clear()
-  return f"{name} has been disbanded."
+  embed = embedhandler.positiveEmbed(f"`Deployment {deployment['name']} has successfully disbanded","","Disbanded")
+  return await interaction.followup.send(embed=embed)
 
-def rallyDeployment(interaction,infType,quantity,deploymentName):
+async def rallyDeployment(interaction,infType,quantity,deploymentName):
   factions = jsonhandler.getfactionsjson()
   
   if interaction.guild.id not in [faction["guild"] for faction in factions]:
-    return f"{interaction.guild.name} is not a faction."
+    embed = embedhandler.dangerEmbed(f"{interaction.guild.name} is not a faction","ensure that your faction is setup","Command denied")
+    return await interaction.followup.send(embed=embed)
   
   #Permission check
   member = interaction.user
   permissions = factionshandler.checkPermissions(interaction,member)
-  if permissions["army"] == False: return "You lack permission to access deployments."
+  if permissions["army"] == False:
+    embed = embedhandler.dangerEmbed("You lack permissions to access `/rally`","Ensure that you have permissions set","Command denied")
+    return await interaction.followup.send(embed=embed)
   
   faction = classhandler.factionClass(interaction.guild.id,factions)
   deployments = faction.deployments
   #deployment existance check
   if deploymentName not in [deployment["name"] for deployment in deployments.raw]:
-    return f"{deploymentName} is not a deployment."
+    embed = embedhandler.dangerEmbed(f"{deploymentName} is not a valid deployment","Ensure that you have the correct name","Command denied")
+    return await interaction.followup.send(embed=embed)
+
   #getting deployment class
   for deployment in deployments.raw:
     if deployment["name"] == deploymentName:
@@ -202,14 +227,19 @@ def rallyDeployment(interaction,infType,quantity,deploymentName):
   #location check
   region = classhandler.regionClass(jsonhandler.getregionjson(),deployment.region)
   if region.building not in ["Fort","Capital"]:
-    return f"{deployment.name} must be located in a fort or capital to rally to."
+    embed = embedhandler.dangerEmbed(f"{deployment.name} must be located in a fort or capital to rally to.","Move the deployment to a region with a fort or capital","Command denied")
+    return await interaction.followup.send(embed=embed)
+
   if region.owner != faction.guild:
-    return f"{faction.name} must own the region to rally."
+    embed = embedhandler.dangerEmbed(f"{faction.name} must own the region to rally.","Move to a region which you own","Command denied")
+    return await interaction.followup.send(embed=embed)
   #turn check
-  if turnshandler.checkLogs(faction.guild,"deployment",deploymentId) == True:
-    return f"`{deployment.name}` has already been interacted with for this turn."
+  if turnshandler.checkLogs(faction.guild,"deployments",deploymentId) == True:
+    embed = embedhandler.dangerEmbed(f"{deployment.name} is currently on cooldown","Check `/armies` for when it will be next avaliable","Command denied")
+    return await interaction.followup.send(embed=embed)
   if turnshandler.checkLogs(faction.guild,"regions",region.id) == True:
-    return f"`Region {region.id}` has already been interacted with for this turn."
+    embed = embedhandler.dangerEmbed(f"`Region {region.id}` is currently on cooldown","It will be avaliable next turn, check with `/Turn`","Command denied")
+    return await interaction.followup.send(embed=embed)
   
   #formatting inf type
   infType = infType.name
@@ -223,14 +253,17 @@ def rallyDeployment(interaction,infType,quantity,deploymentName):
   #resource check
   resources = faction.resources
 
-  if resources.manpower < costs["manpower"]*quantity and resources.gold < costs["gold"]*quantity:
-    return f"{faction.name} does not have enough resouces to rally {infType}."
+  if resources.manpower < costs["manpower"]*quantity or resources.gold < costs["gold"]*quantity:
+    embed = embedhandler.dangerEmbed(f"{faction.name} does not have enough resouces to rally {quantity} {infType}.","Ensure that you have enough resources, check your resources with `/overview`","Command denied")
+    return await interaction.followup.send(embed=embed)
 
   #Army limiting
   deploymentSize = deployment.tierOne + deployment.tierTwo + quantity
   deploymentLimit = 50
   if deploymentSize > deploymentLimit:
-    return f"Exceeded deployment limit of {deploymentLimit}"
+    embed = embedhandler.dangerEmbed(f"Exceeds deployment limit of {deploymentLimit}","Ensure that you do not break this limit","Command denied")
+    return await interaction.followup.send(embed=embed)
+  
   deploymentsRaw = deployments.raw
   # Automatically find the formattedInfType and add to it accordingly
   for deploymentRaw in deploymentsRaw:
@@ -239,10 +272,9 @@ def rallyDeployment(interaction,infType,quantity,deploymentName):
         deploymentRaw["tierOne"] += quantity
       elif formattedInfType == "tierTwo":
         deploymentRaw["tierTwo"] += quantity
-      else: return f"Infantry Type({formatInfType}) is unrecognised, please notify <@604817657169969182>."
-  # === resource check ===
-  if resources.gold < costs["gold"]*quantity or resources.manpower < costs["manpower"]*quantity:
-    return f"`Faction {faction.name}` lacks enough resources for this rally."
+      else: 
+        embed = embedhandler.dangerEmbed(f"Infantry Type({formatInfType}) is unrecognised, please notify <@604817657169969182>.","If you see this error message something has gone horribly wrong!`","Command denied")
+        return await interaction.followup.send(embed=embed)
 
   #Taking resources
   gold = resources.gold - costs["gold"]*quantity
@@ -251,13 +283,15 @@ def rallyDeployment(interaction,infType,quantity,deploymentName):
   jsonhandler.save_factions(interaction.guild,factions,faction.guild,resourcesDict,deployments.raw,faction.capital,faction.permissions.raw)
   turnshandler.logTurn(faction.guild,"deployments",deploymentId,turnshandler.getTurns()["nextTurn"] - time.time())
   turnshandler.logTurn(faction.guild,"regions",region.id,turnshandler.getTurns()["nextTurn"] - time.time())
-  return f"{deploymentName} has rallied {quantity} {infType.lower()}."
+  embed = embedhandler.positiveEmbed(f"{deploymentName} has rallied {quantity} {infType.lower()}.","View your armies with `/armies`","Rally successfull")
+  return await interaction.followup.send(embed=embed)
 
-def marchDeployment(interaction,deploymentName,regionId):
+async def marchDeployment(client,interaction,deploymentName,regionId):
   # === Faction Existance Check ====
   factions = jsonhandler.getfactionsjson()
   if interaction.guild.id not in [faction["guild"] for faction in factions]:
-    return f"{interaction.guild.name} is not a faction."
+    embed = embedhandler.dangerEmbed(f"{interaction.guild.name} is not a faction","ensure that your faction is setup","Command denied")
+    return await interaction.followup.send(embed=embed)
   
   faction = classhandler.factionClass(interaction.guild.id,factions)
   # === Region Existance Check ====
@@ -268,12 +302,15 @@ def marchDeployment(interaction,deploymentName,regionId):
   deployments = faction.deployments.raw
 
   if deploymentName not in [deployment["name"] for deployment in deployments]:
-    return f"{deploymentName} is not a deployment."
+    embed = embedhandler.dangerEmbed(f"{deploymentName} is not a valid deployment","Ensure that you have the correct name","Command denied")
+    return await interaction.followup.send(embed=embed)
   
   # === Permission Check ====
   member = interaction.user
   permissions = factionshandler.checkPermissions(interaction,member)
-  if permissions["army"] == False: return "You lack permission to access deployments."
+  if permissions["army"] == False:
+    embed = embedhandler.dangerEmbed("You lack permissions to access `/armies`","Ensure that you have permissions set","Command denied")
+    return await interaction.followup.send(embed=embed)
 
   # === Deployment Class ====
 
@@ -284,21 +321,28 @@ def marchDeployment(interaction,deploymentName,regionId):
       break
   # === Troop size check ===
   if deployment.tierOne + deployment.tierTwo <= 0:
-    return f"`Deployment {deployment.name}` has no infantry."
+    embed = embedhandler.dangerEmbed(f"`Deployment {deployment.name}` has no infantry and cannot be marched.","Ensure that you have rallied to the deployment","Command denied")
+    return await interaction.followup.send(embed=embed)
 
   # === Neighbour & Water Check ===
   if deployment.region not in region.neighbours:
-    return f"`Region {region.id}` is not a nieghbour."
-  elif region.water and (deploymentRegion.building != "Port" and deploymentRegion.land == True):
-    return f"To cross into the sea, You must do that a port. `Region {deploymentRegion.id} is not a port.`"
+    embed = embedhandler.dangerEmbed(f"`Region {region.id}` is not a nieghbour.","Check neigbouring regions with `/region_lookup`","Command denied")
+    return await interaction.followup.send(embed=embed)
+
+  elif region.water and (deploymentRegion.building not in ["Capital","Port"] and deploymentRegion.land == True):
+    embed = embedhandler.dangerEmbed(f"To cross into the sea, You must do that a port or capital. `Region {deploymentRegion.id} is neither.`","Find a capital or port to access the sea","Command denied")
+    return await interaction.followup.send(embed=embed)
+
   # === Turn Check ===
   if turnshandler.checkLogs(faction.guild,"deployments",deployment.id) == True:
-    return f"`Deployment {deployment.name}` has already been interacted with this turn."
+    embed = embedhandler.dangerEmbed(f"{deployment.name} is currently on cooldown","Check `/armies` for when it will be next avaliable","Command denied")
+    return await interaction.followup.send(embed=embed)
   # === Region attack'd check ===
   mediatorData = mediatorhandler.getMediatorJson()
   for channel in mediatorData:
     if region.id == channel["region"]:
-        return f"You cannot march to `Region {region.id}` due to it being under attack."
+        embed = embedhandler.dangerEmbed(f"You cannot march to `Region {region.id}` due to it being under attack.","","Command denied")
+        return await interaction.followup.send(embed=embed)
   
   # === Applying change to deployments ===
   for deploymentIndex in deployments:
@@ -309,18 +353,30 @@ def marchDeployment(interaction,deploymentName,regionId):
   jsonhandler.save_factions(interaction.guild,factions,interaction.guild.id,faction.resources.raw,deployments,faction.capital,faction.permissions.raw)
   turnshandler.logTurn(faction.guild,"deployments",deployment.id,min(max(((deployment.tierOne + deployment.tierTwo)*600),3600*3),3600))
   if deploymentRegion.building == "None" or region.building == "None": imagehandler.assembleMap.cache_clear()
-  return f"`Deployment {deployment.name}` has marched to `Region {region.id}`"
+  embed = embedhandler.positiveEmbed(f"`Deployment {deployment.name}` has marched to `Region {region.id}`","View your armies with `/armies`","March successfull")
+  await interaction.followup.send(embed=embed)
+  try:
+    if region.owner != faction.guild:
+      regionOwner = client.get_guild(region.owner)
+      regionFaction = classhandler.factionClass(factionId=region.owner,factions=factions)
+      alertChannel = regionOwner.get_channel(regionFaction.alert)
+      file,embed = embedhandler.dangerEmbedFactionLogo(f"{faction.name} has marched an army into `Region {region.id}`","Region tresspass alert",f"Region {region.id} entered",regionFaction.guild)
+      await alertChannel.send(embed=embed,file=file)
+  except Exception: pass
 
 async def attackDeployment(interaction, client, deploymentName, targetName):
   # === Faction Existence Check ===
   factions = jsonhandler.getfactionsjson()
   if interaction.guild.id not in [faction["guild"] for faction in factions]:
-      return await interaction.followup.send(f"{interaction.guild.name} is not a faction.")
+    embed = embedhandler.dangerEmbed(f"{interaction.guild.name} is not a faction","ensure that your faction is setup","Command denied")
+    return await interaction.followup.send(embed=embed)
 
   # === Permission Check ====
   member = interaction.user
   permissions = factionshandler.checkPermissions(interaction,member)
-  if permissions["army"] == False: return await interaction.followup.send("You lack permission to access deployments.")
+  if permissions["army"] == False: 
+    embed = embedhandler.dangerEmbed("You lack permissions to access `/armies`","Ensure that you have permissions set","Command denied")
+    return await interaction.followup.send(embed=embed)
 
   # === Faction Retrieval ===
   def getFactionViaDeployment(deploymentName):
@@ -353,26 +409,34 @@ async def attackDeployment(interaction, client, deploymentName, targetName):
       attackingDeploymentFound = True
       break
   if attackingDeploymentFound == False:
-    return await interaction.followup.send(f"{deploymentName} could not be found.")
+    embed = embedhandler.dangerEmbed(f"{deploymentName} could not be found.","To ensure you have to correct name: use `/armies`","Command denied")
+    return await interaction.followup.send(embed=embed)
+
   attackingDeployment = getDeploymentClass(attackingFaction,deploymentIdViaName(attackingFaction,deploymentName))
   # === Turn check ===
   if turnshandler.checkLogs(attackingDeployment.guild,"deployments",attackingDeployment.id) == True:
-    return await interaction.followup.send(f"`Deployment {attackingDeployment.name}` has been interacted with.")
+    embed = embedhandler.dangerEmbed(f"{attackingDeployment.name} is currently on cooldown or is in a battle","Check `/armies` for when it will be next avaliable","Command denied")
+    return await interaction.followup.send(embed=embed)
     
   
   # === Troop size check ===
   if not attackingDeployment.tierOne + attackingDeployment.tierTwo > 0:
-    return await interaction.followup.send(f"`Deployment {deploymentName}` has no troops to attack with.")
+    embed = embedhandler.dangerEmbed(f"`Deployment {deploymentName}` has no troops to attack with.","You need to rally before you can attack","Command denied")
+    return await interaction.followup.send(embed=embed)
 
   defendingFaction = getFactionViaDeployment(targetName)
-  if defendingFaction == False: return await interaction.followup.send(f"{targetName} could not be found.")
+  if defendingFaction == False: 
+    embed = embedhandler.dangerEmbed(f"{targetName} could not be found.","An easy to check if you have the correct army is with `/scout`","Command denied")
+    return await interaction.followup.send(embed=embed)
+  
   defendingDeployment = getDeploymentClassMethodTwo(defendingFaction,deploymentViaName(defendingFaction,targetName),deploymentIdViaName(defendingFaction,targetName))
 
   # === Nearby Check ===
 
   attackingDeploymentRegion = classhandler.regionClass(jsonhandler.getregionjson(),attackingDeployment.region)
   if defendingDeployment.region not in attackingDeploymentRegion.neighbours and defendingDeployment.region != attackingDeployment.region:
-    return await interaction.followup.send(f"{targetName} is not close enough to be attacked.")
+    embed = embedhandler.dangerEmbed(f"{targetName} is not close enough to be attacked.","An easy to check if you have the correct army is with `/scout`","Command denied")
+    return await interaction.followup.send(embed=embed)
   # === Battle pre existance check ===
   battleData = mediatorhandler.getMediatorJson()
   allDeployments = []
@@ -387,8 +451,11 @@ async def attackDeployment(interaction, client, deploymentName, targetName):
     deploymentFaction = classhandler.factionClass(deploymentIndex["faction"],factions)
     deploymentIndex = getDeploymentClass(deploymentFaction ,deploymentIndex["id"])
     if deploymentFaction.name == defendingDeployment.faction and deploymentIndex.id == defendingDeployment.id:
-        return f"`Deployment {defendingDeployment.name}` is already in a battle"
-  await interaction.followup.send(f"`Deployment {deploymentName}` has begun a battle with `Enemy Deployment {targetName}`")
+        embed = embedhandler.dangerEmbed(f"`Deployment {defendingDeployment.name}` is already in a battle","","Command denied")
+        return await interaction.followup.send(embed=embed)
+    
+  embed = embedhandler.dangerEmbed(f"`Deployment {deploymentName}` has begun a battle with `Enemy Deployment {targetName}`","","Command denied")
+  await interaction.followup.send(embed=embed)
 
   # === Mediator Channel Creation ===
   class BattleInfoClass():
@@ -401,31 +468,40 @@ async def attackDeployment(interaction, client, deploymentName, targetName):
   battleInfo = BattleInfoClass(attackingFaction,attackingDeployment,defendingFaction,defendingDeployment)
   await mediatorhandler.createChannel(interaction, client,battleInfo)
  
-def occupyRegion(interaction,client,regionId):
+async def occupyRegion(interaction,client,regionId):
   # === Faction Existence Check ===
   factions = jsonhandler.getfactionsjson()
   if interaction.guild.id not in [faction["guild"] for faction in factions]:
-      return f"{interaction.guild.name} is not a faction."
+    embed = embedhandler.dangerEmbed(f"{interaction.guild.name} is not a faction","ensure that your faction is setup","Command denied")
+    return await interaction.followup.send(embed=embed)
+  
   faction = classhandler.factionClass(interaction.guild.id,factions)
   # === Region Existance Check ====
-  if not 0 < regionId <= len(jsonhandler.getregionjson()): return f"`Region {regionId}` is not a valid region."
+  if not 0 < regionId <= len(jsonhandler.getregionjson()): 
+    embed = embedhandler.dangerEmbed(f"`Region {regionId}` is not a valid region.","","Command denied")
+    return await interaction.followup.send(embed=embed)
+
   region = classhandler.regionClass(jsonhandler.getregionjson(),regionId)
   
   # === Region water check ===
 
   if region.water == True:
-    return f"Cannot occupy `Region {region.id}` as its ocean."
+    embed = embedhandler.dangerEmbed(f"Cannot occupy `Region {region.id}` as its ocean.","Only land can be occupied","Command denied")
+    return await interaction.followup.send(embed=embed)
 
   # === Permissions Check ===
   
   member = interaction.user
   permissions = factionshandler.checkPermissions(interaction,member)
-  if permissions["army"] == False: return "You lack permission to access deployments."
+  if permissions["army"] == False: 
+    embed = embedhandler.dangerEmbed("You lack permissions to access `/armies`","Ensure that you have permissions set","Command denied")
+    return await interaction.followup.send(embed=embed)
   
   # === Deployment Locations Check ===
 
   if regionId not in [d["region"] for d in faction.deployments.raw]:
-    return f"`Faction {faction.name}` doesnt have a deployment in the region to occupy the region."
+    embed = embedhandler.dangerEmbed(f"`Faction {faction.name}` doesnt have a deployment in the region to occupy the region.","Ensure that you have army to occupy in the region","Command denied")
+    return await interaction.followup.send(embed=embed)
 
   # === Attacking Faction Deployments turn check ===
   attackingDeploymentAva = False
@@ -439,10 +515,12 @@ def occupyRegion(interaction,client,regionId):
       attackingAvaDeployments.append(deploymentIndex.id)
 
   if attackingDeploymentAva == False:
-    return f"`Faction {faction.name}` all deployments in `region {region.id}` have been interacted with already."
+    embed = embedhandler.dangerEmbed(f"`Faction {faction.name}` all deployments in `region {region.id}` have been interacted with already.","Ensure that you have army to occupy in the region","Command denied")
+    return await interaction.followup.send(embed=embed)
   # === Region owner check ===
-  if region.owner == faction.name:  
-    return f"`Faction {faction.name}` already owns `Region {regionId}`"
+  if region.owner == faction.guild:
+    embed = embedhandler.dangerEmbed(f"`Faction {faction.name}` already owns `Region {regionId}`","","Command denied")
+    return await interaction.followup.send(embed=embed)
 
   # === Region owner deployment presence === 
   if region.owner != "None":
@@ -453,7 +531,8 @@ def occupyRegion(interaction,client,regionId):
     deploymentPresent = False
   
   if deploymentPresent == True:
-    return f"`Faction {owningFaction.name}` has a deployment in the region preventing you from taking the region."
+    embed = embedhandler.dangerEmbed(f"`Faction {owningFaction.name}` has a deployment in the region preventing you from taking the region.","You can destory the deployment using`/scout` & `/attack` ","Command denied")
+    return await interaction.followup.send(embed=embed)
   
    # === Logging Turn ===
   for deploymentIndex in attackingAvaDeployments:
@@ -461,43 +540,53 @@ def occupyRegion(interaction,client,regionId):
 
   # === Saving occupation
   
-  if region.building == "Capital" and region.owner != "None": # removing the capital
-    region.building = "None"
-    def getFactionIdViaName(factionName):
-        factions = jsonhandler.getfactionsjson()
-        for faction in factions:
-            if faction["name"] != factionName:
-                continue
-            return faction["guild"]
+  if region.owner != "None": # old owner
+    #remove capital
+    if region.building == "Capital":
+      region.building = "None"
+
     # Removing old factions capital data
-    oldFactionId = getFactionIdViaName(region.owner)
-    oldFactionGuild = client.get_guild(oldFactionId)
+    oldFactionGuild = client.get_guild(region.owner)
     oldFaction = classhandler.factionClass(region.owner,jsonhandler.getfactionsjson())
+    await asyncio.to_thread(imagehandler.updateFactionBorders,oldFaction.guild)
     imagehandler.assembleMap.cache_clear()
-    jsonhandler.save_factions(oldFactionGuild,jsonhandler.getfactionsjson(),oldFactionId,oldFaction.resources.raw,oldFaction.deployments.raw,0,oldFaction.permissions.raw)
-    
+    jsonhandler.save_factions(oldFactionGuild,jsonhandler.getfactionsjson(),region.owner,oldFaction.resources.raw,oldFaction.deployments.raw,0,oldFaction.permissions.raw)
+
+    # Send alert to old faction
+    try:
+      oldFactionGuildObj = client.get_guild(oldFaction.guild)
+      alertChannel = oldFactionGuildObj.get_channel(oldFaction.alert)
+      file,embed = embedhandler.dangerEmbedFactionLogo(f"{faction.name} has taken `Region {region.id}`",f"You no longer control this region",f"Region {region.id} seized",oldFaction.guild)
+      await alertChannel.send(embed=embed,file=file)
+    except Exception: pass
 
 
   jsonhandler.save_regions(jsonhandler.getregionjson(),regionId,owner=faction.guild,building=region.building)
   imagehandler.assembleMap.cache_clear()
-  imagehandler.updateFactionBorders(faction.guild)
-  return (f"`Faction {faction.name}` now owns `Region {regionId}`")
+  await asyncio.to_thread(imagehandler.updateFactionBorders,faction.guild)
+  embed = embedhandler.positiveEmbed(f"`Faction {faction.name}` now owns `Region {regionId}`","","Region Occupied")
+  return await interaction.followup.send(embed=embed)
 
-def scoutRegion(interaction,regionId):
+async def scoutRegion(interaction,regionId):
   # === Faction Existence Check ===
   factions = jsonhandler.getfactionsjson()
   if interaction.guild.id not in [faction["guild"] for faction in factions]:
-      return f"{interaction.guild.name} is not a faction."
+    embed = embedhandler.dangerEmbed(f"{interaction.guild.name} is not a faction","ensure that your faction is setup","Command denied")
+    return await interaction.followup.send(embed=embed)
   faction = classhandler.factionClass(interaction.guild.id,factions)
   # === Region Existance Check ====
-  if not 0 < regionId <= len(jsonhandler.getregionjson()): return f"`Region {regionId}` is not a valid region."
+  if not 0 < regionId <= len(jsonhandler.getregionjson()): 
+    embed = embedhandler.dangerEmbed(f"`Region {regionId}` is not a valid region.","Please ensure that you have a valid region","Comamnd denied")
+    return await interaction.followup.send(embed=embed)
   region = classhandler.regionClass(jsonhandler.getregionjson(),regionId)
   
   # === Permissions Check ===
   
   member = interaction.user
   permissions = factionshandler.checkPermissions(interaction,member)
-  if permissions["army"] == False: return "You lack permission to access deployments."
+  if permissions["army"] == False: 
+    embed = embedhandler.dangerEmbed("You lack permissions to access `/armies`","Ensure that you have permissions set","Command denied")
+    return await interaction.followup.send(embed=embed)
   
   # === Deployment Locations Check ===
 
@@ -513,7 +602,8 @@ def scoutRegion(interaction,regionId):
     return False
   
   if not nearbyCheck(deployments):
-    return f"`Faction {faction.name}` has no deployments nearby."
+    embed = embedhandler.dangerEmbed(f"`Faction {faction.name}` has no deployments nearby.","Ensure that you have a deployment in a neighbouring region to scout","Command denied")
+    return await interaction.followup.send(embed=embed)
   
   # === Listing deployments in region ===
   header = f"""
@@ -535,4 +625,5 @@ Tier two: {deployment.tierTwo}
 """
   if not found:
     header += "No Deployments Found"
-  return header
+  embed = embedhandler.positiveEmbed(header,"",f"Deployments in ` Region {regionId}")
+  return await interaction.followup.send(embed=embed)
