@@ -25,19 +25,24 @@ async def listPermissionedMembers(faction: classhandler.factionClass,guild: disc
   mainGuild = client.get_guild(1074062206297178242)
 
   permissions = faction.permissions.raw
-  armyPermissions = [role["id"] for role in permissions if role["army"]]
+  armyPermissions = [role["roleId"] for role in permissions if role["rolePermissions"]["army"]]
   permissionable = [guild.owner]
   for member in guild.members:
     # check if in mainguild
-    if mainGuild.get_member(member) is None:
-      continue
+    if mainGuild.get_member(member.id) == None or member.bot or member.id == guild.owner.id:
+        continue
+        
     #append if admin
     if member.guild_permissions.administrator:
-      permissionable.append(member)
+      # convert to user to prevent referance based error
+      user = await client.fetch_user(member.id)
+      permissionable.append(user)
       continue
     #append if has army perms
     if any(roleId in armyPermissions for roleId in [role.id for role in member.roles]):
-      permissionable.append(member)
+      # convert to user to prevent referance based error
+      user = await client.fetch_user(member.id)
+      permissionable.append(user)
   return permissionable
 
 
