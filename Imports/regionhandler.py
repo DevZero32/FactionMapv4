@@ -147,7 +147,7 @@ async def capital(interaction,regionId):
     regions = jsonhandler.getregionjson()
     jsonhandler.save_regions(regions,region.id,faction.guild,"Capital")
     jsonhandler.save_factions(interaction.guild,factions,faction.guild,faction.resources.raw,faction.deployments.raw,capital,faction.permissions.raw)
-    await asyncio.wait_for(imagehandler.updateFactionBorders(faction.guild),timeout=360)
+    await asyncio.wait_for(asyncio.to_thread(imagehandler.updateFactionBorders,faction.guild), timeout=360)
     await asyncio.to_thread(imagehandler.addBuilding,regionId)
     file,embed = embedhandler.positiveEmbedFactionLogo("Welcome to Faction Map!\n\nYou can now interact with the map.","Refer to the guides if you get stuck",f"{faction.name}` initated!",faction.guild)
     return await interaction.followup.send(embed=embed,file=file)

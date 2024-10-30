@@ -44,7 +44,7 @@ async def form(interaction:discord.Interaction, region: int, name: str):
 async def disband(interaction:discord.Interaction,name: str):
   adminhandler.logInteraction(disband,interaction.user)
   await interaction.response.defer()
-  armyhandler.disbandDeployment(interaction,name)
+  await armyhandler.disbandDeployment(interaction,name)
 
 
 @app_commands.describe(inf_type="Decide the type to rally. T1 cost: 50 Gold, 1 Manpower T2 cost: 150 gold, 3 manpower")
@@ -224,8 +224,8 @@ async def redraw(interaction:discord.Interaction):
     return
   
   await interaction.response.defer()
-  await asyncio.wait_for(imagehandler.redraw(), timeout=360)
-  await asyncio.wait_for(imagehandler.assembleMap(),timeout=360)
+  await asyncio.wait_for(await asyncio.to_thread(imagehandler.redraw), timeout=360)
+  await asyncio.wait_for(await asyncio.to_thread(imagehandler.assembleMap), timeout=360)
 
   Embed = discord.Embed(
     colour=discord.Colour.blue(),

@@ -377,7 +377,7 @@ Tier Two: {defendingDeployment.tierTwo}
 
 """
   msg+= f"""
-**Defending Team Total**
+**Defending Team Total** 
 Tier One: {defendingTotalTierOne}
 Tier Two: {defendingTotalTierTwo}
 
