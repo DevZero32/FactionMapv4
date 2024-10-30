@@ -553,7 +553,7 @@ async def occupyRegion(interaction,client,regionId):
     # Removing old factions capital data
     oldFactionGuild = client.get_guild(region.owner)
     oldFaction = classhandler.factionClass(region.owner,jsonhandler.getfactionsjson())
-    await asyncio.to_thread(imagehandler.updateFactionBorders,oldFaction.guild)
+    await asyncio.wait_for(imagehandler.updateFactionBorders(oldFaction.guild),timeout=360)
     imagehandler.assembleMap.cache_clear()
     jsonhandler.save_factions(oldFactionGuild,jsonhandler.getfactionsjson(),region.owner,oldFaction.resources.raw,oldFaction.deployments.raw,0,oldFaction.permissions.raw)
 
@@ -568,7 +568,7 @@ async def occupyRegion(interaction,client,regionId):
 
   jsonhandler.save_regions(jsonhandler.getregionjson(),regionId,owner=faction.guild,building=region.building)
   imagehandler.assembleMap.cache_clear()
-  await asyncio.to_thread(imagehandler.updateFactionBorders,faction.guild)
+  await asyncio.wait_for(imagehandler.updateFactionBorders(faction.guild),timeout=360)
   embed = embedhandler.positiveEmbed(f"`Faction {faction.name}` now owns `Region {regionId}`","","Region Occupied")
   return await interaction.followup.send(embed=embed)
 

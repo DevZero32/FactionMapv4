@@ -224,8 +224,8 @@ async def redraw(interaction:discord.Interaction):
     return
   
   await interaction.response.defer()
-  await asyncio.to_thread(imagehandler.redraw)
-  await asyncio.to_thread(imagehandler.assembleMap)
+  await asyncio.wait_for(imagehandler.redraw(), timeout=360)
+  await asyncio.wait_for(imagehandler.assembleMap(),timeout=360)
 
   Embed = discord.Embed(
     colour=discord.Colour.blue(),

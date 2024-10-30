@@ -6,6 +6,9 @@ from Imports import jsonhandler, classhandler, armyhandler
 import imghdr
 from functools import lru_cache
 import numpy as np
+import asyncio
+
+imageLock = asyncio.Lock()
 
 # === ALGROS ===
 
@@ -100,70 +103,71 @@ async def save_image(imageUrl, guildId):
 
 
 # Map assembly
-def redraw() -> None:
-  # === Temp file removal ===
-  try:
-      os.remove("Data/Map/Temp/borderLayer.png")
-  except: pass
-  try:
-      os.remove("Data/Map/Temp/MapBuildings.png")
-  except: pass
-  try:
-      os.remove("Data/Map/Temp/mapOverview.png")
-  except: pass
-  mapBorders = Image.open("Data/Map/MapBorders.png").convert("RGBA")
+async def redraw() -> None:
+  async with imageLock:
+    # === Temp file removal ===
+    try:
+        os.remove("Data/Map/Temp/borderLayer.png")
+    except: pass
+    try:
+        os.remove("Data/Map/Temp/MapBuildings.png")
+    except: pass
+    try:
+        os.remove("Data/Map/Temp/mapOverview.png")
+    except: pass
+    mapBorders = Image.open("Data/Map/MapBorders.png").convert("RGBA")
 
-  for faction in jsonhandler.getfactionsjson():
-    compositePaste(mapBorders,faction["guild"]).save("Data/Map/Temp/borderLayer.png")
-
-  addBuildings()
-  assembleMap.cache_clear()
+    for faction in jsonhandler.getfactionsjson():
+      compositePaste(mapBorders,faction["guild"]).save("Data/Map/Temp/borderLayer.png")
 
 
-def updateFactionBorders(factionId):
-  try:
-    # Load the existing map with borders or create a new one if not found
-    mapImage = Image.open("Data/Map/Temp/borderLayer.png").convert("RGBA")
-  except:
-    mapImage = Image.open("Data/Map/MapBorders.png").convert("RGBA")
-  
-  # Get faction data
-  faction = classhandler.factionClass(factionId=factionId, factions=jsonhandler.getfactionsjson())
-  factionRegions = faction.regions
+    addBuildings()
+    assembleMap.cache_clear()
 
-  # Collect lands (connected regions) of the faction
-  lands = []
-  for region in factionRegions:
-    if region not in [r for area in lands for r in area["area"]]:
-      # Calculate the continuous area
-      area = calContinousLand(regionId=region)
-      lands.append({"area": area})
 
-  # Load base image to apply changes onto
-  baseImage = Image.open("Data/Map/MapBorders.png").convert("RGBA")
-  
-  # Now, only update the affected areas
-  for land in lands:
-    area = land["area"]
-
-    # Create a mask for the area and clear the old one
-    areaMask = Image.new("RGBA", mapImage.size, (255, 255, 255, 0))  # Transparent mask
-    for regionId in area:
-      # Open the mask image corresponding to the region and paste it into the area mask
-      regionMask = Image.open(f"Data/Map/Temp/Masks/{regionId}.png").convert("RGBA")
-      areaMask.paste(regionMask, (0, 0), regionMask)
+async def updateFactionBorders(factionId):
+  async with imageLock:
+    try:
+      # Load the existing map with borders or create a new one if not found
+      mapImage = Image.open("Data/Map/Temp/borderLayer.png").convert("RGBA")
+    except:
+      mapImage = Image.open("Data/Map/MapBorders.png").convert("RGBA")
     
-    # Clear the old area from the map by setting its alpha to 0
-    clearMask = Image.new("RGBA", areaMask.size, (255, 255, 255, 0))  # Fully transparent
-    mapImage.paste(clearMask, (0, 0), areaMask)
+    # Get faction data
+    faction = classhandler.factionClass(factionId=factionId, factions=jsonhandler.getfactionsjson())
+    factionRegions = faction.regions
 
-    compositePaste(mapImage,faction.guild).save("Data/Map/Temp/borderLayer.png")
+    # Collect lands (connected regions) of the faction
+    lands = []
+    for region in factionRegions:
+      if region not in [r for area in lands for r in area["area"]]:
+        # Calculate the continuous area
+        area = calContinousLand(regionId=region)
+        lands.append({"area": area})
+    
+    # Now, only update the affected areas
+    for land in lands:
+      area = land["area"]
 
-  # Save the updated border layer
-  mapImage.save("Data/Map/Temp/borderLayer.png")
+      # Create a mask for the area and clear the old one
+      areaMask = Image.new("RGBA", mapImage.size, (255, 255, 255, 0))  # Transparent mask
+      for regionId in area:
+        # Open the mask image corresponding to the region and paste it into the area mask
+        regionMask = Image.open(f"Data/Map/Temp/Masks/{regionId}.png").convert("RGBA")
+        areaMask.paste(regionMask, (0, 0), regionMask)
+      
+      # Clear the old area from the map by setting its alpha to 0
+      clearMask = Image.new("RGBA", areaMask.size, (255, 255, 255, 0))  # Fully transparent
+      mapImage.paste(clearMask, (0, 0), areaMask)
 
-  assembleMap.cache_clear()
-  assembleMap()
+      compositePaste(mapImage,faction.guild).save("Data/Map/Temp/borderLayer.png")
+
+    # Save the updated border layer
+    mapImage.save("Data/Map/Temp/borderLayer.png")
+    addBuildings()
+
+    assembleMap.cache_clear()
+    assembleMap()
 
 def compositePaste(baseImage,factionId):
   try: 
@@ -227,7 +231,6 @@ def addBuildings():
   width, height = Image.open("Data/Map/MapOverview.png").convert("RGBA").size
 
   buildingImage = Image.new(mode="RGBA",size=(width,height))
-  factions = jsonhandler.getfactionsjson()
   regions = jsonhandler.getregionjson()
   for region in regions:
     region = classhandler.regionClass(regions,region["regionId"])
@@ -272,7 +275,7 @@ def addDeployments():
   return deploymentImage
 
 @lru_cache(maxsize=None)
-def assembleMap():
+async def assembleMap():
   # === Default ====
   def Default():
     try:
@@ -314,9 +317,10 @@ def assembleMap():
     borderImage.paste(titlesImage,(0,0),titlesImage)
     biomeImage.paste(borderImage,(0,0),borderImage)
     biomeImage.save("Data/Map/Temp/topographyOverview.png")
-  Default()
-  Political()
-  Topograhy()
+  async with imageLock:
+    Default()
+    Political()
+    Topograhy()
 def generateMasks():
   
   def findCordinatesWithinBorder(image, regionCentre):
