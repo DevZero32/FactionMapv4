@@ -1,0 +1,165 @@
+[2024-10-15 17:15:51] thewolf3152: 
+[2024-10-15 17:55:07] thewolf3152: Faction map is a place for diplomacy and faction conflicts to be more interesting, For factions to have more interesting asides from wars originating from insults. Wars based on land and economic interests, alliances, betrayals, domination.
+
+All of this is possible within faction map.
+[2024-10-15 18:12:54] thewolf3152: ## Turn system
+
+Turns in faction map is how often the you can interact with units & regions again after interacting with them. Every so often a turn occurs, This time will be listed below.
+
+Current turn cycle: `3 Hours`
+
+## Dynamic turns
+
+Armies have dynamic turning for marching, This means that smaller armies have less of a cooldown before they can be used again.
+
+E.g Armies consisting of 1 Troop only have a cooldown of an hour, whereas armies of 50 troops will have a 3 Hour cooldown
+
+Cooldown formula for nerds
+```py
+totalSize = deployment.tierOne + deployment.tierTwo
+modifier = 600
+totalSize *= modifier
+totalSize = min(max(totalSize),10800,3600)
+```
+
+## Turn based financials
+
+Each turn, buildings have an impact on your resources.
+
+- **Capital** Generates 150 Gold, 5 Wood, 3 Iron, 3 Stone
+- **Fort** 50 Gold for maintenance
+- **Village** 20  Gold from taxes
+- **Port** 10 Gold for maintenance
+
+## Trade
+
+Trade in faction map is quite simple, it occurs every turn. If a faction doesn't have enough resources for a trade the trade will be cancelled.
+[2024-10-15 18:24:30] thewolf3152: ## Regions & Biomes
+
+Regions consist of a chunk of land, each region has its own specific biome type & buildings. 
+
+### Buildings
+- **Capital** Main building (25 Wood, 30 Stone, 500 Gold, 15 Iron) *Armies and be formed and rallied to here can also be used as ports*
+- **Fort** Fortification (10 Wood, 40 Stone, 175 Gold, 20 Iron) *Armies and be formed and rallied to here*
+-  **Village** (25 Wood, 25 Stone, 100 Gold) Mine resources
+- **Port** (15 Wood, 30 Stone, 100 Gold) Allows access to the sea
+
+Biomes are assigned to regions based upon their colour in the map, Each biome has its own benefits and resources.
+
+### Biomes
+
+- **Light Forest** 2 Wood
+- **Forest** 3 Wood
+- **Dark Forest** 4 Wood
+- **Desert** 3 Gold, 1 Stone
+- **Marsh** 2 Wood
+- **Meadowlands** 2 Wood, 1 Iron
+- **Hills** 1 Wood, 1 Iron, 1 Stone
+- **Plateau** 2 Iron, 1 Stone
+- **Snowy Peaks** 2 Stone, 1 Gold
+- **Valley** 1 Wood, 1 Gold, 1 Stone
+- **Large Hills** 1 Gold, 2 Iron, 1 Stone
+- **Mountains** 2 Stone, 1 Iron
+- **Tundra** 1 Wood, 2 Stone, 1 Iron
+[2024-10-15 18:45:03] thewolf3152: ## Armies
+
+Armies / Deployments are how you fight and occupy land within faction map, they can be formed at any fort or capital that you own they move around region to region via the neighbours of the region that they are currently in.
+
+Max Army size: `50 Troops`
+## Troops
+
+Forming an army costs: 50 Gold
+
+In faction map there is two types of troops:
+
+- **Tier one** - Sappers, Light infantry, Archers (50 Gold, 1 Manpower)
+- **Tier two** -Cavalry, Heavy infantry (150 Gold,3 Manpower)
+[2024-10-15 19:08:17] thewolf3152: ## Battles
+
+battles occur when an army is attacked when someone tries to take land off another faction, when this happens the faction are put into its own channel to discuss terms along with a mediator to help with the process and to ensure that the battle is fair.
+
+all battles have pre-set terms, which you will discover in battle, after a battle depending of the score armies will have attrition from the battle based upon how much they won or lost.
+[2024-10-15 19:31:09] thewolf3152: # Commands
+
+## Army commands
+
+`/armies` Provides information of your armies
+
+`/form` Form an army to rally troops to
+
+`/disband` Disband an army
+
+`/rally` Rally to an army
+
+`/march` Used to march an army
+
+`/attack` Attack another army
+
+`/occupy`  Occupy a region
+
+`/scout` Scout a region for region for information on the armies there
+
+## Trading commands
+
+`/trade` Send a trade request to another faction
+
+`/view_trades` List of all trades in your faction
+
+`/cancel_trade` cancel a trade
+
+## Region commands
+
+`/region_lookup` lookup a region for its information
+
+`/build` build a building in a region
+
+## Faction commands
+
+`/overview` Get an overview of your faction
+
+`/setup` Establish your faction, update/set your logo & alert channel **(originally to be used by server owner / admins)**
+
+`/capital`  Set/Update your capital **(originally to be used by server owner / admins)**
+
+`/permissions` view all of your set permissions  **(originally to be used by server owner / admins)**
+
+`/set_permissions` set a permissions for a role **(originally to be used by server owner / admins)**
+
+## Mediator commands
+
+`/teams` View teams and their size in a battle
+
+`/reinforce` Add reinforcements to the battle
+
+`/remove_reinforcement` remove a reinforcement from a battle
+
+`/victor` Enter who won the battle, used to set attrition rates
+
+`/close` Close the battle channel
+
+## Administrator commands
+
+`/give_manpower`  give manpower to factions based upon their last rally
+
+`/redraw` redraw the faction map to remove potential errors
+
+`/associate_faction` used to associate a faction with the map so they can join
+
+## Miscellaneous commands
+
+`/user_lookup` look up a user
+
+`/faction_lookup` look up a faction
+
+`/map` display the current map
+
+`/turn` How long left of the current turn
+[2024-10-15 20:57:06] thewolf3152: # Guides
+
+[How to set-up your faction](https://youtu.be/QB_yo-4Vzkg)
+
+[Battles & Info](https://youtu.be/SazpEURIKrE)
+
+[Occupy & Info](https://youtu.be/8nqCSlO2Mro)
+
+[Trading & Info](https://youtu.be/P6_a5_YLwzQ)
