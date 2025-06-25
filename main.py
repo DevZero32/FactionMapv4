@@ -7,7 +7,7 @@ import asyncio
 
 try:
   token = os.environ["TOKEN"]
-except: token = "MTEwOTE3MzcxODQxNDAxNjUyMg.GpMnBO.c4lH5NQIErFktPpDzEDn9W6XH9DLeu-9RECFwg"
+except: token = ""
 client = commands.Bot(command_prefix=" ",intents = discord.Intents.all())
 global mainguild
 mainguild = 1074062206297178242 #Faction Hub
@@ -224,6 +224,13 @@ async def redraw(interaction:discord.Interaction):
     return
   
   await interaction.response.defer()
+
+  #notify me
+  wolf = await client.fetch_user(604817657169969182)
+  dmChannel = await wolf.create_dm()
+  await dmChannel.send(f"{interaction.user.name} has used redraw.")
+
+
   await asyncio.wait_for(await asyncio.to_thread(imagehandler.redraw), timeout=360)
   await asyncio.wait_for(await asyncio.to_thread(imagehandler.assembleMap), timeout=360)
 
