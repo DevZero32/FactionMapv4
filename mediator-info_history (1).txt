@@ -1,0 +1,42 @@
+[2024-11-11 18:25:54] thewolf3152: # Mediator regulations
+
+
+## Negotiations
+
+*Time* 
+- Time must be negotiated; one side cannot choose the time both sides must agree.
+- If time isn't negotiated within a reasonable time based on the size of the battle, the mediator has the ability to chose for them.
+- If the battle is extremely small the battle must happen within 24 hours
+
+Factions have a right to request reinforcements, however the deployments must be listed in the original message posted by the bot. If an external faction is request you must add a representative of this faction to the channel before reinforcing
+
+Once both sides agree to terms they must be listed in https://discord.com/channels/1074062206297178242/1299092652519718913. After this they may not be altered
+
+*Server* 
+- Only the mediator can host the server.
+
+# During Battle
+
+- If a team fails to show to the agreed time and are failing to communicate, provide the other team the win automatically.
+
+- At the start of every round the teams must be given time to successfully organise themselves.
+- Teams must remain at spawn until its stated that they may begin.
+- If one side is deemed to be round delaying without any strategic reason a round delay timer can be initiated. 
+- During the battle only the commanders and you may speak in public chat, unless its the end of a round they chant. If they talk outside of these parameters warn them.
+- The regular troops are only allowed to speak using team chat.
+- If a team is toxic; warn them for their actions.
+- If a user glitches up to a location that's hard to get to you may also auto round win for round delaying.
+- If a team uses the incorrect troop types you are to warn them and to restart the round to allow them to correct this mistake, if they don't comply fail to try correct the situation you may issue a warning.
+
+A team can only have 2 warnings before you should consider giving them an auto loss.
+
+- If a team is seen using exploits you are to immediately give the win to the opposing team, and report the exploiters to both bb staff and faction hub staff along with evidence.
+*Most exploits are pretty to detect, but some  such as small speed increasers and small hitbox extenders are much harder to catch, lag exploits and flying, mass speed increase, noclipping are such easy to detect exploits so most people wont use them.*
+
+# After the battle
+
+Its really simple, the bot will do all of the calculations for you just need to enter the victory score via `/victor` then close the battle channel using `/close`.
+[2024-11-11 18:26:16] thewolf3152: <@&1162115972124114975> I have rewritten the info to more of my style of mediatoring
+[2025-01-09 19:27:59] thewolf3152: <@&1162115972124114975> 
+
+Please ensure battles have a set time

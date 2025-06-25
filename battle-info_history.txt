@@ -1,0 +1,61 @@
+[2024-10-17 19:25:07] thewolf3152: # Battle info
+
+This category is used for faction map battles, when a battle occurs it will be added here for faction leaders to discuss terms and to organise battles.
+Battles in faction map have pre-set terms to reduce the complexity of  battles & terms
+
+## Battle Rules
+- Only commanders & Mediators may use global chat, only exception being at the end of the round. (soldiers use /team whilst chatting)
+- Only may the Mediator present the score, this is to prevent confusion.
+- Mediators have the ability to decide when a round starts.
+- Mediators have the ability to cancel a round due to cheating.
+- Mediators must have access to admin commands on the private server where the battle is hosted.
+- Battles are first to 5
+- Failing to comply with a mediator is an instant defeat.
+
+## Pre-set terms
+
+Map: set by Mediator
+Server: Mediators own
+Rally size: determined by `/team` total sizes
+Mercs/ Duel Enlisters: ❌
+Pause time: ✅
+
+Time: Discussed and chosen by mediator to best accommodate everyone
+Server: Discussed and chosen by mediator to best accommodate everyone
+
+**Troops**
+Each team has its own rally size, with their own tiers of troops with their own counts. This limits the amount of troops per class you have:
+
+Tier One:
+- Sappers
+- Archers
+- Light Infantry
+
+Tier Two:
+- Heavy Infantry
+- Cavalry
+[2024-10-22 18:28:56] thewolf3152: # Siege speciality
+
+During a siege, the attacking faction has a 10-minute grace period before attrition starts affecting the battle. Once the 10 minutes have passed, the defending side gains 1 point for every additional 2 minutes that elapse.
+
+Here's how the scoring works:
+
+At 12 minutes: 1 point for defenders (0-1)
+At 14 minutes: 2 points for defenders (0-2)
+At 16 minutes: 3 points for defenders (0-3)
+At 18 minutes: 4 points for defenders (0-4)
+At 20 minutes: 5 points for defenders (0-5)
+The attackers can only win by capturing the final objective, which grants them a score of 5. The final score reflects the number of points the defenders earned before the attackers captured the objective.
+
+For example, if the attackers capture the objective at the 14-minute mark, the final score would be 5-2.
+[2024-10-24 14:31:07] gunsupmate123: WIP
+
+Battle of thermoplyae-Defending team goes hellenic due to the camp and nature of the battle, while attackers are persian
+
+Siege of Orleans-France are the agressors and England are the defenders (duh)
+
+Battle Of The Herrings-England is defending due to the fact of how much larger their camp is, while the french one is mostly tents and a single barricaded wall.
+
+Battle Of Milvian Bridge- Defenders are Maxentenius due to the fact that during the battle AND ingame maxetenius held the bridge
+
+Battle of Agincourt- England defends due to their stake wall, this can be changed in individual battle terms due to the nature of cavalry
